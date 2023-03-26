@@ -14,7 +14,7 @@ const Homepage = () => {
           </p>
 
           <div>
-            <Button>REGISTER</Button>
+            <Button className={classes.button}>REGISTER</Button>
             <Button>REGISTER</Button>
           </div>
         </Col>
