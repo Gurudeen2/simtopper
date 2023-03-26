@@ -15,7 +15,7 @@ const Homepage = () => {
 
           <div>
             <Button className={classes.button}>REGISTER</Button>
-            <Button>REGISTER</Button>
+            <Button>LOGIN</Button>
           </div>
         </Col>
       </Row>
