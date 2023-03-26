@@ -15,7 +15,7 @@ const Homepage = () => {
 
           <div>
             <Button className={classes.button}>REGISTER</Button>
-            <Button>LOGIN</Button>
+            <Button variant="outline-info">LOGIN</Button>
           </div>
         </Col>
       </Row>
