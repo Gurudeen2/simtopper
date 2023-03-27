@@ -14,7 +14,9 @@ const Homepage = () => {
           </p>
 
           <div>
-            <Button className={classes.button}>REGISTER</Button>
+            <Button variant="danger" className={classes.button}>
+              REGISTER
+            </Button>
             <Button variant="outline-info">LOGIN</Button>
           </div>
         </Col>
