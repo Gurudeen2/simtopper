@@ -5,21 +5,61 @@ import classes from "./Home.module.css";
 const Home = () => {
   return (
     <Container fluid className={classes["header-section"]}>
-      <Row>
+      <Row className={classes["row-section"]}>
         <Col>
           <h2>The Best Platform For VTU Services</h2>
           <Button className={classes.button}>Button</Button>
         </Col>
         <Col>
-          <Card>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-              <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <Row>
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col>
+              <Card>
+                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Body>
+                  <Card.Text>
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
         </Col>
       </Row>
     </Container>
