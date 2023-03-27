@@ -1,12 +1,12 @@
 import "./App.css";
 import Header from "./components/UI/Header/Header";
-import Homepage from "./components/UI/Pages/Home";
+import Banner from "./components/UI/Pages/Banner";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Homepage />
+      <Banner />
     </div>
   );
 }
