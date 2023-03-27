@@ -8,6 +8,10 @@ const Home = () => {
       <Row className={classes["row-section"]}>
         <Col>
           <h2>The Best Platform For VTU Services</h2>
+          <small className="d-sm-none">
+            We offer instant recharge of Airtime, Databundle, CableTV (DStv,
+            GOtv &amp; Startimes), Electricity Bill Payment and more
+          </small>
           <Button className={classes.button}>Button</Button>
         </Col>
         <Col>
