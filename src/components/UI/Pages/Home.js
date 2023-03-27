@@ -1,12 +1,14 @@
 import React from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import classes from "./Home.module.css";
 
 const Home = () => {
   return (
-    <Container>
+    <Container fluid className={classes["header-section"]}>
       <Row>
         <Col>
           <h2>The Best Platform For VTU Services</h2>
+          <Button className={classes.button}>Button</Button>
         </Col>
         <Col>
           <Card>
