@@ -11,6 +11,7 @@ const Home = () => {
           <small className="d-sm-none">
             We offer instant recharge of Airtime, Databundle, CableTV (DStv,
             GOtv &amp; Startimes), Electricity Bill Payment and more
+            <i class="bi bi-telephone-inbound-fill">calll</i>
           </small>
           <Button className={classes.button}>Button</Button>
         </Col>
