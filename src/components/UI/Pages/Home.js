@@ -18,12 +18,12 @@ const Home = () => {
           <Row>
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                {/* <Card.Img variant="top" src="holder.js/100px180"/> */}
                 <i class="bi bi-telephone-inbound-fill"></i>
                 <Card.Body>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    <i class="bi bi-telephone-inbound-fill"></i>
+                    Buy
                   </Card.Text>
                 </Card.Body>
               </Card>
