@@ -18,10 +18,6 @@ const Home = () => {
           <Row>
             <Col style={{ textAlign: "center" }}>
               <Card>
-                {/* <Card.Img variant="top" src="holder.js/100px180"/> */}
-                {/* <i
-                  className={`bi bi-telephone-inbound-fill ${classes.icon}`}
-                ></i> */}
                 <Card.Body>
                   <Card.Text>
                     <a href="/" className={classes.link}>
@@ -34,14 +30,14 @@ const Home = () => {
                 </Card.Body>
               </Card>
             </Col>
-
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    <a href="/" className={classes.link}>
+                      <i className={`bi bi-wifi ${classes.icon}`}></i>
+                      <p>Buy Data</p>
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -49,11 +45,12 @@ const Home = () => {
 
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    <a href="/" className={classes.link}>
+                      <i className={`bi bi-lightbulb ${classes.icon}`}></i>
+                      <p>Buy Electricity</p>
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
@@ -61,11 +58,12 @@ const Home = () => {
 
             <Col>
               <Card>
-                <Card.Img variant="top" src="holder.js/100px180" />
                 <Card.Body>
                   <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    <a href="/" className={classes.link}>
+                      <i className={`bi bi-wifi ${classes.icon}`}></i>
+                      <p>Cable TV</p>
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>
