@@ -24,11 +24,12 @@ const Home = () => {
                 ></i> */}
                 <Card.Body>
                   <Card.Text>
-                    <i
-                      className={`bi bi-telephone-inbound-fill ${classes.icon}`}
-                    ></i>
-                    <br />
-                    Buy Airtime
+                    <a href="/" className={classes.link}>
+                      <i
+                        className={`bi bi-telephone-inbound-fill ${classes.icon}`}
+                      ></i>
+                      <p>Buy Airtime</p>
+                    </a>
                   </Card.Text>
                 </Card.Body>
               </Card>

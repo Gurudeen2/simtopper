@@ -18,4 +18,15 @@
   font-size: 30px;
   text-align: center;
 }
+
+.link {
+  text-decoration: none;
+  color: #000;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #000;
+}
+
 /* style="font-size: 17px;line-height: 0px;" */
