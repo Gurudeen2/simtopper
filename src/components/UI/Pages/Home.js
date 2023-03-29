@@ -11,7 +11,6 @@ const Home = () => {
           <small className="d-sm-none">
             We offer instant recharge of Airtime, Databundle, CableTV (DStv,
             GOtv &amp; Startimes), Electricity Bill Payment and more
-            <i class="bi bi-telephone-inbound-fill">calll</i>
           </small>
           <Button className={classes.button}>Button</Button>
         </Col>
@@ -20,6 +19,7 @@ const Home = () => {
             <Col>
               <Card>
                 <Card.Img variant="top" src="holder.js/100px180" />
+                <i class="bi bi-telephone-inbound-fill"></i>
                 <Card.Body>
                   <Card.Text>
                     Some quick example text to build on the card title and make
