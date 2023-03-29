@@ -19,11 +19,15 @@ const Home = () => {
             <Col>
               <Card>
                 {/* <Card.Img variant="top" src="holder.js/100px180"/> */}
-                <i class="bi bi-telephone-inbound-fill"></i>
+                {/* <i
+                  className={`bi bi-telephone-inbound-fill ${classes.icon}`}
+                ></i> */}
                 <Card.Body>
                   <Card.Text>
-                    <i class="bi bi-telephone-inbound-fill"></i>
-                    Buy
+                    <i
+                      className={`bi bi-telephone-inbound-fill ${classes.icon}`}
+                    ></i>
+                    Buy Airtime
                   </Card.Text>
                 </Card.Body>
               </Card>
