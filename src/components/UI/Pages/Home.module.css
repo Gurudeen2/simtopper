@@ -10,8 +10,8 @@
   padding-right: 2rem;
 }
 .button {
-  width: 100%;
-  border-radius: 3rem;
+  width: 85%;
+  border-radius: 15rem;
 }
 
 .icon {
@@ -30,7 +30,7 @@
 }
 
 .span {
-  padding-top: 6rem;
+  padding-top: 4rem;
 }
 
 /* style="font-size: 17px;line-height: 0px;" */
