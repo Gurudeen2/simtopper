@@ -10,7 +10,7 @@
   padding-right: 2rem;
 }
 .button {
-  width: 85%;
+  width: 100%;
   border-radius: 3rem;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .span {
-  padding: 4rem;
+  padding-top: 6rem;
 }
 
 /* style="font-size: 17px;line-height: 0px;" */
