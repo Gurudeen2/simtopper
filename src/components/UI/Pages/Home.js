@@ -12,9 +12,9 @@ const Home = () => {
             We offer instant recharge of Airtime, Databundle, CableTV (DStv,
             GOtv &amp; Startimes), Electricity Bill Payment and more
           </small>
-          {/* <span className={classes.span}></span>
-          <br /> */}
-          <Button className={classes.button}>Button</Button>
+          
+            <Button className={classes.button}>Button</Button>
+         
         </Col>
         <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
           <Row style={{ textAlign: "center" }}>

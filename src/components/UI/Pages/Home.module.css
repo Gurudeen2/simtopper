@@ -10,7 +10,7 @@
   padding-right: 2rem;
 }
 .button {
-  width: 85%;
+  width: inherit;
   border-radius: 15rem;
 }
 
