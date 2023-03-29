@@ -17,7 +17,7 @@ const Home = () => {
         <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
           <Row style={{ textAlign: "center" }}>
             <Col>
-              <Card style={{ height: "inherit" }}>
+              <Card>
                 <Card.Body>
                   <Card.Text>
                     <a href="/" className={classes.link}>
@@ -31,7 +31,7 @@ const Home = () => {
               </Card>
             </Col>
             <Col>
-              <Card style={{ height: "inherit" }}>
+              <Card>
                 <Card.Body>
                   <Card.Text>
                     <a href="/" className={classes.link}>
@@ -44,7 +44,7 @@ const Home = () => {
             </Col>
 
             <Col>
-              <Card style={{ height: "inherit" }}>
+              <Card>
                 <Card.Body>
                   <Card.Text>
                     <a href="/" className={classes.link}>
@@ -57,7 +57,7 @@ const Home = () => {
             </Col>
 
             <Col>
-              <Card style={{ height: "inherit" }}>
+              <Card>
                 <Card.Body>
                   <Card.Text>
                     <a href="/" className={classes.link}>
