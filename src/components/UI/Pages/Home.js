@@ -16,7 +16,7 @@ const Home = () => {
         </Col>
         <Col>
           <Row>
-            <Col>
+            <Col style={{ textAlign: "center" }}>
               <Card>
                 {/* <Card.Img variant="top" src="holder.js/100px180"/> */}
                 {/* <i
@@ -27,6 +27,7 @@ const Home = () => {
                     <i
                       className={`bi bi-telephone-inbound-fill ${classes.icon}`}
                     ></i>
+                    <br />
                     Buy Airtime
                   </Card.Text>
                 </Card.Body>
