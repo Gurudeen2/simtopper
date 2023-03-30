@@ -17,6 +17,9 @@
   .button {
     width: 100%;
   }
+  .col-order-1 {
+    padding-top: 1rem;
+  }
 }
 
 .icon {

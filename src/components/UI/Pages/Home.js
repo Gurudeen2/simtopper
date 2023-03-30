@@ -7,9 +7,11 @@ const Home = () => {
     <Container fluid className={classes["header-section"]}>
       <Row className={classes["row-section"]}>
         <Col
+          className={classes[".col-order-1"]}
           xs={{ span: 12, order: 2 }}
           md={{ span: 6, order: 1 }}
-          lg={{ span: 4, order: 1 }}
+          lg={{ span: 5, order: 1 }}
+          style={{ paddingTop: "1rem" }}
         >
           <h2>The Best Platform For VTU Services</h2>
           <small className={`d-sm-none ${classes.span}`}>
@@ -17,9 +19,15 @@ const Home = () => {
             GOtv &amp; Startimes), Electricity Bill Payment and more
           </small>
           <p className={classes.span}></p>
-          <Button className={classes.button}>Button</Button>
+          <Button className={classes.button} style={{ borderRadius: "3rem" }}>
+            Button
+          </Button>
         </Col>
-        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }} lg={{ span: 8, order: 2 }}>
+        <Col
+          xs={{ span: 12, order: 1 }}
+          md={{ span: 6, order: 2 }}
+          lg={{ span: 7, order: 2 }}
+        >
           <Row style={{ textAlign: "center" }}>
             <Col>
               <Card>
