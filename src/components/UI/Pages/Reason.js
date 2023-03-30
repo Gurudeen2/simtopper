@@ -1,10 +1,8 @@
-import React from 'react'
-
+import React from "react";
+import classes from "./Reason.module.css";
 
 const Reason = () => {
-  return (
-    <div>Reason</div>
-  )
-}
+  return <div className={classes.reason}>Reason</div>;
+};
 
-export default Reason
+export default Reason;
