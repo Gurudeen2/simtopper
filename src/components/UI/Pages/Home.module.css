@@ -11,7 +11,14 @@
 }
 .button {
   width: 85%;
-  border-radius: 15rem;
+  border-radius: 5rem;
+}
+
+@media (min-width: 20em) {
+  .button {
+    width: 100%;
+    border-radius: 5rem;
+  }
 }
 
 .icon {
