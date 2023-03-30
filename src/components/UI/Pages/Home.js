@@ -83,7 +83,7 @@ const Home = () => {
             </Col>
           </Row>
 
-          <Row style={{ textAlign: "center" }}>
+          <Row style={{ textAlign: "center", paddingTop: "1rem" }}>
             <Col>
               <Card>
                 <Card.Body>
