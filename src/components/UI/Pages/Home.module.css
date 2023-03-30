@@ -13,7 +13,7 @@
   width: 85%;
 }
 
-@media (min-width: 20em) {
+@media (max-width: 320px) {
   .button {
     width: 100%;
   }
