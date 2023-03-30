@@ -6,7 +6,11 @@ const Home = () => {
   return (
     <Container fluid className={classes["header-section"]}>
       <Row className={classes["row-section"]}>
-        <Col xs={{ span: 12, order: 2 }} md={{ span: 6, order: 1 }}>
+        <Col
+          xs={{ span: 12, order: 2 }}
+          md={{ span: 6, order: 1 }}
+          lg={{ span: 4, order: 1 }}
+        >
           <h2>The Best Platform For VTU Services</h2>
           <small className={`d-sm-none ${classes.span}`}>
             We offer instant recharge of Airtime, Databundle, CableTV (DStv,
@@ -15,7 +19,7 @@ const Home = () => {
           <p className={classes.span}></p>
           <Button className={classes.button}>Button</Button>
         </Col>
-        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }}>
+        <Col xs={{ span: 12, order: 1 }} md={{ span: 6, order: 2 }} lg={{ span: 8, order: 2 }}>
           <Row style={{ textAlign: "center" }}>
             <Col>
               <Card>
