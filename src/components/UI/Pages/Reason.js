@@ -6,7 +6,7 @@ const Reason = () => {
   return (
     <Container fluid className={classes.reason}>
       <Row>
-        <Col>
+        <Col className={classes["justify-content"]}>
           <h2>Why Choose Us?</h2>
           <p>
             We offer instant recharge of Airtime, Databundle, CableTV (DStv,

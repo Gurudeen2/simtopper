@@ -2,3 +2,7 @@
   width: 100%;
   background-color: antiquewhite;
 }
+
+.justify-content {
+  text-align: justify;
+}
