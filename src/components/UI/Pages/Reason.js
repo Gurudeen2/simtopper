@@ -3,7 +3,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import classes from "./Reason.module.css";
 import image from "../../../assets/images/photo-1624411024074-18a756682b50.jfif";
 
-
 const Reason = () => {
   return (
     <Container fluid className={classes.reason}>
@@ -23,7 +22,9 @@ const Reason = () => {
             24/7 Customer Support
           </p>
         </Col>
-        <Col><img src={image} className={classes["round-img"]} alt="choose us"/></Col>
+        <Col className={classes["justify-content"]}>
+          <img src={image} className={classes["round-img"]} alt="choose us" />
+        </Col>
       </Row>
     </Container>
   );
