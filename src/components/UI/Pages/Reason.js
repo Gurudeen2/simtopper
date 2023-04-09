@@ -1,14 +1,14 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import classes from "./Reason.module.css";
+import image from "../../../../assets/images/"
+
 
 const Reason = () => {
   return (
     <Container fluid className={classes.reason}>
       <Row>
-        <Col
-          className={classes["justify-content"]}
-        >
+        <Col className={classes["justify-content"]}>
           <h2>Why Choose Us?</h2>
           <p>
             We offer instant recharge of Airtime, Databundle, CableTV (DStv,
@@ -23,7 +23,7 @@ const Reason = () => {
             24/7 Customer Support
           </p>
         </Col>
-        <Col></Col>
+        <Col><img src="../../" alt="choose us"/></Col>
       </Row>
     </Container>
   );
