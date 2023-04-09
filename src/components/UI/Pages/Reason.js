@@ -23,7 +23,7 @@ const Reason = () => {
             24/7 Customer Support
           </p>
         </Col>
-        <Col><img src={image} alt="choose us"/></Col>
+        <Col><img src={image} className={classes["round-img"]} alt="choose us"/></Col>
       </Row>
     </Container>
   );
