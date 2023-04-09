@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import classes from "./Reason.module.css";
-import image from "../../../../assets/images/"
+import image from "../../../assets/images/photo-1624411024074-18a756682b50.jfif";
 
 
 const Reason = () => {
@@ -23,7 +23,7 @@ const Reason = () => {
             24/7 Customer Support
           </p>
         </Col>
-        <Col><img src="../../" alt="choose us"/></Col>
+        <Col><img src={image} alt="choose us"/></Col>
       </Row>
     </Container>
   );

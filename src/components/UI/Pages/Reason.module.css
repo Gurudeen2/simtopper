@@ -6,3 +6,7 @@
 .justify-content {
   padding: 3rem;
 }
+
+.round-img{
+  border-radius: 3rem;
+}
