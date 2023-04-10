@@ -3,6 +3,7 @@ import Header from "./components/UI/Header/Header";
 import Banner from "./components/UI/Pages/Banner";
 import Home from "./components/UI/Pages/Home";
 import Reason from "./components/UI/Pages/Reason";
+import UserCount from "./components/UI/Pages/UserCount";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Banner />
       <Home />
       <Reason />
+      <UserCount />
     </div>
   );
 }
