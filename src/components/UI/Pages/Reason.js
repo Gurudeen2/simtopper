@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import classes from "./Reason.module.css";
 import image from "../../../assets/images/photo-1624411024074-18a756682b50.jfif";
 
@@ -64,6 +64,7 @@ const Reason = () => {
             campuses of higher learning and youths in diaspora. Finally, to
             promote technology via the use of ICT tools in our society.
           </p>
+          <Button>Get Started</Button>
         </Col>
         <Col className={classes["justify-content"]}>
           <img src={image} className={classes["round-img"]} alt="choose us" />
