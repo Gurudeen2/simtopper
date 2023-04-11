@@ -86,7 +86,7 @@ const PriceTag = () => {
           <Card>
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">GLO</Card.Subtitle>
-            <ListGroup variant="flush">
+            <ListGroup>
               <Container>
                 <ListGroup.Item>
                   <Row>
@@ -239,13 +239,13 @@ const PriceTag = () => {
               9mobile
             </Card.Subtitle>
             <ListGroup variant="flush" className={classes.mobile9}>
-              {/* <Container> */}
+              <Container>
                 <ListGroup.Item>
-                  {/* <Row>
+                  <Row>
                     <Col>500.0MB</Col>
                     <Col>₦115</Col>
                     <Col>30days</Col>
-                  </Row> */}
+                  </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
@@ -303,7 +303,7 @@ const PriceTag = () => {
                     <Col>30days</Col>
                   </Row>
                 </ListGroup.Item>
-              {/* </Container> */}
+              </Container>
             </ListGroup>
           </Card>
         </Col>
