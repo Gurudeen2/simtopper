@@ -4,7 +4,7 @@ import classes from "./UserCount.module.css"
 
 const UserCount = () => {
   return (
-    <Container className={classes.count}>
+    <Container fluid className={classes.count}>
       <Row>
         <Col>
           1000k

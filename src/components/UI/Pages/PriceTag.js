@@ -5,33 +5,307 @@ import img from "../../../assets/images/photo-1624411024074-18a756682b50.jfif";
 const PriceTag = () => {
   return (
     <Container>
+      <h2>Affordable Data Plans And Prices</h2>
       <Row>
         <Col>
           <Card>
-            <Card.Body>
-              <Card.Img src={img} />
-              <Card.Subtitle className="mb-2 text-muted">
-                Card Subtitle
-              </Card.Subtitle>
-              <ListGroup variant="flush">
-                <Container>
-                  <ListGroup.Item>
-                    <Row>
-                      <Col>500.0MB</Col>
-                      <Col>₦115</Col>
-                      <Col>30days</Col>
-                    </Row>
-                  </ListGroup.Item>
-                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-                </Container>
-              </ListGroup>
-            </Card.Body>
+            <Card.Img src={img} />
+            <Card.Subtitle className="mb-2 p-2 text-muted">MTN</Card.Subtitle>
+            <ListGroup variant="flush">
+              <Container>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+              </Container>
+            </ListGroup>
           </Card>
         </Col>
-        <Col></Col>
-        <Col></Col>
-        <Col></Col>
+
+        <Col>
+          <Card>
+            <Card.Img src={img} />
+            <Card.Subtitle className="mb-2 p-2 text-muted">GLO</Card.Subtitle>
+            <ListGroup variant="flush">
+              <Container>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+              </Container>
+            </ListGroup>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card>
+            <Card.Img src={img} />
+            <Card.Subtitle className="mb-2 p-2 text-muted">
+              Airtel
+            </Card.Subtitle>
+            <ListGroup variant="flush">
+              <Container>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+              </Container>
+            </ListGroup>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card style={{ backgroundColor: "red" }}>
+            <Card.Img src={img} />
+            <Card.Subtitle className="mb-2 p-2 text-muted">
+              9mobile
+            </Card.Subtitle>
+            <ListGroup variant="flush">
+              <Container>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  <Row>
+                    <Col>500.0MB</Col>
+                    <Col>₦115</Col>
+                    <Col>30days</Col>
+                  </Row>
+                </ListGroup.Item>
+              </Container>
+            </ListGroup>
+          </Card>
+        </Col>
       </Row>
     </Container>
   );
