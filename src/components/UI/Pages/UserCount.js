@@ -1,9 +1,10 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import classes from "./UserCount.module.css"
 
 const UserCount = () => {
   return (
-    <Container>
+    <Container className={classes.count}>
       <Row>
         <Col>
           1000k

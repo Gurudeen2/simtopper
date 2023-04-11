@@ -30,6 +30,7 @@ const Home = () => {
         >
           <Row style={{ textAlign: "center" }}>
             <Col>
+              
               <Card>
                 <Card.Body>
                   <Card.Text>
