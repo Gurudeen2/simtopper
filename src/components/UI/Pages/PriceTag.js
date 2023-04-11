@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Container, Row, ListGroup, Col } from "react-bootstrap";
+import classes from "./PriceTag.module.css"
 import img from "../../../assets/images/photo-1624411024074-18a756682b50.jfif";
 
 const PriceTag = () => {
@@ -232,7 +233,7 @@ const PriceTag = () => {
         </Col>
 
         <Col>
-          <Card style={{ backgroundColor: "red" }}>
+          <Card className="">
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">
               9mobile
