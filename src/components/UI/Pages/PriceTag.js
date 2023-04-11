@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Container, Row, ListGroup, Col } from "react-bootstrap";
-import classes from "./PriceTag.module.css"
+import classes from "./PriceTag.module.css";
 import img from "../../../assets/images/photo-1624411024074-18a756682b50.jfif";
 
 const PriceTag = () => {
@@ -233,19 +233,19 @@ const PriceTag = () => {
         </Col>
 
         <Col>
-          <Card className="">
+          <Card className={classes.mobile9}>
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">
               9mobile
             </Card.Subtitle>
-            <ListGroup variant="flush">
-              <Container>
+            <ListGroup variant="flush" className={classes.mobile9}>
+              {/* <Container> */}
                 <ListGroup.Item>
-                  <Row>
+                  {/* <Row>
                     <Col>500.0MB</Col>
                     <Col>₦115</Col>
                     <Col>30days</Col>
-                  </Row>
+                  </Row> */}
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
@@ -290,7 +290,7 @@ const PriceTag = () => {
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <Row>
+                  <Row> 
                     <Col>500.0MB</Col>
                     <Col>₦115</Col>
                     <Col>30days</Col>
@@ -303,7 +303,7 @@ const PriceTag = () => {
                     <Col>30days</Col>
                   </Row>
                 </ListGroup.Item>
-              </Container>
+              {/* </Container> */}
             </ListGroup>
           </Card>
         </Col>
