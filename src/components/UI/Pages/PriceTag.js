@@ -14,9 +14,17 @@ const PriceTag = () => {
                 Card Subtitle
               </Card.Subtitle>
               <ListGroup variant="flush">
-                <ListGroup.Item><Col></Col>></ListGroup.Item>
-                <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                <Container>
+                  <ListGroup.Item>
+                    <Row>
+                      <Col>500.0MB</Col>
+                      <Col>₦115</Col>
+                      <Col>30days</Col>
+                    </Row>
+                  </ListGroup.Item>
+                  <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                  <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                </Container>
               </ListGroup>
             </Card.Body>
           </Card>
