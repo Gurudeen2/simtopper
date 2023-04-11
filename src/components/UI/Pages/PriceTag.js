@@ -8,7 +8,7 @@ const PriceTag = () => {
     <Container>
       <h2>Affordable Data Plans And Prices</h2>
       <Row>
-        <Col>
+        <Col xs="12" lg="3" md="3" className="mt-4">
           <Card>
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">MTN</Card.Subtitle>
@@ -82,7 +82,7 @@ const PriceTag = () => {
           </Card>
         </Col>
 
-        <Col>
+        <Col xs="12" lg="3" md="3" className="mt-4">
           <Card>
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">GLO</Card.Subtitle>
@@ -156,7 +156,7 @@ const PriceTag = () => {
           </Card>
         </Col>
 
-        <Col>
+        <Col xs="12" lg="3" md="3" className="mt-4">
           <Card>
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">
@@ -232,7 +232,7 @@ const PriceTag = () => {
           </Card>
         </Col>
 
-        <Col>
+        <Col xs="12" lg="3" md="3" className="mt-4">
           <Card className={classes.mobile9}>
             <Card.Img src={img} />
             <Card.Subtitle className="mb-2 p-2 text-muted">
@@ -290,7 +290,7 @@ const PriceTag = () => {
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                  <Row> 
+                  <Row>
                     <Col>500.0MB</Col>
                     <Col>₦115</Col>
                     <Col>30days</Col>
