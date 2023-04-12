@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/UI/Header/Header";
+import APIDocPage from "./components/UI/Pages/APIDocPage";
 import Banner from "./components/UI/Pages/Banner";
 import Home from "./components/UI/Pages/Home";
 import PriceTag from "./components/UI/Pages/PriceTag";
@@ -15,6 +16,7 @@ function App() {
       <Reason />
       <UserCount />
       <PriceTag />
+      <APIDocPage/>
     </div>
   );
 }
