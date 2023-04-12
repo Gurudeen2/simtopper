@@ -6,6 +6,7 @@ import Home from "./components/UI/Pages/Home";
 import PriceTag from "./components/UI/Pages/PriceTag";
 import Reason from "./components/UI/Pages/Reason";
 import UserCount from "./components/UI/Pages/UserCount";
+import UserTestimonies from "./components/UI/Pages/UserTestimonies";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Reason />
       <UserCount />
       <PriceTag />
-      <APIDocPage/>
+      <APIDocPage />
+      <UserTestimonies />
     </div>
   );
 }
