@@ -2,8 +2,8 @@
   text-align: justify;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  padding-left: 2rem;
-  padding: 2rem;
+  padding-left: 3rem !important;
+  padding-right: 3rem !important;
 }
 
 .button {
