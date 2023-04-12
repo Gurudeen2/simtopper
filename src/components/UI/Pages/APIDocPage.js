@@ -4,7 +4,7 @@ import classes from "./APIDocPage.module.css";
 
 const APIDocPage = () => {
   return (
-    <Container fluid>
+    <Container fluid className={classes.apicontent}>
       <Row>
         <Col>
           <h2>Integrate Our API</h2>
