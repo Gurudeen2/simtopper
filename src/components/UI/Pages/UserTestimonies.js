@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import classes from "./UserTestimonial.module.css";
 
 const UserTestimonies = () => {
   return (
-    <Container>
+    <Container fluid className={classes["tesmonial-content"]}>
       <h2>Users Testimonials</h2>
       <p>Checokut these feedbacks from some of our satisfied customers</p>
 
@@ -22,3 +23,5 @@ const UserTestimonies = () => {
   );
 };
 export default UserTestimonies;
+
+//css
