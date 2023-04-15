@@ -7,7 +7,7 @@ const Partner = () => {
     <Container fluid className={classes["partner-content"]}>
       <h2>Our Partner</h2>
       <p>Below is a list of some of our supported service provider(s)</p>
-      <Table bordered>
+      <Table  size="sm">
         <tr>
           <td>IBEDC</td>
           <td>WAEC</td>
