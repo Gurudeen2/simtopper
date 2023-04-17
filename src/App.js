@@ -6,7 +6,7 @@ import Register from "./components/User/Register";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       {/* <LandingPage /> */}
 
