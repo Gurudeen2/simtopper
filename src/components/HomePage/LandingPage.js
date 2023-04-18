@@ -10,7 +10,7 @@ import Partner from "../UI/Pages/Partner";
 
 function LandingPage() {
   return (
-    <div>
+    <>
       <Banner />
       <Home />
       <Reason />
@@ -19,7 +19,7 @@ function LandingPage() {
       <APIDocPage />
       <UserTestimonies />
       <Partner />
-    </div>
+    </>
   );
 }
 

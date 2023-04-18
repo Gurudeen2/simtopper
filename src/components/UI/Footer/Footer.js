@@ -52,7 +52,7 @@ const Footer = () => {
         <Col>
           <i
             style={{
-              float: "right",
+              textAlign: "right",
             }}
           >
             icons to the right
