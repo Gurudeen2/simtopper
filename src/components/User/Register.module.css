@@ -13,11 +13,20 @@ button {
   width: 20% !important;
 }
 
-@media (min-width: 320px) {
+@media screen and (max-width: 600px) {
   .reg-container {
     width: 90% !important;
   }
   button {
     width: 100% !important;
   }
+}
+
+@media screen and (max-width: 992px){
+    .reg-container {
+    width: 90% !important;
+  }
+  button {
+    width: 100% !important;
+  } 
 }
