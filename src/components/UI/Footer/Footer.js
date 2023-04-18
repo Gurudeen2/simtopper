@@ -39,8 +39,8 @@ const Footer = () => {
           <p>
             <b>Contact Information</b>
           </p>
-          <p>Bussiness Address: Tunga Minna Niger state.</p>
-          <p>Email: abdullahiibrahimkabir@gmail.com </p>
+          <p>Address: Tunga Minna Niger state.</p>
+          <p>Email: abdullahiibrahi</p>
           <p>Phone: 2348108606335</p>
         </Col>
       </Row>
