@@ -4,20 +4,14 @@
   width: 100%;
 }
 
-.reg-container {
+.login-container {
   background-color: #fff;
   margin-top: -2rem;
   padding: 3rem !important;
-}
-button {
-  width: 20% !important;
 }
 
 @media (min-width: 320px) {
   .reg-container {
     width: 90% !important;
-  }
-  button {
-    width: 100% !important;
   }
 }

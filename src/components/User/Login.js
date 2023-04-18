@@ -1,12 +1,12 @@
 import React from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import classes from "./Register.module.css";
+import classes from "./Login.module.css";
 
 function Register() {
   return (
     <div>
       <div className={classes["page-header"]}>Home/Login</div>
-      <Container className={classes["reg-container"]}>
+      <Container className={classes["login-container"]}>
         <Row>
           <Col sm="12">
             <Form>
@@ -34,7 +34,9 @@ function Register() {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
-
+              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check type="checkbox" label="Remember password" />
+              </Form.Group>
               <Button variant="primary" type="submit">
                 Submit
               </Button>
