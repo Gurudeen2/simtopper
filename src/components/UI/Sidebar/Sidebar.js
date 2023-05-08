@@ -19,13 +19,19 @@ const Sidebar = (props) => {
         </p>
 
         <p>
-          <a href="/">Account</a>
+          <a href="/">Profile</a>
         </p>
         <p>
           <a href="/">Data Management</a>
         </p>
         <p>
           <a href="/">Airtime Management</a>
+        </p>
+        <p>
+          <a href="/">Cable Subscription</a>
+        </p>
+        <p>
+          <a href="/">Fund Account</a>
         </p>
       </div>
       <div id="main">{props.children}</div>
