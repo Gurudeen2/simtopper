@@ -15,26 +15,18 @@ const Sidebar = (props) => {
         </div>
 
         <p>
-          <a href="/">Home</a>
+          <a href="/">Dashboard</a>
         </p>
-        <ul>
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/">Data Management</a>
-          </li>
-          <li>
-            <a href="/">Airtime Records</a>
-          </li>
-          <li>
-            <a href="/">Fund Management</a>
-          </li>
 
-          <li>
-            <a href="/">Airtime Management</a>
-          </li>
-        </ul>
+        <p>
+          <a href="/">Account</a>
+        </p>
+        <p>
+          <a href="/">Data Management</a>
+        </p>
+        <p>
+          <a href="/">Airtime Management</a>
+        </p>
       </div>
       <div id="main">{props.children}</div>
     </div>
