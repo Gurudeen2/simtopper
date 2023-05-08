@@ -22,7 +22,7 @@ const Sidebar = (props) => {
         </p>
         <span>Data Management</span>
         <p>
-          <a href="/">Buy Data</a>
+          <a href="/">Buy                                                                                           Data</a>
         </p>
         <p>
           <a href="/">Airtime Management</a>
