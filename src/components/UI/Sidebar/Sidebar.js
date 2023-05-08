@@ -13,7 +13,6 @@ const Sidebar = (props) => {
         >
           <img src={avatar} alt="avatar" width="50rem" />
         </div>
-
         <p>
           <a href="/">Dashboard</a>
         </p>
@@ -21,6 +20,7 @@ const Sidebar = (props) => {
         <p>
           <a href="/">Profile</a>
         </p>
+<span>Data Management</span>
         <p>
           <a href="/">Data Management</a>
         </p>
