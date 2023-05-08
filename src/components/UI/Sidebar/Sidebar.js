@@ -20,9 +20,9 @@ const Sidebar = (props) => {
         <p>
           <a href="/">Profile</a>
         </p>
-<span>Data Management</span>
+        <span>Data Management</span>
         <p>
-          <a href="/">Data Management</a>
+          <a href="/">Buy Data</a>
         </p>
         <p>
           <a href="/">Airtime Management</a>
