@@ -13,7 +13,7 @@ const Footer = () => {
             checker pin , airtime and electricity token generation
           </span>
         </Col>
-        <Col sm="4" lg="4" md="4" xs="4" className={classes.usefullinks}>
+        <Col sm="3" lg="4" md="4" xs="3" className={classes.usefullinks}>
           <ul>
             <p>
               <b>Useful Links</b>
@@ -35,7 +35,7 @@ const Footer = () => {
             </li>
           </ul>
         </Col>
-        <Col sm="4" lg="4" md="4" xs="4">
+        <Col sm="5" lg="4" md="4" xs="5">
           <p>
             <b>Contact Information</b>
           </p>
@@ -47,7 +47,10 @@ const Footer = () => {
 
       <Row className={classes["footer-bottom"]}>
         <Col>
-          Developed By: <a href="fb.com/fakeem3">DevTolani</a>
+          Developed By:{" "}
+          <a href="fb.com/fakeem3" target="_blank">
+            DevTolani
+          </a>
         </Col>
         <Col>
           <i
