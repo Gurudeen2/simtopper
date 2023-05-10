@@ -31,9 +31,9 @@ function Account() {
           </Col>
           <Col>
             <span style={{ background: "#028a0f", color: "#fff" }}>
-              Miss
+              Commission
             </span>
-            <h2>N1000</h2>
+            <h2>N0.00</h2>
             <a href="/">Deposit</a>
           </Col>
           <Col></Col>
