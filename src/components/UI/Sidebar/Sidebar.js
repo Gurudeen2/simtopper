@@ -13,28 +13,56 @@ const Sidebar = (props) => {
         >
           <img src={avatar} alt="avatar" width="50rem" />
         </div>
+        <hr />
+
+        <span>Account</span>
         <p>
           <a href="/">Dashboard</a>
         </p>
-
         <p>
-          <a href="/">Profile</a>
+          <a href="/">Edit Profile</a>
         </p>
+        <p>
+          <a href="/">Change Password</a>
+        </p>
+        <hr />
+
         <span>Data Management</span>
         <p>
-          <a href="/">Buy                                                                                           Data</a>
+          <a href="/">Buy Data</a>
         </p>
         <p>
-          <a href="/">Airtime Management</a>
+          <a href="/">Recent Data Transaction</a>
         </p>
+        <p>
+          <a href="/">User Data Transaction</a>
+        </p>
+        <hr />
+
+        <span>Airtime Management</span>
+        <p>
+          <a href="/">Buy Airtime</a>
+        </p>
+        <p>
+          <a href="/">Recent Airtime Transaction</a>
+        </p>
+        <p>
+          <a href="/">User Airtime Transaction</a>
+        </p>
+        <hr />
         <p>
           <a href="/">Cable Subscription</a>
         </p>
+        <hr />
+        <p>
+          <a href="/">Electricity Payment</a>
+        </p>
+        <hr />
         <p>
           <a href="/">Fund Account</a>
         </p>
       </div>
-      <div id="main">{props.children}</div>
+      <div className={classes.main}>{props.children}</div>
     </div>
   );
 };

@@ -10,6 +10,7 @@
   width: 18%;
   color: #fff;
   text-align: center;
+  overflow: auto;
 }
 
 .sidebar p {
@@ -36,20 +37,6 @@
   font-size: large;
 }
 
-.sidebar ul {
-  list-style: none;
-}
-
-.sidebar ul li {
-  padding-bottom: 0.5rem;
-}
-
-.sidebar ul li:hover {
-  background: #fff;
-}
-
-.sidebar ul li a {
-  text-decoration: none;
-  color: #fff;
-  font-size: large;
+.main {
+  margin: 1rem;
 }
