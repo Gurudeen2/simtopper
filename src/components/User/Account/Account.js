@@ -21,7 +21,7 @@ function Account() {
         </Row>
         <Row>
           <Col>
-            <span style={{background:"green"}}>Wallet Balance</span>
+            <span style={{ background: "#028a0f" }}>Wallet Balance</span>
             <h2>N1000</h2>
             <a href="/">Deposit</a>
           </Col>
