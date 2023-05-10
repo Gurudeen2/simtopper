@@ -34,7 +34,9 @@ function Account() {
               Commission
             </span>
             <h2>N0.00</h2>
-            <a href="/">Deposit</a>
+            <a href="/">Withdraw Commission</a>
+            <a href="/">Withdraw</a>
+            <a href="/">Withdraw</a>
           </Col>
           <Col></Col>
         </Row>
