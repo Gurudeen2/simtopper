@@ -5,7 +5,7 @@ import avatar from "../../../assets/images/photo-1624411024074-18a756682b50.jfif
 const Sidebar = (props) => {
   return (
     <div className={classes.container}>
-      <div className={classes.sidebar}>
+      <div className={`${classes.sidebar}`}>
         <div
           style={{
             padding: "1rem",
