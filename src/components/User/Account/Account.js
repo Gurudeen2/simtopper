@@ -29,7 +29,13 @@ function Account() {
               <a href="/">Deposit</a>
             </Card>
           </Col>
-          <Col></Col>
+          <Col>
+            <span style={{ background: "#028a0f", color: "#fff" }}>
+              Wallet Balance
+            </span>
+            <h2>N1000</h2>
+            <a href="/">Deposit</a>
+          </Col>
           <Col></Col>
         </Row>
       </Container>
