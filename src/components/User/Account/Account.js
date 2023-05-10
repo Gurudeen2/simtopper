@@ -31,7 +31,7 @@ function Account() {
           </Col>
           <Col>
             <span style={{ background: "#028a0f", color: "#fff" }}>
-              Wallet Balance
+              Miss
             </span>
             <h2>N1000</h2>
             <a href="/">Deposit</a>
