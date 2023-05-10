@@ -21,10 +21,16 @@ function Account() {
         </Row>
         <Row>
           <Col>
-            <span style={{ background: "#028a0f" }}>Wallet Balance</span>
-            <h2>N1000</h2>
-            <a href="/">Deposit</a>
+            <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+              <span style={{ background: "#028a0f", color: "#fff" }}>
+                Wallet Balance
+              </span>
+              <h2>N1000</h2>
+              <a href="/">Deposit</a>
+            </Card>
           </Col>
+          <Col></Col>
+          <Col></Col>
         </Row>
       </Container>
     </>
