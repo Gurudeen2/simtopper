@@ -23,7 +23,8 @@ const BuyAirtime = () => {
               />
             </Form.Group>
           </Col>
-          <Col>
+
+          {/* <Col>
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
               <Controller
@@ -40,7 +41,7 @@ const BuyAirtime = () => {
                 Please enter Grade
               </Form.Control.Feedback>
             </Form.Group>
-          </Col>
+          </Col> */}
 
           <Col>
             <Form.Group className="mb-3">
