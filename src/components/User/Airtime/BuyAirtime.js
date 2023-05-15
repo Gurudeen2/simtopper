@@ -1,8 +1,11 @@
 import React from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
-import { Controller } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
+import Select from "../../Select";
 
 const BuyAirtime = () => {
+  const { control} = useFormContext();
+
   return (
     <Container>
       <Row style={{ width: "60%" }}>
@@ -24,18 +27,15 @@ const BuyAirtime = () => {
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
               <Controller
-                name="branch_grade"
-                // as={Select}
-                options={["GLO", "MTN", "AIRTEL"]}
-                // control={control}
+                name="networkProvider"
+                as={Select}
+                options={[]}
+                control={control}
                 getOptionValue={(option) => option}
                 getOptionLabel={(option) => option}
-                placeholder="related grade ..."
-                rules={{ required: "Grade is required!" }}
-                // isInvalid={errors}
-                // disabled={mode === "view" || mode === "delete"}
-                // defaultValue=""
+                // isInvalid={errors.ic4proRelatedMenu}
               />
+
               <Form.Control.Feedback type="invalid">
                 Please enter Grade
               </Form.Control.Feedback>
