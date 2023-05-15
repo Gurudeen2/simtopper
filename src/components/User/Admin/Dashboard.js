@@ -1,13 +1,14 @@
 import React from "react";
 import Sidebar from "../../UI/Sidebar/Sidebar";
 import Account from "../Account/Account";
-// import { Container, Row, Col } from "react-bootstrap";
+import BuyAirtime from "../Airtime/BuyAirtime";
 
 const Dashboard = () => {
   return (
     <>
       <Sidebar>
-        <Account />
+        {/* <Account /> */}
+        <BuyAirtime />
       </Sidebar>
     </>
   );

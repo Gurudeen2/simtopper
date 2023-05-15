@@ -19,6 +19,7 @@ function Account() {
             </Card>
           </Col>
         </Row>
+
         <Row>
           <Col>
             <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
@@ -30,15 +31,78 @@ function Account() {
             </Card>
           </Col>
           <Col>
-            <span style={{ background: "#028a0f", color: "#fff" }}>
-              Commission
-            </span>
-            <h2>N0.00</h2>
-            <a href="/">Withdraw Commission</a>
-            <a href="/">Withdraw</a>
-            <a href="/">Withdraw</a>
+            <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+              <span style={{ background: "#028a0f", color: "#fff" }}>
+                Commission
+              </span>
+              <h2>N0.00</h2>
+              <div>
+                <a href="/">Withdraw Commission</a>
+              </div>
+              <div>
+                <a href="/">View Commission History</a>
+              </div>
+              <div>
+                <a href="/">View Referral/Downline</a>
+              </div>
+            </Card>
           </Col>
-          <Col></Col>
+          <Col>
+            <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+              <span style={{ background: "#028a0f", color: "#fff" }}>
+                Membership
+              </span>
+              <h2>FREE Member</h2>
+              <b>
+                <a href="/">Upgrade Membership</a>
+              </b>
+              <a href="/">KYC Verification</a>
+            </Card>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col>
+            <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+              <span style={{ background: "#028a0f", color: "#fff" }}>
+                Service
+              </span>
+              <p>
+                Service we render such as <a href="/">Buy Data</a>,
+                <a href="/">Buy Airtime</a>, <a href="/">Cabled Sub</a>,
+                <a href="/">Electricity</a>
+              </p>
+            </Card>
+          </Col>
+          <Col>
+            {/* <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+              <span style={{ background: "#028a0f", color: "#fff" }}>
+                Commission
+              </span>
+              <h2>N0.00</h2>
+              <div>
+                <a href="/">Withdraw Commission</a>
+              </div>
+              <div>
+                <a href="/">View Commission History</a>
+              </div>
+              <div>
+                <a href="/">View Referral/Downline</a>
+              </div>
+            </Card> */}
+          </Col>
+          <Col>
+            {/* <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+              <span style={{ background: "#028a0f", color: "#fff" }}>
+                Membership
+              </span>
+              <h2>FREE Member</h2>
+              <b>
+                <a href="/">Upgrade Membership</a>
+              </b>
+              <a href="/">KYC Verification</a>
+            </Card> */}
+          </Col>
         </Row>
       </Container>
     </>
