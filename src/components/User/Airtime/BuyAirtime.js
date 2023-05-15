@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
-import {Controller } from "react-hook-form"
+import { Controller } from "react-hook-form";
 
 const BuyAirtime = () => {
   return (
@@ -26,7 +26,7 @@ const BuyAirtime = () => {
               <Controller
                 name="branch_grade"
                 as={Select}
-                options={["GLO", "MTN",]}
+                options={["GLO", "MTN", "AIRTEL"]}
                 // control={control}
                 getOptionValue={(option) => option.key}
                 getOptionLabel={(option) => option.key}
