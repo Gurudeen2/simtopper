@@ -35,14 +35,14 @@ const BuyAirtime = () => {
                   // id="keyofficer"
                   name="ic4proRelatedMenu"
                   as={Select}
-                  options={MainMenuData}
+                  options={[]}
                   control={control}
-                  getOptionValue={(option) => option.ic4proMenuLabel}
-                  getOptionLabel={(option) => option.ic4proMenuLabel}
-                  isInvalid={errors.ic4proRelatedMenu}
-                  disabled={
-                    mode === "view" || mode === "delete" || mode === "edit"
-                  }
+                  // getOptionValue={(option) => option.ic4proMenuLabel}
+                  // getOptionLabel={(option) => option.ic4proMenuLabel}
+                  // isInvalid={errors.ic4proRelatedMenu}
+                  // disabled={
+                  //   mode === "view" || mode === "delete" || mode === "edit"
+                  // }
                 />
               </Col>
             </Form.Group>
