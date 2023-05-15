@@ -28,11 +28,11 @@ const BuyAirtime = () => {
                 as={Select}
                 options={["GLO", "MTN", "AIRTEL"]}
                 // control={control}
-                getOptionValue={(option) => option.key}
-                getOptionLabel={(option) => option.key}
+                getOptionValue={(option) => option}
+                getOptionLabel={(option) => option}
                 placeholder="related grade ..."
                 rules={{ required: "Grade is required!" }}
-                isInvalid={errors.branch_grade}
+                isInvalid={errors}
                 disabled={mode === "view" || mode === "delete"}
                 defaultValue=""
               />
