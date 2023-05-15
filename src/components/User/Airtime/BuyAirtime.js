@@ -23,7 +23,7 @@ const BuyAirtime = () => {
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
                           <Form.Control as="select" name="number"
-                              option
+                              options
                               required />
             </Form.Group>
           </Col>
