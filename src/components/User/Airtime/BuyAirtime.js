@@ -1,5 +1,6 @@
 import React from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
+import {Controller } from "react-hook-form"
 
 const BuyAirtime = () => {
   return (
@@ -22,9 +23,22 @@ const BuyAirtime = () => {
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
-                          <Form.Control as="select" name="number"
-                              options={["ak", "er"]}
-                              required />
+              <Controller
+                name="branch_grade"
+                as={Select}
+                options={[]}
+                control={control}
+                getOptionValue={(option) => option.key}
+                getOptionLabel={(option) => option.key}
+                placeholder="related grade ..."
+                rules={{ required: "Grade is required!" }}
+                isInvalid={errors.branch_grade}
+                disabled={mode === "view" || mode === "delete"}
+                defaultValue=""
+              />
+              <Form.Control.Feedback type="invalid">
+                Please enter Grade!
+              </Form.Control.Feedback>
             </Form.Group>
           </Col>
 
