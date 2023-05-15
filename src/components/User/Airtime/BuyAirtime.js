@@ -25,7 +25,7 @@ const BuyAirtime = () => {
               <Form.Label>Network</Form.Label>
               <Controller
                 name="branch_grade"
-                as={Select}
+                // as={Select}
                 options={["GLO", "MTN", "AIRTEL"]}
                 // control={control}
                 getOptionValue={(option) => option}
