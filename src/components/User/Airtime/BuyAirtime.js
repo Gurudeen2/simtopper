@@ -26,7 +26,7 @@ const BuyAirtime = () => {
               <Controller
                 name="branch_grade"
                 as={Select}
-                options={[]}
+                options={["GLO", "MTN",]}
                 // control={control}
                 getOptionValue={(option) => option.key}
                 getOptionLabel={(option) => option.key}
