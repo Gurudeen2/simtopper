@@ -4,7 +4,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import Select from "../../Select";
 
 const BuyAirtime = () => {
-  const { control} = useFormContext();
+  // const { control} = useFormContext();
 
   return (
     <Container>
@@ -30,7 +30,7 @@ const BuyAirtime = () => {
                 name="networkProvider"
                 as={Select}
                 options={[]}
-                control={control}
+                // control={control}
                 getOptionValue={(option) => option}
                 getOptionLabel={(option) => option}
                 // isInvalid={errors.ic4proRelatedMenu}
