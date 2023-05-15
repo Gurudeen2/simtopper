@@ -32,9 +32,9 @@ const BuyAirtime = () => {
                 getOptionLabel={(option) => option}
                 placeholder="related grade ..."
                 rules={{ required: "Grade is required!" }}
-                isInvalid={errors}
-                disabled={mode === "view" || mode === "delete"}
-                defaultValue=""
+                // isInvalid={errors}
+                // disabled={mode === "view" || mode === "delete"}
+                // defaultValue=""
               />
               <Form.Control.Feedback type="invalid">
                 Please enter Grade!
