@@ -37,7 +37,7 @@ const BuyAirtime = () => {
                 // defaultValue=""
               />
               <Form.Control.Feedback type="invalid">
-                Please enter Grade!
+                Please enter Grade
               </Form.Control.Feedback>
             </Form.Group>
           </Col>
