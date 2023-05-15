@@ -24,6 +24,30 @@ const BuyAirtime = () => {
             </Form.Group>
           </Col>
 
+          <Col style={{ height: "3rem" }}>
+            <Form.Group as={Row} controlId="ic4proRelatedMenu">
+              <Form.Label column sm="3" className="mb-4 text-center">
+                Related Menu*
+              </Form.Label>
+
+              <Col sm="9">
+                <Controller
+                  // id="keyofficer"
+                  name="ic4proRelatedMenu"
+                  as={Select}
+                  options={MainMenuData}
+                  control={control}
+                  getOptionValue={(option) => option.ic4proMenuLabel}
+                  getOptionLabel={(option) => option.ic4proMenuLabel}
+                  isInvalid={errors.ic4proRelatedMenu}
+                  disabled={
+                    mode === "view" || mode === "delete" || mode === "edit"
+                  }
+                />
+              </Col>
+            </Form.Group>
+          </Col>
+
           {/* <Col>
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
