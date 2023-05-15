@@ -27,7 +27,7 @@ const BuyAirtime = () => {
                 name="branch_grade"
                 as={Select}
                 options={[]}
-                control={control}
+                // control={control}
                 getOptionValue={(option) => option.key}
                 getOptionLabel={(option) => option.key}
                 placeholder="related grade ..."
