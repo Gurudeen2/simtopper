@@ -1,32 +1,13 @@
 import React, { useState } from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
 
-const BuyAirtime = () => {
-  const [bonus, setBonus] = useState();
-  const [hidden, setHidden] = useState(true);
-
+const CabledSub = () => {
   const options = [
     { value: "MTN", key: "1" },
     { value: "GLO", key: "2" },
     { value: "AIRTEL", key: "3" },
     { value: "9MOBILE", key: "4" },
   ];
-
-  const bonusOptions = [
-    { value: "MTN", key: "1" },
-    { value: "GLO", key: "2" },
-    { value: "AIRTEL", key: "3" },
-    { value: "9MOBILE", key: "4" },
-  ];
-
-  const networkHandler = (e) => {
-    const handler = e.target.value;
-    if (handler === "GLO" || handler === "MTN") {
-      setBonus(handler);
-      setHidden(false);
-      return;
-    }
-  };
 
   return (
     <Container>
@@ -48,8 +29,21 @@ const BuyAirtime = () => {
 
           <Col>
             <Form.Group className="mb-3">
-              <Form.Label>Network</Form.Label>
-              <Form.Select onChange={networkHandler}>
+              <Form.Label>TV Subscription</Form.Label>
+              <Form.Select>
+                {options.map((option) => (
+                  <option value={option.value} key={option.key}>
+                    {option.value}
+                  </option>
+                ))}
+              </Form.Select>
+            </Form.Group>
+          </Col>
+
+          <Col>
+            <Form.Group className="mb-3">
+              <Form.Label>Package</Form.Label>
+              <Form.Select>
                 {options.map((option) => (
                   <option value={option.value} key={option.key}>
                     {option.value}
@@ -60,38 +54,30 @@ const BuyAirtime = () => {
           </Col>
           <Col>
             <Form.Group className="mb-3">
-              <Form.Label>Airtime Value(50-50,000)</Form.Label>
-              <Form.Control type="text" name="airtimevalue" required />
-            </Form.Group>
-          </Col>
-
-          <Col hidden={hidden}>
-            <Form.Group className="mb-3">
-              <Form.Label>{bonus} Bonus</Form.Label>
-              <Form.Select>
-                {bonusOptions.map((option) => (
-                  <option value={option.value} key={option.key}>
-                    {option.value}
-                  </option>
-                ))}
-              </Form.Select>
+              <Form.Label>SMARTCARD/IUC Number</Form.Label>
+              <Form.Control type="text" name="iucnumber" required />
             </Form.Group>
           </Col>
 
           <Col>
             <Form.Group className="mb-3">
-              <Form.Label>Mobile Number</Form.Label>
-              <Form.Control type="text" name="number" required />
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control type="text" name="phnumber" required />
             </Form.Group>
           </Col>
 
           <Col>
             <Form.Group className="mb-3">
-              <Form.Label>Airtime Amount</Form.Label>
-              <Form.Control type="text" name="airtimeamount" readOnly />
+              <Form.Label>Amount</Form.Label>
+              <Form.Control type="text" name="amount" readOnly />
             </Form.Group>
           </Col>
 
+          <Col>
+            <Button variant="primary" type="submit">
+              Verify IUC Number
+            </Button>
+          </Col>
           <Col>
             <Button variant="primary" type="submit">
               Buy Now
@@ -103,4 +89,4 @@ const BuyAirtime = () => {
   );
 };
 
-export default BuyAirtime;
+export default CabledSub;
