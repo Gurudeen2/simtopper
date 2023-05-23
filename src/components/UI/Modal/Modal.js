@@ -8,17 +8,18 @@ const ModalClass = (props) => {
       // size="lg"
       backdrop="static"
       aria-labelledby="contained-modal-title-vcenter"
-      
+      style={{
+        border: "none",
+      }}
+
       // centered
       // dialogClassName="modal-90w"
     >
-      <Modal.Header closeButton>
-       
-      </Modal.Header>
+      <Modal.Header closeButton></Modal.Header>
       <Modal.Body>{props.description}</Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
+      {/* <Modal.Footer> */}
+      <Button onClick={props.onHide}>Close</Button>
+      {/* </Modal.Footer> */}
     </Modal>
   );
 };
