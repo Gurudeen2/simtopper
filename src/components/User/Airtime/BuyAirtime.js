@@ -60,18 +60,7 @@ const BuyAirtime = () => {
       .post("http://127.0.0.1:8000/apiV1/airtime/", data)
       .then((res) => console.log("Res", res))
       .catch((err) => console.log("err", err));
-    // fetch("http://127.0.0.1:8000/apiV1/airtime/", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    // network: bonus,
-    // amount: airValue,
-    // mobile_number: mobileNumber,
-    //   }),
-    //   header: {
-    //     "Content-Type": "application/json",
-    //   },
-    // }).then((res) => console.log("res", res));
-
+   
     console.log("submited");
   };
 
