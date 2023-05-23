@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const BuyAirtime = () => {
@@ -11,57 +12,67 @@ const BuyAirtime = () => {
   const [mobileNumber, setMobileNumber] = useState();
 
   const options = [
-    { value: "MTN", key: "1" },
-    { value: "GLO", key: "2" },
-    { value: "AIRTEL", key: "3" },
-    { value: "9MOBILE", key: "4" },
+    { value: "MTN", id: "1" },
+    { value: "GLO", id: "2" },
+    { value: "AIRTEL", id: "3" },
+    { value: "9MOBILE", id: "4" },
   ];
 
   const bonusOptions = [
-    { value: "MTN", key: 1 },
-    { value: "GLO", key: 2 },
-    { value: "AIRTEL", key: 3 },
-    { value: "9MOBILE", key: 4 },
+    { value: "MTN", id: 1 },
+    { value: "GLO", id: 2 },
+    { value: "AIRTEL", id: 3 },
+    { value: "9MOBILE", id: 4 },
   ];
 
   const networkHandler = (e) => {
     const handler = e.target;
-    console.log("network", handler);
     if (handler.value === "2" || handler.value === "1") {
-      const convertObj = Object.entries(options);
-      const filtered = convertObj.filter(([value, key]) =>
-        console.log("ysufd", key)
-      );
-      console.log("dilter", typeof handler.value);
-      setBonus(filtered);
+      const filtered = options.find(
+        (netwk) => netwk.id === handler.value
+      ).value;
 
+      setBonus(filtered);
       setHidden(false);
-      return;
+    } else {
+      setHidden(true);
+      setBonus(handler.value);
     }
   };
 
   const airtimeValueHandler = (e) => {
     setairValue(+e.target.value);
-    console.log("airvalue", airValue);
   };
 
   const MobileNumberHandler = (e) => {
     setMobileNumber(+e.target.value);
-    console.log("airvalue", mobileNumber);
   };
 
   const submitHanlder = () => {
-    fetch("http://127.0.0.1:8000/apiV1/airtime/", {
-      method: "POST",
-      body: JSON.stringify({
-        network: bonus,
-        amount: airValue,
-        mobile_number: mobileNumber,
-      }),
-      header: {
-        "Content-Type": "application/json",
-      },
-    }).then((res) => console.log("res", res));
+    const data = {
+      network: bonus,
+      amount: airValue,
+      mobile_number: mobileNumber,
+    };
+
+
+    axios
+      .post("http://127.0.0.1:8000/apiV1/airtime/", data)
+      .then((res) => console.log("Res", res))
+      .catch((err) => console.log("err", err));
+    // fetch("http://127.0.0.1:8000/apiV1/airtime/", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    // network: bonus,
+    // amount: airValue,
+    // mobile_number: mobileNumber,
+    //   }),
+    //   header: {
+    //     "Content-Type": "application/json",
+    //   },
+    // }).then((res) => console.log("res", res));
+
+    console.log("submited");
   };
 
   return (
@@ -87,7 +98,7 @@ const BuyAirtime = () => {
               <Form.Label>Network</Form.Label>
               <Form.Select onChange={networkHandler}>
                 {options.map((option) => (
-                  <option value={option.key} key={option.key}>
+                  <option value={option.id} key={option.id}>
                     {option.value}
                   </option>
                 ))}
@@ -111,7 +122,7 @@ const BuyAirtime = () => {
               <Form.Label>{bonus} Bonus</Form.Label>
               <Form.Select>
                 {bonusOptions.map((option) => (
-                  <option value={option.value} key={option.key}>
+                  <option value={option.id} key={option.id}>
                     {option.value}
                   </option>
                 ))}
