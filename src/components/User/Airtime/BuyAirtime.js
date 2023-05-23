@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import ModalClass from "../../UI/Modal/Modal";
 
 const BuyAirtime = () => {
   const methods = useForm();
+
+  const [modalShow, setModalShow] = useState(false);
+  const [description, setDescription] = useState();
 
   const [bonus, setBonus] = useState();
   const [hidden, setHidden] = useState(true);
@@ -55,97 +59,116 @@ const BuyAirtime = () => {
       mobile_number: mobileNumber,
     };
 
-
     axios
       .post("http://127.0.0.1:8000/apiV1/airtime/", data)
-      .then((res) => console.log("Res", res))
-      .catch((err) => console.log("err", err));
-   
-    console.log("submited");
+      .then((res) => {
+        if (res.statusText === "OK") {
+          setModalShow(true);
+          setDescription(res.data);
+        } else {
+          console.log("error");
+        }
+      })
+      .catch((err) => {
+        setModalShow(true);
+        setDescription(err);
+      });
   };
 
   return (
-    <Container>
-      <Row style={{ width: "60%" }}>
-        <h4>Buy Airtime </h4>
+    <>
+      <ModalClass
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        description={description}
+      />
+      <Container>
+        <Row style={{ width: "60%" }}>
+          <h4>Buy Airtime </h4>
 
-        <Form onSubmit={methods.handleSubmit(submitHanlder)}>
-          <Col>
-            <Form.Group className="mb-3">
-              <Form.Label>Wallet</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Wallet"
-                defaultValue="parse balance from db"
-                readOnly
-              />
-            </Form.Group>
-          </Col>
+          <Form onSubmit={methods.handleSubmit(submitHanlder)}>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Wallet</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Wallet"
+                  defaultValue="parse balance from db"
+                  readOnly
+                />
+              </Form.Group>
+            </Col>
 
-          <Col>
-            <Form.Group className="mb-3">
-              <Form.Label>Network</Form.Label>
-              <Form.Select onChange={networkHandler}>
-                {options.map((option) => (
-                  <option value={option.id} key={option.id}>
-                    {option.value}
-                  </option>
-                ))}
-              </Form.Select>
-            </Form.Group>
-          </Col>
-          <Col>
-            <Form.Group className="mb-3">
-              <Form.Label>Airtime Value(50-50,000)</Form.Label>
-              <Form.Control
-                type="text"
-                name="airtimevalue"
-                onChange={airtimeValueHandler}
-                required
-              />
-            </Form.Group>
-          </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Network</Form.Label>
+                <Form.Select onChange={networkHandler}>
+                  <option value="---select---">---select---</option>
 
-          <Col hidden={hidden}>
-            <Form.Group className="mb-3">
-              <Form.Label>{bonus} Bonus</Form.Label>
-              <Form.Select>
-                {bonusOptions.map((option) => (
-                  <option value={option.id} key={option.id}>
-                    {option.value}
-                  </option>
-                ))}
-              </Form.Select>
-            </Form.Group>
-          </Col>
+                  {options.map((option) => (
+                    <option value={option.id} key={option.id}>
+                      {option.value}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Form.Group>
+            </Col>
 
-          <Col>
-            <Form.Group className="mb-3">
-              <Form.Label>Mobile Number</Form.Label>
-              <Form.Control
-                type="text"
-                name="number"
-                onChange={MobileNumberHandler}
-                required
-              />
-            </Form.Group>
-          </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Airtime Value(50-50,000)</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="airtimevalue"
+                  onChange={airtimeValueHandler}
+                  required
+                />
+              </Form.Group>
+            </Col>
 
-          <Col>
-            <Form.Group className="mb-3">
-              <Form.Label>Airtime Amount</Form.Label>
-              <Form.Control type="text" name="airtimeamount" readOnly />
-            </Form.Group>
-          </Col>
+            <Col hidden={hidden}>
+              <Form.Group className="mb-3">
+                <Form.Label>{bonus} Bonus</Form.Label>
+                <Form.Select>
+                  <option value="---select---">---select---</option>
 
-          <Col>
-            <Button variant="primary" type="submit">
-              Buy Now
-            </Button>
-          </Col>
-        </Form>
-      </Row>
-    </Container>
+                  {bonusOptions.map((option) => (
+                    <option value={option.id} key={option.id}>
+                      {option.value}
+                    </option>
+                  ))}
+                </Form.Select>
+              </Form.Group>
+            </Col>
+
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Mobile Number</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="number"
+                  onChange={MobileNumberHandler}
+                  required
+                />
+              </Form.Group>
+            </Col>
+
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Airtime Amount</Form.Label>
+                <Form.Control type="text" name="airtimeamount" readOnly />
+              </Form.Group>
+            </Col>
+
+            <Col>
+              <Button variant="primary" type="submit">
+                Buy Now
+              </Button>
+            </Col>
+          </Form>
+        </Row>
+      </Container>
+    </>
   );
 };
 
