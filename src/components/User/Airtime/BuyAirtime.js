@@ -3,6 +3,7 @@ import { Col, Form, Row, Button, Container } from "react-bootstrap";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import ModalClass from "../../UI/Modal/Modal";
+import { baseUrl } from "../../../BaseUrl";
 
 const BuyAirtime = () => {
   const methods = useForm();
@@ -60,18 +61,21 @@ const BuyAirtime = () => {
     };
 
     axios
-      .post("http://127.0.0.1:8000/apiV1/airtime/", data)
+      .post(baseUrl + "airtime/", data)
       .then((res) => {
         if (res.statusText === "OK") {
           setModalShow(true);
           setDescription(res.data);
         } else {
-          console.log("error");
+          console.log("Error");
+          // return Promise.reject(res.status)
+          // code: "ERR_NETWORK";
         }
       })
       .catch((err) => {
         setModalShow(true);
         setDescription(err);
+        console.log("erross");
       });
   };
 

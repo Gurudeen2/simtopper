@@ -12,8 +12,8 @@ function App() {
       <Header />
       {/* <LandingPage /> */}
       {/* <Login /> */}
-      <Dashboard />
-      {/* <Register /> */}
+      {/* <Dashboard /> */}
+      <Register />
       <Footer />
     </div>
   );
