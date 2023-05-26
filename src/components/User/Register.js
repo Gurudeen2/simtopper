@@ -28,7 +28,7 @@ function Register() {
     }
   };
 
-  const passMatch = () => {
+  const passMatch = async () => {
     const data = {
       firstname: fname.current.value,
       lastname: lname.current.value,
@@ -39,13 +39,11 @@ function Register() {
     if (conpass.current.value !== pass.current.value) {
       setReq(true);
     } else {
-      axios
+      await axios
         .post(baseUrl + "createuser/", data)
         .then((res) => {
           if (res.statusText === "OK") {
-            setModalShow(true);
-            setDescription(res.data);
-            // route to home
+            // route to login commponent
           }
         })
         .catch((err) => {

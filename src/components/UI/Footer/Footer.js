@@ -48,7 +48,7 @@ const Footer = () => {
       <Row className={classes["footer-bottom"]}>
         <Col>
           Developed By:{" "}
-          <a href="fb.com/fakeem3" target="_blank">
+          <a target="_blank" rel="noreferrer" href="https://www.fb.com/fakeem3">
             DevTolani
           </a>
         </Col>
