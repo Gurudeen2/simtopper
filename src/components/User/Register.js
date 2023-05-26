@@ -39,17 +39,19 @@ function Register() {
     if (conpass.current.value !== pass.current.value) {
       setReq(true);
     } else {
-      axios.post(baseUrl + "createuser/", data).then((res) => {
-        if (res.statusText === "OK") {
+      axios
+        .post(baseUrl + "createuser/", data)
+        .then((res) => {
+          if (res.statusText === "OK") {
+            setModalShow(true);
+            setDescription(res.data);
+            // route to home
+          }
+        })
+        .catch((err) => {
           setModalShow(true);
-          setDescription(res.data);
-          // route to home
-        }
-      });
-      //   .catch((err) => {
-      //     setModalShow(true);
-      //     setDescription(err);
-      //   });
+          setDescription(err);
+        });
       setReq(false);
     }
   };

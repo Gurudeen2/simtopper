@@ -18,7 +18,7 @@ const ModalClass = (props) => {
       <Modal.Header closeButton></Modal.Header>
       <Modal.Body>{props.description}</Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button onClick={props.onHide}>OK</Button>
       </Modal.Footer>
     </Modal>
   );
