@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
 import classes from "./Login.module.css";
+import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
 
 function Login() {
   const [isVisible, setIsVisible] = useState("password");
@@ -28,8 +29,8 @@ function Login() {
                 <Form.Label>Password</Form.Label>
                 <InputGroup className="mb-3">
                   <Form.Control type={isVisible} name="password" required />
-                  <InputGroup.Text>
-                    <i onClick={passwordVisible}>Eye</i>
+                  <InputGroup.Text onClick={passwordVisible}>
+                    {isVisible === "text" ? <EyeFill /> : <EyeSlashFill />}
                   </InputGroup.Text>
                 </InputGroup>
               </Form.Group>

@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
 import classes from "./Register.module.css";
 import { useForm } from "react-hook-form";
+import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
+
 import axios from "axios";
 import { baseUrl } from "../../BaseUrl";
 import ModalClass from "../UI/Modal/Modal";
@@ -43,6 +45,8 @@ function Register() {
         .post(baseUrl + "createuser/", data)
         .then((res) => {
           if (res.statusText === "OK") {
+            setModalShow(true);
+            setDescription(res.data);
             // route to login commponent
           }
         })
@@ -52,6 +56,12 @@ function Register() {
         });
       setReq(false);
     }
+
+    pass.current.value = "";
+    fname.current.value = "";
+    lname.current.value = "";
+    email.current.value = "";
+    phonenumber.current.value = "";
   };
 
   const onSubmitHandler = () => {
@@ -119,8 +129,8 @@ function Register() {
                     required
                     ref={pass}
                   />
-                  <InputGroup.Text>
-                    <i onClick={passwordVisible}>Eye</i>
+                  <InputGroup.Text onClick={passwordVisible}>
+                    {visible === "text" ? <EyeFill /> : <EyeSlashFill />}
                   </InputGroup.Text>
                 </InputGroup>
               </Form.Group>
@@ -136,8 +146,8 @@ function Register() {
                     required={req}
                     ref={conpass}
                   />
-                  <InputGroup.Text>
-                    <i onClick={passwordVisible}>Eye</i>
+                  <InputGroup.Text onClick={passwordVisible}>
+                    {visible === "text" ? <EyeFill /> : <EyeSlashFill />}
                   </InputGroup.Text>
                 </InputGroup>
               </Form.Group>
