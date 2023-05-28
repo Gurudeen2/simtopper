@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 import classes from "./Login.module.css";
 import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
+import axios from "axios";
+import { baseUrl } from "../../BaseUrl";
 
 function Login() {
+  const methods = useForm();
+  const username = useRef();
+  const password = useRef();
   const [isVisible, setIsVisible] = useState("password");
   const passwordVisible = () => {
     setIsVisible("text");
@@ -11,24 +17,52 @@ function Login() {
       setIsVisible("password");
     }
   };
+  const onSubmitHandler = () => {
+    const data = {
+      username: username.current.value,
+      password: password.current.value
+    }
+    axios
+      .post(baseUrl + "loginuser/", data)
+      .then((res) => {
+        console.log("login", res);
+      }).catch((err) => {
+        console.log("err login", err)
+      })
+
+    console.log("ake", data)
+     
+  };
+
   return (
     <div>
       <div className={classes["page-header"]}></div>
       <Container className={classes["login-container"]}>
         <Row>
           <h2>Login</h2>
-          <Form>
+          <Form onSubmit={methods.handleSubmit(onSubmitHandler)}>
             <Col>
               <Form.Group className="mb-3">
-                <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="text" placeholder="Phone Number" required />
+                <Form.Label>Emaail / Phone Number</Form.Label>
+                <Form.Control
+                  name="emailphoneno"
+                  type="text"
+                  placeholder="Email or Phone Number"
+                  required
+                  ref={username}
+                />
               </Form.Group>
             </Col>
             <Col>
               <Form.Group className="mb-3">
                 <Form.Label>Password</Form.Label>
                 <InputGroup className="mb-3">
-                  <Form.Control type={isVisible} name="password" required />
+                  <Form.Control
+                    type={isVisible}
+                    name="password"
+                    required
+                    ref={password}
+                  />
                   <InputGroup.Text onClick={passwordVisible}>
                     {isVisible === "text" ? <EyeFill /> : <EyeSlashFill />}
                   </InputGroup.Text>

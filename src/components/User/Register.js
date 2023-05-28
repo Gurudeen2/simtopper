@@ -3,14 +3,14 @@ import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
 import classes from "./Register.module.css";
 import { useForm } from "react-hook-form";
 import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../BaseUrl";
 import ModalClass from "../UI/Modal/Modal";
 
 function Register() {
   const methods = useForm();
-
+  const navigate = useNavigate();
   const [visible, setVisible] = useState("password");
   const [req, setReq] = useState(false);
   const [modalShow, setModalShow] = useState(false);
@@ -43,12 +43,10 @@ function Register() {
     } else {
       await axios
         .post(baseUrl + "createuser/", data)
+
         .then((res) => {
-          if (res.statusText === "OK") {
-            setModalShow(true);
-            setDescription(res.data);
-            // route to login commponent
-          }
+          alert(res.data);
+          navigate("/login");
         })
         .catch((err) => {
           setModalShow(true);
@@ -62,6 +60,7 @@ function Register() {
     lname.current.value = "";
     email.current.value = "";
     phonenumber.current.value = "";
+    conpass.current.value = "";
   };
 
   const onSubmitHandler = () => {

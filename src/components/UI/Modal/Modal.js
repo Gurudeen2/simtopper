@@ -11,7 +11,7 @@ const ModalClass = (props) => {
       style={{
         border: "none",
       }}
-
+      keyboard={false}
       // centered
       // dialogClassName="modal-90w"
     >
