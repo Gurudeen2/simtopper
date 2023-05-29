@@ -27,7 +27,7 @@ function Login() {
       .then((res) => {
         console.log("login", res);
       }).catch((err) => {
-        console.log("err login", err)
+        console.log("err login", err.response.data)
       })
 
     console.log("ake", data)

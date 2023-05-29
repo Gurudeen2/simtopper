@@ -16,7 +16,9 @@ const ModalClass = (props) => {
       // dialogClassName="modal-90w"
     >
       <Modal.Header closeButton></Modal.Header>
-      <Modal.Body>{props.description}</Modal.Body>
+      <Modal.Body style={{ textAlign: "center" }}>
+        {props.description}
+      </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>OK</Button>
       </Modal.Footer>

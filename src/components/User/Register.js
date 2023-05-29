@@ -49,8 +49,8 @@ function Register() {
           navigate("/login");
         })
         .catch((err) => {
+          setDescription(err.response.data);
           setModalShow(true);
-          setDescription(err);
         });
       setReq(false);
     }
