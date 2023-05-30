@@ -1,12 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import classes from "./Login.module.css";
 import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
 import axios from "axios";
 import { baseUrl } from "../../BaseUrl";
+import AuthContext from "../store/authContext";
 
 function Login() {
+  const authCtx = useContext(AuthContext);
   const methods = useForm();
   const username = useRef();
   const password = useRef();
@@ -20,18 +22,21 @@ function Login() {
   const onSubmitHandler = () => {
     const data = {
       username: username.current.value,
-      password: password.current.value
-    }
+      password: password.current.value,
+    };
     axios
       .post(baseUrl + "loginuser/", data)
       .then((res) => {
-        console.log("login", res);
-      }).catch((err) => {
-        console.log("err login", err.response.data)
+        const expirationTime = new Date(
+          new Date().getTime() + +res.expiresIn * 1000
+        );
+        authCtx.login(res.data, expirationTime);
+        console.log("login", res.data);
       })
+      .catch((err) => {
+        console.log("err login", err.response.data);
+      });
 
-    console.log("ake", data)
-     
   };
 
   return (

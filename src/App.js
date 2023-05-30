@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Suspense, useContext } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import AuthContext from "./components/store/authContext";
 import LandingPage from "./components/HomePage/LandingPage";
 import Footer from "./components/UI/Footer/Footer";
 import Header from "./components/UI/Header/Header";
@@ -10,8 +11,9 @@ const Register = React.lazy(() => import("./components/User/Register"));
 const Login = React.lazy(() => import("./components/User/Login"));
 
 function App() {
+  const authCtx = useContext(AuthContext)
   return (
-    <div>
+    <Suspense fallback="Loading">
       <Header />
       {/* <LandingPage /> */}
       <Routes>
@@ -20,7 +22,7 @@ function App() {
         <Route path="/login" Component={Login} />
       </Routes>
       <Footer />
-    </div>
+    </Suspense>
   );
 }
 
