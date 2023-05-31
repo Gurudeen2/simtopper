@@ -61,7 +61,6 @@ export const AuthContextProvider = (props) => {
   }, []);
 
   const loginHandler = (token, expirationTime) => {
-    console.log("tokeen akeem 62", token.message);
     setToken(true);
 
     localStorage.setItem("token", token);

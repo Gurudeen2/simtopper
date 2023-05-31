@@ -11,13 +11,13 @@ const Register = React.lazy(() => import("./components/User/Register"));
 const Login = React.lazy(() => import("./components/User/Login"));
 
 function App() {
-  const authCtx = useContext(AuthContext)
+  const authCtx = useContext(AuthContext);
   return (
     <Suspense fallback="Loading">
       <Header />
       {/* <LandingPage /> */}
       <Routes>
-        <Route path="/" exact Component={Dashboard} />
+        {authCtx.isLoggedIn ? <Route path="/" exact Component={Dashboard} /> : }
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
       </Routes>
