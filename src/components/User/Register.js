@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { baseUrl } from "../../BaseUrl";
 import ModalClass from "../UI/Modal/Modal";
+import PageHeader from "../UI/PageHeader/pageHeader";
 
 function Register() {
   const methods = useForm();
@@ -73,7 +74,7 @@ function Register() {
         onHide={() => setModalShow(false)}
         description={description}
       />
-      <div className={classes["page-header"]}></div>
+      <PageHeader />
       <Container className={classes["reg-container"]}>
         <Row>
           <h2>Register</h2>

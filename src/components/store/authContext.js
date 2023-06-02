@@ -37,7 +37,7 @@ const retrieveStoredToken = () => {
 };
 
 export const AuthContextProvider = (props) => {
-    // console.log("tokeen akeem 40", props);
+  // console.log("tokeen akeem 40", props);
 
   const tokenData = retrieveStoredToken();
 
@@ -63,7 +63,7 @@ export const AuthContextProvider = (props) => {
   const loginHandler = (token, expirationTime) => {
     setToken(true);
 
-    localStorage.setItem("token", token);
+    localStorage.setItem("token", token.token);
     localStorage.setItem("expirationTime", expirationTime);
 
     const remainingTime = calculateRemainingTime(expirationTime);
