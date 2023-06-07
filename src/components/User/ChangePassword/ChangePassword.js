@@ -23,18 +23,18 @@ const ChangePassword = () => {
       phone: phone.current.value,
       password: password.current.value,
     };
-    // axios
-    //   .post(baseUrl + "loginuser/", data)
-    //   .then((res) => {
-    //     const expirationTime = new Date(
-    //       new Date().getTime() + +res.expiresIn * 1000
-    //     );
-    //     authCtx.login(res.data, expirationTime);
-    //     console.log("login", res.data);
-    //   })
-    //   .catch((err) => {
-    //     console.log("err login", err.response.data);
-    //   });
+    axios
+      .post(baseUrl + "loginuser/", data)
+      .then((res) => {
+        const expirationTime = new Date(
+          new Date().getTime() + +res.expiresIn * 1000
+        );
+        authCtx.login(res.data, expirationTime);
+        console.log("login", res.data);
+      })
+      .catch((err) => {
+        console.log("err login", err.response.data);
+      });
   };
 
   return (

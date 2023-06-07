@@ -33,20 +33,20 @@ function Login() {
       password: password.current.value,
     };
 
-    // axios
-    //   .post(baseUrl + "loginuser/", data)
-    //   .then((res) => {
-    //     const expirationTime = new Date(
-    //       new Date().getTime() + +res.expiresIn * 1000
-    //     );
-    //     // authCtx.login(res.data, expirationTime);
-    //     navigate("/");
-    //   })
-    //   .catch((err) => {
-    //     console.log("err login", err.response.data);
-    //     setDescription(err.response.data);
-    //     setModalShow(true);
-    //   });
+    axios
+      .post(baseUrl + "loginuser/", data)
+      .then((res) => {
+        const expirationTime = new Date(
+          new Date().getTime() + +res.expiresIn * 1000
+        );
+        authCtx.login(res.data, expirationTime);
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log("err login", err.response.data);
+        setDescription(err.response.data);
+        setModalShow(true);
+      });
   };
 
   return (
