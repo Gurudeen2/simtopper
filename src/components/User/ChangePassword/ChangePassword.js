@@ -24,13 +24,13 @@ const ChangePassword = () => {
       password: password.current.value,
     };
     axios
-      .post(baseUrl + "loginuser/", data)
+      .put(baseUrl + "changepassword/", data)
       .then((res) => {
         const expirationTime = new Date(
           new Date().getTime() + +res.expiresIn * 1000
         );
-        authCtx.login(res.data, expirationTime);
-        console.log("login", res.data);
+        // authCtx.login(res.data, expirationTime);
+        console.log("change", res.data);
       })
       .catch((err) => {
         console.log("err login", err.response.data);
