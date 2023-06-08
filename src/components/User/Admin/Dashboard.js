@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
 import Sidebar from "../../UI/Sidebar/Sidebar";
 import Account from "../Account/Account";
 import BuyAirtime from "../Airtime/BuyAirtime";
@@ -9,9 +10,10 @@ const Dashboard = () => {
     <>
       <Sidebar>
         <Breadcrum separator="|" pageName="Get url from router" />
-        {/* <Account /> */}
-
-        <BuyAirtime />
+        <Routes>
+          {/* <Account /> */}
+          <Route path="/airtime" Component={BuyAirtime} />
+        </Routes>
       </Sidebar>
     </>
   );

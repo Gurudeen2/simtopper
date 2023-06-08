@@ -10,7 +10,11 @@ function Account() {
         <Row>
           <Col md="12" sm="12" lg="12" xs="12">
             <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
-              <h3>
+              <h3
+                style={{
+                  textAlign: "right",
+                }}
+              >
                 Akeem Fatai
                 <a href="/" className={classes.achor}>
                   Logout
@@ -68,28 +72,23 @@ function Account() {
                 Service
               </span>
               <p>
-                Service we render such as <a href="/">Buy Data</a>,
-                <a href="/">Buy Airtime</a>, <a href="/">Cabled Sub</a>,
+                Service we render such as <a href="/">Buy Data</a>,{" "}
+                <a href="/airtime">Buy Airtime</a>, <a href="/">Cabled Sub</a>,{" "}
                 <a href="/">Electricity</a>
               </p>
             </Card>
           </Col>
           <Col>
-            {/* <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
+            <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
               <span style={{ background: "#028a0f", color: "#fff" }}>
-                Commission
+                Transaction History
               </span>
-              <h2>N0.00</h2>
+              <h2>Transaction History</h2>
+
               <div>
-                <a href="/">Withdraw Commission</a>
+                <a href="/">Click Here </a>
               </div>
-              <div>
-                <a href="/">View Commission History</a>
-              </div>
-              <div>
-                <a href="/">View Referral/Downline</a>
-              </div>
-            </Card> */}
+            </Card>
           </Col>
           <Col>
             {/* <Card className="shadow-sm p-3 mb-5 bg-white rounded border-0">
