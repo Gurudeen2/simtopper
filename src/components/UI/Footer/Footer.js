@@ -24,7 +24,6 @@ const Footer = () => {
             <li>
               <a href="/">About Us</a>
             </li>
-            <li>
               <li>
                 <a href="/">Services</a>
               </li>
@@ -32,7 +31,6 @@ const Footer = () => {
               <li>
                 <a href="/">Register</a>
               </li>
-            </li>
           </ul>
         </Col>
         <Col sm="5" lg="4" md="4" xs="5">

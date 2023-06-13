@@ -1,15 +1,18 @@
 import React, { useState } from "react";
-import { Col, Form, Row, Button, Container } from "react-bootstrap";
-import axios from "axios";
-import { useForm } from "react-hook-form";
+import { Col, Row, Button, Container } from "react-bootstrap";
+
 import ModalClass from "../../../UI/Modal/Modal";
-import { baseUrl } from "../../../../BaseUrl";
+import FormNetwork from "./Form";
 
 const NetworkProvider = () => {
-  const methods = useForm();
-
   const [modalShow, setModalShow] = useState(false);
   const [description, setDescription] = useState();
+
+  const [show, setShow_] = useState(false);
+
+  const handleClose = () => setShow_(false);
+  const handleShow = () => setShow_(true);
+
   return (
     <>
       <ModalClass
@@ -17,64 +20,28 @@ const NetworkProvider = () => {
         onHide={() => setModalShow(false)}
         description={description}
       />
-
       <Container>
-        <Row style={{ width: "60%" }}>
-          <h4
-            style={{
-              paddingBottom: "1rem",
-            }}
-          >
-            Add Network{" "}
-          </h4>
-
-          <Form //onSubmit={methods.handleSubmit(submitHanlder)}
-          >
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>Provide ID</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Provide ID"
-                  name="provideID"
-                />
-              </Form.Group>
-            </Col>
-
-            <Col>
-              <Form.Group className="mb-3">
-                <Form.Label>Network Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Network Name"
-                  name="networkName"
-                />
-                {/* <Form.Select
-                   onChange={networkHandler}
-                >
-                  <option value="---select---">---select---</option> */}
-                {/* 
-                  {options.map((option) => (
-                    <option value={option.id} key={option.id}>
-                      {option.value}
-                    </option>
-                  ))} */}
-                {/* </Form.Select> */}
-              </Form.Group>
-            </Col>
-
-            <Col
+        <Row>
+          <Col md="10" sm="10" xs="8">
+            <h3>Network</h3>
+          </Col>
+          <Col md="2" sm="2" xs="4">
+            <Button
+              onClick={handleShow}
               style={{
-                textAlign: "right",
+                border: "none",
+                height: "4rem",
+                borderRadius: "0px",
               }}
             >
-              <Button variant="primary" type="submit">
-                Add
-              </Button>
-            </Col>
-          </Form>
+              Add Network
+            </Button>
+          </Col>
         </Row>
+
+        <Row></Row>
       </Container>
+      <FormNetwork show={show} onHide={handleClose} />
     </>
   );
 };
