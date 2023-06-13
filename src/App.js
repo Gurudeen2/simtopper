@@ -22,7 +22,7 @@ function App() {
       {/* <LandingPage /> */}
       <Routes>
         {/* {authCtx.isLoggedIn ? */}
-        <Route path="/" exact Component={Dashboard} />
+        <Route path="/*" exact Component={Dashboard} />
         {/* : } */}
 
         <Route path="/register" Component={Register} />

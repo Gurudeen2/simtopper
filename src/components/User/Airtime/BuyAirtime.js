@@ -86,6 +86,7 @@ const BuyAirtime = () => {
         onHide={() => setModalShow(false)}
         description={description}
       />
+      
       <Container>
         <Row style={{ width: "60%" }}>
           <h4>Buy Airtime </h4>
