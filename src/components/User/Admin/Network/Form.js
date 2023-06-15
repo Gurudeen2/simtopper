@@ -5,8 +5,6 @@ import { useForm } from "react-hook-form";
 import { baseUrl } from "../../../../BaseUrl";
 
 function FormNetwork(props) {
-
-
   const methods = useForm();
 
   const providerId = useRef();
@@ -63,10 +61,10 @@ function FormNetwork(props) {
               <Form onSubmit={methods.handleSubmit(onSubmitHandler)}>
                 <Col>
                   <Form.Group className="mb-3">
-                    <Form.Label>Provide ID</Form.Label>
+                    <Form.Label>Network ID</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Provide ID"
+                      placeholder="Network ID"
                       name="provideID"
                       ref={providerId}
                       onChange={onChangeHandler}
@@ -96,17 +94,6 @@ function FormNetwork(props) {
                       ref={providerName}
                       required
                     />
-                    {/* <Form.Select
-                   onChange={networkHandler}
-                >
-                  <option value="---select---">---select---</option> */}
-                    {/* 
-                  {options.map((option) => (
-                    <option value={option.id} key={option.id}>
-                      {option.value}
-                    </option>
-                  ))} */}
-                    {/* </Form.Select> */}
                   </Form.Group>
                 </Col>
 

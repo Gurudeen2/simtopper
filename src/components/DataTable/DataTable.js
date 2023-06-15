@@ -7,71 +7,105 @@ import {
   TableBody,
   TableHeader,
 } from "react-bs-datatable";
-import { Col, Row, Table } from "react-bootstrap";
+import { Col, Row, Table, Button, Container } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Create table headers consisting of 4 columns.
 const header = [
-  { title: "Username", prop: "username" },
-  { title: "Name", prop: "realname" },
-  { title: "Location", prop: "location" },
+  {
+    prop: "",
+    title: "",
+  },
+  {
+    prop: "providerID",
+    title: "ID",
+    isFilterable: true,
+  },
+  {
+    title: "Name",
+    prop: "providerName",
+    isFilterable: true,
+  },
+  {
+    prop: "button",
+
+    cell: (row) => (
+      <div style={{ textAlign: "center", right: "30%" }}>
+        <Button
+          variant="outline-primary"
+          size="sm"
+          onClick={() => {
+            alert(`${row.providerID}'s score is ${row.providerName}`);
+          }}
+        >
+          Delete
+        </Button>
+      </div>
+    ),
+  },
 ];
 
-// Randomize data of the table columns.
-// Note that the fields are all using the `prop` field of the headers.
-const body = Array.from(new Array(57), () => {
-  const rd = (Math.random() * 10).toFixed(1);
-
-  if (rd > 0.5) {
-    return {
-      username: "i-am-billy",
-      realname: `Billy ${rd}`,
-      location: "Mars",
-    };
-  }
-
-  return {
-    username: "john-nhoj",
-    realname: `John ${rd}`,
-    location: "Saturn",
-  };
-});
+const body = [];
 
 // Then, use it in a component.
-function TableComponent() {
+function TableComponent(props) {
   return (
-    <DatatableWrapper body={body} headers={header}>
-      <Row className="mb-4">
+    <Container
+      style={{
+        paddingLeft: "2rem",
+        paddingRight: "2rem",
+      }}
+    >
+      <DatatableWrapper
+        body={props.body}
+        headers={props.header}
+        paginationOptionsProps={{
+          initialState: {
+            rowsPerPage: 5,
+            options: [5, 10],
+          },
+        }}
+      >
+        <Row className="mb-4">
+          <Col
+            xs={12}
+            lg={4}
+            className="d-flex flex-col justify-content-end align-items-end"
+          >
+            <Filter />
+          </Col>
+          <Col
+            xs={12}
+            sm={6}
+            lg={4}
+            className="d-flex flex-col justify-content-lg-center align-items-center justify-content-sm-start mb-2 mb-sm-0"
+          >
+            <PaginationOptions />
+          </Col>
+          <Col
+            xs={12}
+            sm={6}
+            lg={4}
+            className="d-flex flex-col justify-content-end align-items-end"
+          >
+            <Pagination />
+          </Col>
+        </Row>
         <Col
           xs={12}
-          lg={4}
-          className="d-flex flex-col justify-content-end align-items-end"
+          sm={12}
+          lg={12}
+          className="d-flex flex-col justify-content-lg-center align-items-center
+        justify-content-sm-start mb-2 mb-sm-0"
         >
-          <Filter />
+          <Table>
+            <TableHeader />
+            <TableBody />
+          </Table>
         </Col>
-        <Col
-          xs={12}
-          sm={6}
-          lg={4}
-          className="d-flex flex-col justify-content-lg-center align-items-center justify-content-sm-start mb-2 mb-sm-0"
-        >
-          <PaginationOptions />
-        </Col>
-        <Col
-          xs={12}
-          sm={6}
-          lg={4}
-          className="d-flex flex-col justify-content-end align-items-end"
-        >
-          <Pagination />
-        </Col>
-      </Row>
-      <Table>
-        <TableHeader />
-        <TableBody />
-      </Table>
-    </DatatableWrapper>
+      </DatatableWrapper>
+    </Container>
   );
 }
 

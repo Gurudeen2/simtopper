@@ -13,7 +13,42 @@ const NetworkProvider = () => {
 
   const handleClose = () => setShow_(false);
   const handleShow = () => setShow_(true);
+  // Create table headers consisting of 4 columns.
+  const header = [
+    {
+      prop: "",
+      title: "",
+    },
+    {
+      prop: "providerID",
+      title: "ID",
+      isFilterable: true,
+    },
+    {
+      title: "Name",
+      prop: "providerName",
+      isFilterable: true,
+    },
+    {
+      prop: "button",
 
+      cell: (row) => (
+        <div style={{ textAlign: "center", right: "30%" }}>
+          <Button
+            variant="outline-primary"
+            size="sm"
+            onClick={() => {
+              alert(`${row.providerID}'s score is ${row.providerName}`);
+            }}
+          >
+            Delete
+          </Button>
+        </div>
+      ),
+    },
+  ];
+
+  const body = [];
   return (
     <>
       <ModalClass
@@ -41,7 +76,9 @@ const NetworkProvider = () => {
         </Row>
 
         <Row>
-          <TableComponent />
+          <Col>
+            <TableComponent body={body} header={header} />
+          </Col>
         </Row>
       </Container>
       <FormNetwork show={show} onHide={handleClose} />
