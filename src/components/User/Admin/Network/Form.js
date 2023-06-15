@@ -5,18 +5,15 @@ import { useForm } from "react-hook-form";
 import { baseUrl } from "../../../../BaseUrl";
 
 function FormNetwork(props) {
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   const methods = useForm();
 
   const providerId = useRef();
   const providerName = useRef();
   const [error, setError_] = useState(false);
-  const [modalShow, setModalShow] = useState(false);
-  const [description, setDescription] = useState();
+  // const [modalShow, setModalShow] = useState(false);
+  // const [description, setDescription] = useState();
 
   const onChangeHandler = (e) => {
     const re = /^[0-9\b]+$/;

@@ -3,6 +3,7 @@ import { Col, Row, Button, Container } from "react-bootstrap";
 
 import ModalClass from "../../../UI/Modal/Modal";
 import FormNetwork from "./Form";
+import TableComponent from "../../../DataTable/DataTable";
 
 const NetworkProvider = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -39,7 +40,9 @@ const NetworkProvider = () => {
           </Col>
         </Row>
 
-        <Row></Row>
+        <Row>
+          <TableComponent />
+        </Row>
       </Container>
       <FormNetwork show={show} onHide={handleClose} />
     </>
