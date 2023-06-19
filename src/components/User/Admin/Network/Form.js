@@ -34,10 +34,10 @@ function FormNetwork(props) {
     axios
       .post(baseUrl + "addnetwork/", data)
       .then((res) => {
-        console.log("network", data);
+        alert("Network Added");
       })
       .catch((err) => {
-        console.log("Error", err);
+        alert(err);
       });
   };
 

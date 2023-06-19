@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Row, Button, Container } from "react-bootstrap";
 
 import ModalClass from "../../../UI/Modal/Modal";
 import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
+import axios from "axios";
+import { baseUrl } from "../../../../BaseUrl";
 
 const NetworkProvider = () => {
   const [modalShow, setModalShow] = useState(false);
   const [description, setDescription] = useState();
+  const [data, setData_] = useState();
 
   const [show, setShow_] = useState(false);
 
@@ -47,6 +50,22 @@ const NetworkProvider = () => {
       ),
     },
   ];
+
+  const fetchData = async () => {
+    await axios
+      .get(baseUrl + "getnetwork/")
+      .then((res) => {
+        setData_(res);
+        console.log("res", res);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+// "[{"model": "networkprovider.networkprovider", "pk": 1, "fields": {"providerID": 1, "providerName": "MTN"}}]"
 
   const body = [];
   return (
