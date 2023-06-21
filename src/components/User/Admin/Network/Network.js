@@ -1,16 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Col, Row, Button, Container } from "react-bootstrap";
 
-import ModalClass from "../../../UI/Modal/Modal";
 import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
 
 const NetworkProvider = () => {
-  const [modalShow, setModalShow] = useState(false);
-  const [description, setDescription] = useState();
-  const [data, setData_] = useState();
+  const [data, setData_] = useState([]);
 
   const [show, setShow_] = useState(false);
 
@@ -41,6 +38,7 @@ const NetworkProvider = () => {
             variant="outline-primary"
             size="sm"
             onClick={() => {
+              axios.delete(baseUrl + "deletenetwork/", row.providerID);
               alert(`${row.providerID}'s score is ${row.providerName}`);
             }}
           >
@@ -51,30 +49,21 @@ const NetworkProvider = () => {
     },
   ];
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     await axios
       .get(baseUrl + "getnetwork/")
       .then((res) => {
-        setData_(res);
+        setData_(res.data.map((dt) => dt.fields));
         console.log("res", res);
       })
-      .catch((err) => {
-        console.log("err", err);
-      });
-  };
+      .catch((err) => {});
+  }, [data]);
   useEffect(() => {
     fetchData();
-  }, []);
-// "[{"model": "networkprovider.networkprovider", "pk": 1, "fields": {"providerID": 1, "providerName": "MTN"}}]"
+  }, [fetchData]);
 
-  const body = [];
   return (
     <>
-      <ModalClass
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        description={description}
-      />
       <Container>
         <Row>
           <Col md="10" sm="10" xs="8">
@@ -96,7 +85,7 @@ const NetworkProvider = () => {
 
         <Row>
           <Col>
-            <TableComponent body={body} header={header} />
+            <TableComponent body={data} header={header} />
           </Col>
         </Row>
       </Container>
