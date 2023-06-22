@@ -1,6 +1,7 @@
 .container {
   display: flex;
   height: 48rem;
+  background-color: #fff;
 }
 
 .sidebar {

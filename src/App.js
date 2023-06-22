@@ -13,7 +13,6 @@ const ChangePassword = React.lazy(() =>
   import("./components/User/ChangePassword/ChangePassword")
 );
 
-
 function App() {
   const authCtx = useContext(AuthContext);
   return (

@@ -5,6 +5,7 @@ import Account from "../Account/Account";
 import BuyAirtime from "../Airtime/BuyAirtime";
 import Breadcrum from "../../UI/Breadcrumb/Breadcrumb";
 import NetworkProvider from "./Network/Network";
+import Opportunity from "../../Demo/Opportunities/Opportunity";
 
 const Dashboard = () => {
   return (
@@ -13,6 +14,7 @@ const Dashboard = () => {
         <Breadcrum separator="|" pageName="Get url from router" />
         <Routes>
           <Route path="/dashboard" Component={Account} />
+          <Route path="/demo" Component={Opportunity} />
 
           <Route path="/airtime" Component={BuyAirtime} />
           <Route path="/addnetwork" Component={NetworkProvider} />

@@ -38,7 +38,7 @@ const NetworkProvider = () => {
             variant="outline-primary"
             size="sm"
             onClick={() => {
-              axios.delete(baseUrl + "deletenetwork/", row.providerID);
+              axios.delete(baseUrl + "deletenetwork/" + row.providerID);
               alert(`${row.providerID}'s score is ${row.providerName}`);
             }}
           >
@@ -53,11 +53,15 @@ const NetworkProvider = () => {
     await axios
       .get(baseUrl + "getnetwork/")
       .then((res) => {
-        setData_(res.data.map((dt) => dt.fields));
-        console.log("res", res);
+        let datas = res.data.map((dt) => dt.fields);
+        setData_(datas);
+        console.log("res", datas);
       })
-      .catch((err) => {});
-  }, [data]);
+      .catch((err) => {
+        alert(err);
+      });
+  }, []);
+
   useEffect(() => {
     fetchData();
   }, [fetchData]);
