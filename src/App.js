@@ -5,6 +5,8 @@ import AuthContext from "./components/store/authContext";
 import LandingPage from "./components/HomePage/LandingPage";
 import Footer from "./components/UI/Footer/Footer";
 import Header from "./components/UI/Header/Header";
+import DemoReg from "./components/Demo/Account/Registration/Register";
+import DemoLogin from "./components/Demo/Account/Login/Login";
 
 const Dashboard = React.lazy(() => import("./components/User/Admin/Dashboard"));
 const Register = React.lazy(() => import("./components/User/Register"));
@@ -24,11 +26,13 @@ function App() {
         <Route path="/*" exact Component={Dashboard} />
         {/* : } */}
 
+        <Route path="/demoreg" Component={DemoReg} />
+        <Route path="/demologin" Component={DemoLogin} />
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
         <Route path="/changepassword" Component={ChangePassword} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Suspense>
   );
 }

@@ -14,7 +14,7 @@ const Sidebar = (props) => {
           <img src={avatar} alt="avatar" width="50rem" />
         </div>
         <hr />
-
+{/* 
         <span>Account</span>
         <p>
           <a href="/">Dashboard</a>
@@ -60,7 +60,7 @@ const Sidebar = (props) => {
         <hr />
         <p>
           <a href="/">Fund Account</a>
-        </p>
+        </p> */}
       </div>
       <div className={classes.main}>{props.children}</div>
     </div>
