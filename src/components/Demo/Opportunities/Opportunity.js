@@ -13,7 +13,6 @@ import { Link } from "react-router-dom";
 import classes from "./Opportunities.module.css";
 
 const Opportunity = () => {
-  
   const data = [
     {
       title: "Krabi Beach Apartment",
@@ -56,7 +55,8 @@ const Opportunity = () => {
   // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   const tooltip = (
     <Tooltip id="tooltip">
-      <strong>Holy Akeem!</strong> Check this info.
+      Return on investment after sale, including rental profit and expected
+      annual appreciation of the area.
     </Tooltip>
   );
   return (

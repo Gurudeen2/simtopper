@@ -8,9 +8,12 @@ import {
   Tooltip,
   Image,
   Card,
+  Table,
 } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+import { currency } from "../../Util/currencyConvert";
 import classes from "../Opportunities.module.css";
+import Opportunity from "../Opportunity";
 
 const SingleOpport = () => {
   const { appartmentName } = useParams();
@@ -53,7 +56,7 @@ const SingleOpport = () => {
 
   const tooltip = (
     <Tooltip id="tooltip">
-      <strong>Holy Akeem!</strong> Check this info.
+      <strong>Internal Rate of Return</strong>
     </Tooltip>
   );
 
@@ -79,15 +82,19 @@ const SingleOpport = () => {
             </Carousel.Item>
           </Carousel>
         </Col>
-        <Col sm="4">
+        <Col
+          sm="4"
+          style={{
+            fontSize: "14px",
+          }}
+        >
           <Card
             style={{
-              width: "18rem",
+              // width: "18rem",
               boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
               border: "none",
             }}
           >
-            {/* <Card.Img src={dt.img1} as={Image} variant="top" fluid={true} /> */}
             <Card.Body>
               <Card.Title style={{ textAlign: "center" }}>title</Card.Title>
               <Card.Text>
@@ -95,31 +102,293 @@ const SingleOpport = () => {
                   <strong>Price in NGN</strong>: <span>price</span>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Total RPP</strong>: <span>price</span>
+                  <strong>Total EPT</strong>: <span>price</span>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Price Per RPP</strong>{" "}
+                  <strong>Price Per EPT</strong> : <span>%</span>
+                </div>
+                <div
+                  style={{
+                    display: "table",
+                    width: "100%",
+                    padding: "0",
+                    marginTop: "10px",
+                    marginBottom: "10px",
+                  }}
+                >
+                  <Col
+                    style={{
+                      display: "table-cell",
+                      width: "50%",
+                      background: "#f7f7f7",
+                      borderRight: "solid 1px #ffffff",
+                      textAlign: "center",
+                      padding: "15px 5px",
+                    }}
+                  >
+                    <h5>7.03 %</h5>
+                    <span>
+                      <strong>IRR</strong>{" "}
+                      <OverlayTrigger placement="top" overlay={tooltip}>
+                        <i
+                          bsStyle="default"
+                          className="bi bi-question-circle-fill"
+                        ></i>
+                      </OverlayTrigger>
+                    </span>
+                  </Col>
+                  <Col
+                    style={{
+                      display: "table-cell",
+                      width: "50%",
+                      background: "#f7f7f7",
+                      borderRight: "solid 1px #ffffff",
+                      textAlign: "center",
+                      padding: "15px 5px",
+                    }}
+                  >
+                    <h5>{currency.format(200000000)}</h5>
+                    <span>NGN</span>
+                    <br />
+                    <span style={{ fontSize: "12px" }}>
+                      Average price per sqm
+                    </span>
+                  </Col>
+                </div>
+                <div className={classes.spacing}>
+                  <strong>Project Type</strong>: <span>price</span>
+                </div>
+
+                <div className={classes.spacing}>
+                  <strong>Projected ROI Transfer</strong>{" "}
                   <OverlayTrigger placement="top" overlay={tooltip}>
                     <i
                       bsStyle="default"
                       className="bi bi-question-circle-fill"
                     ></i>
-                  </OverlayTrigger>
-                  : <span>%</span>
+                  </OverlayTrigger>{" "}
+                  : <span>ROI %</span>
+                </div>
+                <div className={classes.spacing}>
+                  <strong>Rental Yield</strong>: <span>Yield</span>
                 </div>
               </Card.Text>
               <div className={classes["button-container"]}>
-                {/* <Link
-                  className={`btn btn-primary ${classes.button}`}
-                  to=""
-                >
-                  More Details
-                </Link> */}
+                <Link className={`btn btn-primary ${classes.button}`} to="">
+                  Secondary Market
+                </Link>
               </div>
             </Card.Body>
           </Card>
         </Col>
       </Row>
+      <Row style={{ marginTop: "3rem" }}>
+        <Col
+          style={{
+            textAlign: "justify",
+          }}
+        >
+          <Card
+            style={{
+              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              <Card.Title style={{ textAlign: "justify" }}>
+                <h5>Property location info</h5>
+              </Card.Title>
+              <Card.Text>
+                <p>
+                  Klong Muang Beach, Krabi, Thailand. Home to pristine beaches,
+                  a wide range of hotels, beach bars, a popular area for
+                  filmmakers and diving enthusiasts. It’s known as a higher-end
+                  location with the likes of Ritz-Carlton Reserve Hotel, Dusit
+                  Thani, Sofitel, Elements Krabi and many more along this
+                  stretch of beach. Situated next to Au Nang and Krabi Town,
+                  which are a short drive away. These tourist hot spots offer a
+                  wide range of food, shopping and nightlife. Klong Muang is a
+                  more relaxed and private location, for those looking to escape
+                  but still, be close to all the action and fast access from
+                  Bangkok and international locations.
+                </p>
+                <ul
+                  style={{
+                    listStyleType: "disc",
+                  }}
+                >
+                  <li>40 minutes to Krabi Airport</li>
+                  <li>1 hour flight to Bangkok</li>
+                  <li>2 hour ferry to Phuket</li>
+                </ul>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+        <Col>
+          <Card
+            style={{
+              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h5>Location</h5>
+              </Card.Title>
+              <Card.Text>Map Image</Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row style={{ marginTop: "3rem" }}>
+        <Col>
+          <Card
+            style={{
+              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h5>Description</h5>
+              </Card.Title>
+              <Card.Text>
+                <p>The property</p>
+                <p>
+                  This apartment is in a project of 11,246 sq.m., made up of 5
+                  buildings, with 3 to 5 stories and 167 units. Set slight back
+                  from the ocean on an inclined piece of land. Which offers a
+                  180-degree panoramic view of the surrounding landscape and
+                  crystal clear water of Andaman sea. The property includes
+                  pools, onsite parking, 24-hour front desk and security. The
+                  types of units found at the project include 65 sqm suits with
+                  private pools, 31 and 33 sqm standard rooms. The site will be
+                  run as a Condotel, fully managed and maintained by the
+                  developer after construction.
+                </p>
+                <p>Why this property is a good investment</p>
+                <p>
+                  Beachfront areas will always hold their value and draw high
+                  levels of demand. All beaches in Thailand are owned by the
+                  crown property bureau and can’t be held privately, an only
+                  property next to the beach can be bought and sold on freehold,
+                  because of this there is no such thing as a private beach in
+                  Thailand and land next to beaches hold high value and demand.
+                  The property is a very affordable option in an area with such
+                  high-end real estate and expensive hotels. Which means it can
+                  easily be rented and rooms filled. The management company will
+                  run the property as a hotel which takes care of the headaches
+                  of maintenance and managing guests. Making it a full turn-key
+                  investment, remove all the hassle for owners.
+                </p>
+                <p>INVESTMENT DATA</p>
+                <p>Rental payments</p>
+                <p>
+                  Rental payments for investors on this opportunity will start
+                  in February 2020. Economy Thailand finished gross domestic
+                  product (GDP) grew by 4.1 percent in 2018. This rate is 1
+                  -tenth of one percent higher than the figure of 4% published
+                  in 2017. Now ranked 26th largest GDP. Ranked 3rd of the ASEAN
+                  countries, only being outperformed on a per capita by Malaysia
+                  and Singapore. The number of tourists visiting Thailand
+                  increased from 35.35 million in 2017 to 38.28 million in 2018.
+                  Bangkok was also the number one visited citysSurpassing Paris
+                  and London in Mastercard's list of "Global Destination Cities
+                  Index 2019" with 22.78 million visitors. Phuket (next to
+                  Krabi) was 14th with 9.89 million visitors. Tourist accounts
+                  for one-fifth of Thailands GDP.
+                </p>
+                <p>Market Stats</p>
+                <p>
+                  The Thai baht continued to remain strong in Q3 2019, hitting a
+                  6-year high against the USD and a 10% Y-o-Y increase against
+                  the CNY. Single-detached house prices in 2019 rose by 3.1% and
+                  3% for land according to the the Bank of Thailand. Due to the
+                  strength of the Thai Baht, we’ve seen investors focusing more
+                  on income-generating properties. Demand has grown the most for
+                  hotel, condotel, serviced apartments and office space
+                  investments. Thailand just approved Phukets 2nd airport in
+                  Phang Nga and the highspeed rail from Bangkok which is
+                  targeted to go live around 2025; this will continue to help
+                  the growth of the southern region. Plus new rules and
+                  regulations for the types of buildings that can be built in
+                  and around Phuket. Zoning will come into action allowing for
+                  taller structures to be allowed to be built.
+                </p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row style={{ marginTop: "3rem" }}>
+        <Col>
+          <Card
+            style={{
+              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              <Card.Title>
+                <h5>Documentation</h5>
+              </Card.Title>
+              <Card.Text>
+                <p>
+                  Please find some confidential investment data. Note its
+                  distribution is prohibited and will result in the termination
+                  of your account.
+                </p>
+                <p>
+                  ( pdf icons here) with following text Financial Information
+                  Paris Addendum The Based Returns
+                </p>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row style={{ marginTop: "3rem" }}>
+        <Col>
+          <Card
+            style={{
+              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              border: "none",
+            }}
+          >
+            <Card.Body>
+              <Card.Title></Card.Title>
+              <Card.Text>
+                <Table>
+                  <thead>
+                    <td>Date</td>
+                    <td>Profit</td>
+                    <td>Profit Type</td>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </Table>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+      {/* <Row style={{ marginTop: "3rem" }}>
+        <Col>
+          <h3>Opportunities</h3>
+          <span>Selection of investment opportunities</span>
+          <div></div>
+          <Opportunity />
+        </Col>
+      </Row> */}
     </Container>
   );
 };
