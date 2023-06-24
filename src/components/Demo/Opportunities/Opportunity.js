@@ -63,6 +63,7 @@ const Opportunity = () => {
     <Container style={{ fontFamily: "sans-serif", fontSize: "14px" }}>
       <div className={classes.heading}>
         <h5>Opportunities</h5>
+        <span>Selection of investment opportunities</span>
       </div>
 
       <Row>
@@ -103,7 +104,6 @@ const Opportunity = () => {
                           bsStyle="default"
                           className="bi bi-question-circle-fill"
                         ></i>
-                        {/* <Button bsStyle="default">Holy guacamole!</Button> */}
                       </OverlayTrigger>{" "}
                       : <span>{dt.roi}%</span>
                     </div>

@@ -7,6 +7,7 @@ import Breadcrum from "../../UI/Breadcrumb/Breadcrumb";
 import NetworkProvider from "./Network/Network";
 import Opportunity from "../../Demo/Opportunities/Opportunity";
 import SingleOpport from "../../Demo/Opportunities/Opportunity/SingleOpport";
+import DemoDashboard from "../../Demo/Dashboard/Dashboard";
 
 const Dashboard = () => {
   return (
@@ -16,6 +17,7 @@ const Dashboard = () => {
         <Routes>
           <Route path="/dashboard" Component={Account} />
           <Route path="/demo" Component={Opportunity} />
+          <Route path="/demo/dashboard" Component={DemoDashboard} />
           <Route path="/demo/:appartmentName" Component={SingleOpport} />
 
           <Route path="/airtime" Component={BuyAirtime} />

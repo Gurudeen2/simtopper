@@ -1,11 +1,21 @@
+.icon-container {
+  display: table;
+  width: 100%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  padding: 2rem;
+}
+
+.table-cell {
+  display: table-cell;
+  width: 50%;
+  text-align: center;
+}
+
 .spacing {
   padding: 0.6rem;
 }
-.heading {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-align: center;
-}
+
 
 .button-container {
   text-align: center;
