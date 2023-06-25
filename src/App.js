@@ -31,6 +31,7 @@ function App() {
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
         <Route path="/changepassword" Component={ChangePassword} />
+        
       </Routes>
       {/* <Footer /> */}
     </Suspense>
