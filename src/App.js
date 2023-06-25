@@ -7,6 +7,7 @@ import Footer from "./components/UI/Footer/Footer";
 import Header from "./components/UI/Header/Header";
 import DemoReg from "./components/Demo/Account/Registration/Register";
 import DemoLogin from "./components/Demo/Account/Login/Login";
+import AdminBash from "./components/User/Admin/DashAdmin";
 
 const Dashboard = React.lazy(() => import("./components/User/Admin/Dashboard"));
 const Register = React.lazy(() => import("./components/User/Register"));
@@ -31,7 +32,6 @@ function App() {
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
         <Route path="/changepassword" Component={ChangePassword} />
-        
       </Routes>
       {/* <Footer /> */}
     </Suspense>

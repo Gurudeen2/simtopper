@@ -8,7 +8,7 @@ const FactorAuth = () => {
     <Container
       style={{ paddingLeft: "6rem", paddingRight: "6rem", paddingTop: "2rem" }}
     >
-      <Setup />
+      {/* <Setup /> */}
       <Row>
         <Col>
           <h3>Two-Factor Authentication</h3>
@@ -37,7 +37,6 @@ const FactorAuth = () => {
                       size="sm"
                       style={{ border: "none" }}
                     />
-                    
                   </Col>
                 </Row>
               </Card.Text>
