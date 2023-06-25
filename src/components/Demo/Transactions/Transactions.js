@@ -43,6 +43,7 @@ const Transaction = () => {
             paddingRight: "2rem",
           }}
         >
+          
           <div>
             <Table responsive="sm" striped>
               <thead>

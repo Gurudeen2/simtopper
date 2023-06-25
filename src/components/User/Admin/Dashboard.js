@@ -13,6 +13,7 @@ import Profile from "../../Demo/Profile/Profile";
 import Deposit from "../../Demo/Deposit/Deposit";
 import Transaction from "../../Demo/Transactions/Transactions";
 import FactorAuth from "../../Demo/TwoFA/FactorAuth";
+import SecondaryMarket from "../../Demo/Market/Market";
 
 const Dashboard = () => {
   return (
@@ -36,8 +37,12 @@ const Dashboard = () => {
             <Route path="/demo/deposit" Component={Deposit} />
             <Route path="/demo/transaction" Component={Transaction} />
             <Route path="/demo/twofactor" Component={FactorAuth} />
+            <Route path="/demo/secondarymarket" Component={SecondaryMarket} />
 
-            <Route path="/demo/:appartmentName" Component={SingleOpport} />
+            <Route
+              path="/demo/opportunity/:appartmentName"
+              Component={SingleOpport}
+            />
 
             <Route path="/airtime" Component={BuyAirtime} />
             <Route path="/addnetwork" Component={NetworkProvider} />

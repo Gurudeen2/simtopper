@@ -67,7 +67,11 @@ const SingleOpport = () => {
   // }, [appartmentName, data]);
 
   return (
-    <Container>
+    <Container
+      style={{
+        paddingTop: "2rem",
+      }}
+    >
       <Row>
         <Col sm="8">
           <Carousel>
@@ -174,7 +178,10 @@ const SingleOpport = () => {
                 </div>
               </Card.Text>
               <div className={classes["button-container"]}>
-                <Link className={`btn btn-primary ${classes.button}`} to="">
+                <Link
+                  className={`btn btn-primary ${classes.button}`}
+                  to="/demo/secondarymarket"
+                >
                   Secondary Market
                 </Link>
               </div>
