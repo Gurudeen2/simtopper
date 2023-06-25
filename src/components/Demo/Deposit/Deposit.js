@@ -25,119 +25,8 @@ const Deposit = () => {
           >
             <Card.Body style={{ textAlign: "justify" }}>
               <Card.Title>
-                <i className="">icon</i> REAL
-              </Card.Title>
-              <Card.Text>
-                <div className={classes["padding-div"]}>
-                  <a
-                    href="/"
-                    className="btn btn-primary"
-                    style={{ width: "100%" }}
-                  >
-                    {" "}
-                    Generate Address
-                  </a>
-                  <p className={classes["padding-p"]}>
-                    * Click on the button to generate your address where you can
-                    send REAL to the platform.
-                  </p>
-                </div>
-                <div>
-                  <p>
-                    <strong>Advantages for REAL holders:</strong>
-                    <br />
-                    <b> Lower fees:</b> 2.5% special commission for REAL holders
-                    for the price of each ETP
-                  </p>
-                  <p>
-                    <strong>Pre-sale investment opportunity:</strong> Investing
-                    before other users
-                  </p>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card
-            style={{
-              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-              border: "none",
-            }}
-            className={classes["col-height"]}
-          >
-            <Card.Body style={{ textAlign: "justify" }}>
-              <Card.Title>
-                <i className="">icon</i> ETH
-              </Card.Title>
-
-              <Card.Text>
-                <div className={classes["padding-div"]}>
-                  <a
-                    href="/"
-                    className="btn btn-primary"
-                    style={{ width: "100%" }}
-                  >
-                    {" "}
-                    Generate Address
-                  </a>
-                  <p className={classes["padding-p"]}>
-                    * Click on the button to generate your address where you can
-                    send ETH to the platform.
-                  </p>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card
-            style={{
-              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-              border: "none",
-            }}
-            className={classes["col-height"]}
-          >
-            <Card.Body style={{ textAlign: "justify" }}>
-              <Card.Title>
-                <i className="">icon</i> BTC
-              </Card.Title>
-
-              <Card.Text>
-                <div className={classes["padding-div"]}>
-                  <a
-                    href="/"
-                    className="btn btn-primary"
-                    style={{ width: "100%" }}
-                  >
-                    {" "}
-                    Generate Address
-                  </a>
-                  <p className={classes["padding-p"]}>
-                    * Click on the button to generate your address where you can
-                    send BTC to the platform.
-                  </p>
-                </div>
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col>
-          <Card
-            style={{
-              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
-              border: "none",
-            }}
-            className={classes["col-height"]}
-          >
-            <Card.Body style={{ textAlign: "justify" }}>
-              <Card.Title>
                 <i className="">icon</i> USDT
               </Card.Title>
-
               <Card.Text>
                 <div className={classes["padding-div"]}>
                   <a
@@ -151,6 +40,37 @@ const Deposit = () => {
                   <p className={classes["padding-p"]}>
                     * Click on the button to generate your address where you can
                     send USDT to the platform.
+                  </p>
+                </div>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col>
+          <Card
+            style={{
+              boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
+              border: "none",
+            }}
+          >
+            <Card.Body style={{ textAlign: "justify" }}>
+              <Card.Title>
+                <i className="">icon</i> NGN
+              </Card.Title>
+              <Card.Text>
+                <div className={classes["padding-div"]}>
+                  <a
+                    href="/"
+                    className="btn btn-primary"
+                    style={{ width: "100%" }}
+                  >
+                    {" "}
+                    Make Payment
+                  </a>
+                  <p className={classes["padding-p"]}>
+                    * Click on the button to generate your address where you can
+                    send NGN to the platform.
                   </p>
                 </div>
               </Card.Text>

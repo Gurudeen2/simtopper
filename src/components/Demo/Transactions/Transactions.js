@@ -23,9 +23,7 @@ const Transaction = () => {
         </Col>
         <Col sm="9" style={{ textAlign: "right" }}>
           <Button as="input" type="button" value="USDT" />{" "}
-          <Button as="input" type="button" value="BTC" />{" "}
-          <Button as="input" type="button" value="ETH" />{" "}
-          <Button as="input" type="submit" value="REAL" />{" "}
+          <Button as="input" type="submit" value="NGN" />{" "}
           <Button as="input" type="submit" value="Outflows" />{" "}
           <Button as="input" type="button" value="Earning" />{" "}
           <Button as="input" type="button" value="All Data" />
