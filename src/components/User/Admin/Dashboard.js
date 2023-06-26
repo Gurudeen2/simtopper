@@ -14,6 +14,8 @@ import Deposit from "../../Demo/Deposit/Deposit";
 import Transaction from "../../Demo/Transactions/Transactions";
 import FactorAuth from "../../Demo/TwoFA/FactorAuth";
 import SecondaryMarket from "../../Demo/Market/Market";
+import NavHeader from "../../UI/Header/Header";
+import Homepage from "../../Demo/Homepage/Homepage";
 
 const Dashboard = () => {
   return (
@@ -22,9 +24,7 @@ const Dashboard = () => {
       <Sidebar />
       {/* <!-- Page content wrapper--> */}
       <div style={{ width: "100%" }}>
-        {/* <!-- Top navigation--> */}
-        {/* <Header /> */}
-        {/* <!-- Page content--> */}
+        <NavHeader />
         <div
           className="container-fluid content-container"
           style={{ paddingLeft: "3rem" }}
@@ -50,26 +50,6 @@ const Dashboard = () => {
         </div>
       </div>
     </div>
-    // <>
-
-    //   <Sidebar>
-    //     {/* <Breadcrum separator="|" pageName="Get url from router" /> */}
-    // <Routes>
-    //   <Route path="/dashboard" Component={Account} />
-    //   <Route path="/demo" Component={Opportunity} />
-    //   <Route path="/demo/dashboard" Component={DemoDashboard} />
-    //   <Route path="/demo/profile" Component={Profile} />
-    //   <Route path="/demo/deposit" Component={Deposit} />
-    //   <Route path="/demo/transaction" Component={Transaction} />
-    //   <Route path="/demo/twofactor" Component={FactorAuth} />
-
-    //   <Route path="/demo/:appartmentName" Component={SingleOpport} />
-
-    //   <Route path="/airtime" Component={BuyAirtime} />
-    //   <Route path="/addnetwork" Component={NetworkProvider} />
-    // </Routes>
-    //   </Sidebar>
-    // </>
   );
 };
 

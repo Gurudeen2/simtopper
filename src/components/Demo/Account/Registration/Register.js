@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
+import { Form, Button, Container, Row, Col, InputGroup, Nav, Navbar } from "react-bootstrap";
 import classes from "./Register.module.css";
 import { useForm } from "react-hook-form";
 import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ModalClass from "../../../UI/Modal/Modal";
 import PageHeader from "../../../UI/PageHeader/pageHeader";
@@ -50,7 +50,7 @@ function Register() {
       //     setModalShow(true);
       //   });
       // setReq(false);
-      navigate("/login");
+      navigate("/demologin");
     }
 
     pass.current.value = "";
@@ -69,6 +69,41 @@ function Register() {
         onHide={() => setModalShow(false)}
         description={description}
       />
+      <Navbar bg="primary" variant="dark">
+        <Container >
+          <Navbar.Brand href="/">
+            {/* <img src="" alt="logo" width="30%" className={classes.img} /> */}
+            <h2>EsusuProp Trade</h2>
+          </Navbar.Brand>
+
+          {/* <Nav className="justify-content-end">
+            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="#home">How It Works</Nav.Link>
+            <Nav.Link href="#home">FAQ</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav> */}
+
+          <Nav className="justify-content-end">
+            {/* <Link
+              to="#home"
+              className="btn btn-outline-secondary"
+              style={{
+                color: "#000",
+                background: "#fff",
+                border: "1px solid black",
+              }}
+            >
+              Signup
+            </Link>{" "} */}
+            <Link to="/demologin" className="btn btn-primary">
+              Login
+            </Link>
+            {/* <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="/register">Register</Nav.Link> */}
+          </Nav>
+        </Container>
+      </Navbar>
       <PageHeader />
       <Container className={classes["reg-container"]}>
         <Row>

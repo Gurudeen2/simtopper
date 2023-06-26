@@ -1,6 +1,15 @@
 import React, { useState, useRef, useContext } from "react";
-import { Form, Button, Container, Row, Col, InputGroup } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import {
+  Form,
+  Button,
+  Container,
+  Row,
+  Col,
+  InputGroup,
+  Nav,
+  Navbar,
+} from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import classes from "./Login.module.css";
 import { EyeSlashFill, EyeFill } from "react-bootstrap-icons";
@@ -9,6 +18,7 @@ import { baseUrl } from "../../../../BaseUrl";
 import ModalClass from "../../../UI/Modal/Modal";
 import PageHeader from "../../../UI/PageHeader/pageHeader";
 import AuthContext from "../../../store/authContext";
+import NavHeader from "../../../UI/Header/Header";
 
 function Login() {
   const authCtx = useContext(AuthContext);
@@ -47,7 +57,7 @@ function Login() {
     //     setDescription(err.response.data);
     //     setModalShow(true);
     //   });
-    navigate("/demo");
+    navigate("/account/demo");
   };
 
   return (
@@ -57,6 +67,33 @@ function Login() {
         onHide={() => setModalShow(false)}
         description={description}
       />
+      <Navbar bg="primary" variant="dark">
+        <Container >
+          <Navbar.Brand href="/">
+            {/* <img src="" alt="logo" width="30%" className={classes.img} /> */}
+            <h2>EsusuProp Trade</h2>
+          </Navbar.Brand>
+          {/* 
+          <Nav className="justify-content-end">
+            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="#home">How It Works</Nav.Link>
+            <Nav.Link href="#home">FAQ</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav> */}
+
+          <Nav className="justify-content-end">
+            <Link to="/demoreg" className="btn btn-success">
+              Register
+            </Link>{" "}
+            {/* <Link to="#home" className="btn btn-primary">
+              Login
+            </Link> */}
+            {/* <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="/register">Register</Nav.Link> */}
+          </Nav>
+        </Container>
+      </Navbar>
       <PageHeader />
       <Container className={classes["login-container"]}>
         <Row>

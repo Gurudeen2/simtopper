@@ -9,6 +9,8 @@ import {
   Image,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
+// import { Tota } from "react-bootstrap-icons";
+
 import classes from "./Dashboard.module.css";
 
 const DemoDashboard = () => {
@@ -19,7 +21,7 @@ const DemoDashboard = () => {
     </Tooltip>
   );
   return (
-    <Container>
+    <Container style={{ paddingBottom: "4rem" }}>
       <Row style={{ marginTop: "3rem" }}>
         <Col>Dashboard</Col>
       </Row>
