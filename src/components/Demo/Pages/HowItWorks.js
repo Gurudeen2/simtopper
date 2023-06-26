@@ -30,12 +30,21 @@ const HowItWorks = () => {
                 <h4>HOW IT WORKS</h4>
               </div>
               <p className={classes.justify}>
-                Think of us as the bridge connecting customers with a perfect
-                asset. Using blockchain technology, we provide an innovative way
-                of investing in real estate projects around the world faster and
-                easier than ever before. Our crowdfunding platform makes the
-                funding process safe and accessible from anywhere in the world.
-                It is alsocompletely transparent.
+                Step 1: Create your account and deposit funds in Naira or USD by
+                transferring to your bank account.
+              </p>
+              <p className={classes.justify}>
+                Step 2: Choose from a range of investment opportunities and
+                start growing your real estate portfolio with as little as NGN
+                10,000.
+              </p>
+              <p className={classes.justify}>
+                Step 3: Track your investments, transactions, and profits
+                conveniently on your personalized dashboard.
+              </p>
+              <p className={classes.justify}>
+                Step 4: Exit your investment through property sales, selling
+                shares to other users, or selling participation on exchanges.
               </p>
             </Col>
           </Row>

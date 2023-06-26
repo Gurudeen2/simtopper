@@ -100,16 +100,16 @@ const SingleOpport = () => {
             }}
           >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>title</Card.Title>
+              <Card.Title style={{ textAlign: "center" }}>Naibut Beach</Card.Title>
               <Card.Text>
                 <div className={classes.spacing}>
                   <strong>Price in NGN</strong>: <span>price</span>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Total EPT</strong>: <span>price</span>
+                  <strong>Total EPT</strong>: <span>30,000</span>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Price Per EPT</strong> : <span>%</span>
+                  <strong>Price Per EPT</strong> : <span>6,700</span>
                 </div>
                 <div
                   style={{
@@ -160,7 +160,7 @@ const SingleOpport = () => {
                   </Col>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Project Type</strong>: <span>price</span>
+                  <strong>Project Type</strong>: <span>Residential </span>
                 </div>
 
                 <div className={classes.spacing}>
@@ -171,7 +171,7 @@ const SingleOpport = () => {
                       className="bi bi-question-circle-fill"
                     ></i>
                   </OverlayTrigger>{" "}
-                  : <span>ROI %</span>
+                  : <span>63%</span>
                 </div>
                 <div className={classes.spacing}>
                   <strong>Rental Yield</strong>: <span>Yield</span>
@@ -180,7 +180,7 @@ const SingleOpport = () => {
               <div className={classes["button-container"]}>
                 <Link
                   className={`btn btn-primary ${classes.button}`}
-                  to="/demo/secondarymarket"
+                  to="/account/demo/secondarymarket"
                 >
                   Secondary Market
                 </Link>

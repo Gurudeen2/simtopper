@@ -10,11 +10,11 @@ const Sidebar = () => {
       className={`border-end sidenav ${classes.sidebar}`}
       id="sidebar-wrapper"
     >
-      <div className="sidebar-heading border-bottom ">
+      <div className="sidebar-heading border-bottom " >
         <Link to="/">
           {/* <img
               alt="Alt content"
-              src={require("./../assets/images/logo.png")}
+              src={require("../../../assets/images/bg_properties-home.png")}
             /> */}
         </Link>
       </div>

@@ -79,16 +79,18 @@ const SecondaryMarket = () => {
             <Card.Img src="/D2.jpg" as={Image} variant="top" fluid={true} />
 
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>title</Card.Title>
+              <Card.Title style={{ textAlign: "center" }}>
+                Land at Lekki
+              </Card.Title>
               <Card.Text>
                 <div className={classes.spacing}>
-                  <strong>Price in NGN</strong>: <span>price</span>
+                  <strong>Price in NGN</strong>: <span>200,000,000</span>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Total EPT</strong>: <span>price</span>
+                  <strong>Total EPT</strong>: <span>30,000</span>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Price Per EPT</strong> : <span>%</span>
+                  <strong>Price Per EPT</strong> : <span>6,700</span>
                 </div>
                 <div
                   style={{
@@ -139,7 +141,7 @@ const SecondaryMarket = () => {
                   </Col>
                 </div>
                 <div className={classes.spacing}>
-                  <strong>Project Type</strong>: <span>price</span>
+                  <strong>Project Type</strong>: <span>Residential</span>
                 </div>
 
                 <div className={classes.spacing}>
@@ -150,7 +152,7 @@ const SecondaryMarket = () => {
                       className="bi bi-question-circle-fill"
                     ></i>
                   </OverlayTrigger>{" "}
-                  : <span>ROI %</span>
+                  : <span>63%</span>
                 </div>
                 <div className={classes.spacing}>
                   <strong>Rental Yield</strong>: <span>Yield</span>
@@ -176,7 +178,7 @@ const SecondaryMarket = () => {
                       <tr>
                         <th>EPT</th>
                         <th>% of total (5,000)</th>
-                        <th>USDT</th>
+                        <th>USD/NGN</th>
                         <th></th>
                         <th></th>
                       </tr>

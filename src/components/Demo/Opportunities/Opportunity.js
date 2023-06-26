@@ -15,10 +15,10 @@ import classes from "./Opportunities.module.css";
 const Opportunity = () => {
   const data = [
     {
-      title: "Krabi Beach Apartment",
+      title: "Naibut Beach",
       price: 200000000,
-      type: "Apartment",
-      roi: 45.63,
+      type: "Residential",
+      roi: 63,
       img1: "/D1.jpg",
       img2: "/D2.jpg",
       img3: "/D6.jpg",
@@ -33,8 +33,8 @@ const Opportunity = () => {
     {
       title: "Land at Lekki",
       price: 340000000,
-      type: "Apartment",
-      roi: 25.31,
+      type: "Residential",
+      roi: 25,
       img1: "/D6.jpg",
       img2: "/D6.jpg",
       img3: "/D6.jpg",

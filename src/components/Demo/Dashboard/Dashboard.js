@@ -30,7 +30,7 @@ const DemoDashboard = () => {
           <div className={classes["icon-container"]}>
             <div style={{ textAlign: "center" }}>
               <div className={classes["table-cell"]}>
-                <i className="">icon</i>
+                {/* <i className="bi bi-currency-dollar"></i> */}
               </div>
               <div
                 className={classes["table-cell"]}
@@ -56,7 +56,7 @@ const DemoDashboard = () => {
           <div className={classes["icon-container"]}>
             <div style={{ textAlign: "center" }}>
               <div className={classes["table-cell"]}>
-                <i className="">icon</i>
+                {/* <i className="">icon</i> */}
               </div>
               <div
                 className={classes["table-cell"]}
@@ -75,7 +75,7 @@ const DemoDashboard = () => {
           <div className={classes["icon-container"]}>
             <div style={{ textAlign: "center" }}>
               <div className={classes["table-cell"]}>
-                <i className="">icon</i>
+                {/* <i className="">icon</i> */}
               </div>
               <div
                 className={classes["table-cell"]}
@@ -94,7 +94,7 @@ const DemoDashboard = () => {
           <div className={classes["icon-container"]}>
             <div style={{ textAlign: "center" }}>
               <div className={classes["table-cell"]}>
-                <i className="">icon</i>
+                {/* <i className="">icon</i> */}
               </div>
               <div
                 className={classes["table-cell"]}
@@ -158,10 +158,10 @@ const DemoDashboard = () => {
             <Card.Title style={{ textAlign: "center" }}>dt.title</Card.Title>
             <Card.Text>
               <div className={classes.spacing}>
-                <strong>Price in NGN</strong>: <span>NGN.format(dt.price)</span>
+                <strong>Price in NGN</strong>: <span>2,000,000</span>
               </div>
               <div className={classes.spacing}>
-                <strong>Property Type</strong>: <span>dt.type</span>
+                <strong>Property Type</strong>: <span>Apartment</span>
               </div>
               <div className={classes.spacing}>
                 <strong>Projected ROI Transfer</strong>{" "}
@@ -171,7 +171,7 @@ const DemoDashboard = () => {
                     className="bi bi-question-circle-fill"
                   ></i>
                 </OverlayTrigger>{" "}
-                : <span>dt.roi%</span>
+                : <span>20.56%</span>
               </div>
             </Card.Text>
             <div className={classes["button-container"]}>

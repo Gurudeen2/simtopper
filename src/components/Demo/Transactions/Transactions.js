@@ -22,7 +22,7 @@ const Transaction = () => {
           <h3>Transaction</h3>
         </Col>
         <Col sm="9" style={{ textAlign: "right" }}>
-          <Button as="input" type="button" value="USDT" />{" "}
+          <Button as="input" type="button" value="USD" />{" "}
           <Button as="input" type="submit" value="NGN" />{" "}
           <Button as="input" type="submit" value="Outflows" />{" "}
           <Button as="input" type="button" value="Earning" />{" "}
@@ -43,7 +43,6 @@ const Transaction = () => {
             paddingRight: "2rem",
           }}
         >
-          
           <div>
             <Table responsive="sm" striped>
               <thead>
@@ -59,9 +58,9 @@ const Transaction = () => {
                 <tr>
                   <td>2019-12-25 17:47</td>
                   <td>Transfer</td>
-                  <td>1.60</td>
-                  <td>USDT</td>
-                  <td>Obtained from 32 REAL transferred</td>
+                  <td>26,000</td>
+                  <td>NGN</td>
+                  <td>Obtained from 32 EPT transferred</td>
                 </tr>
               </tbody>
             </Table>

@@ -67,14 +67,14 @@ const Footer = () => (
       </div>
     </div>
     <hr style={{ color: "#fff" }} />
-    <div
+    {/* <div
       className="footer-copyright text-center py-3"
       style={{ fontSize: "14px" }}
     >
       The services included in this site are provided by EsusuProp Trade
       Platform Ltd, a company registered in St Vincent and the Grenadines under
       Licence number 24762 IBC 2018
-    </div>
+    </div> */}
   </footer>
 );
 

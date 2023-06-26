@@ -25,7 +25,7 @@ const Deposit = () => {
           >
             <Card.Body style={{ textAlign: "justify" }}>
               <Card.Title>
-                <i className="">icon</i> USDT
+                <i className="">icon</i> USD
               </Card.Title>
               <Card.Text>
                 <div className={classes["padding-div"]}>
@@ -35,11 +35,10 @@ const Deposit = () => {
                     style={{ width: "100%" }}
                   >
                     {" "}
-                    Generate Address
+                    Make Payment
                   </a>
                   <p className={classes["padding-p"]}>
-                    * Click on the button to generate your address where you can
-                    send USDT to the platform.
+                    * Click on the button to make payment in USD.
                   </p>
                 </div>
               </Card.Text>
@@ -90,6 +89,7 @@ const Deposit = () => {
           <h3>Withdrawal</h3>
         </Col>
       </Row>
+
       <Row>
         <Col>
           <Card
@@ -104,7 +104,7 @@ const Deposit = () => {
               </Card.Title>
 
               <Card.Text>
-                <div
+                {/* <div
                   className="alert alert-warning"
                   role="alert"
                   style={{ fontSize: "14px" }}
@@ -113,18 +113,18 @@ const Deposit = () => {
                   from <strong>Ethereum network enabled wallet</strong>. USDT
                   sent to non-compatible addresses may be non-retrievable by the
                   recipient.
-                </div>
+                </div> */}
                 <Form>
                   <Row className="mb-3">
                     <Col sm="4">
-                      <Form.Group controlId="amount">
+                      <Form.Group controlId="Account Number">
                         <Form.Label column sm="4" className="text-left">
-                          Amount
+                          Account Number
                         </Form.Label>
                         <Col sm="8">
                           <Form.Control
                             type="text"
-                            name="amount"
+                            name="Account Number"
                             placeholder="0"
                             // ref={register}
                           />
@@ -133,25 +133,38 @@ const Deposit = () => {
                     </Col>
 
                     <Col sm="8">
-                      <Form.Group controlId="walletaddress">
+                      <Form.Group controlId="bankname">
                         <Form.Label column sm="4" className="text-left">
-                          Wallet Address
+                          Account Name
                         </Form.Label>
                         <Col sm="8">
                           <Form.Control
                             type="text"
                             name="walletaddress"
                             // ref={register}
-                            placeholder="0x9AE533846bDae9BD18c937681D4Fb76791aE3A72"
                           />
                         </Col>
                       </Form.Group>
                     </Col>
-                    {/* <Col>
-                      <a href="/" className="btn btn-primary">
-                        Send
-                      </a>
-                    </Col> */}
+                  </Row>
+                  <Row className="mb-3">
+                    <Col sm="4">
+                      <Form.Group controlId="Bank Name">
+                        <Form.Label column sm="4" className="text-left">
+                          Bank Name
+                        </Form.Label>
+                        <Col sm="8">
+                          <Form.Control
+                            type="text"
+                            name="Bank Name"
+                            placeholder="0"
+                            // ref={register}
+                          />
+                        </Col>
+                      </Form.Group>
+                    </Col>
+
+                    <Col sm="8"></Col>
                   </Row>
                   <Row>
                     <Col>

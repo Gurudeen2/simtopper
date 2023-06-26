@@ -57,7 +57,7 @@ function Login() {
     //     setDescription(err.response.data);
     //     setModalShow(true);
     //   });
-    navigate("/account/demo");
+    navigate("/account/demo/dashboard");
   };
 
   return (
