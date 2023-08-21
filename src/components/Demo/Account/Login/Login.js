@@ -105,7 +105,7 @@ function Login() {
                 <Form.Control
                   name="phone"
                   type="text"
-                  placeholder="Enter Phone Number"
+                  placeholder="Enter Email"
                   required
                   ref={phone}
                 />

@@ -13,9 +13,13 @@ const BuyData = () => {
 
   const DataOptions = [
     { value: "200MB - 14Days", key: "1", amount: "50" },
-    { value: "GLO", key: "2" },
-    { value: "AIRTEL", key: "3" },
-    { value: "9MOBILE", key: "4" },
+    { value: "200MB - 14Days", key: "1", amount: "50" },
+    { value: "200MB - 14Days", key: "1", amount: "50" },
+    { value: "200MB - 14Days", key: "1", amount: "50" },
+    { value: "200MB - 14Days", key: "1", amount: "50" },
+    { value: "200MB - 14Days", key: "1", amount: "50" },
+    { value: "200MB - 14Days", key: "1", amount: "50" },
+   
   ];
 
   const networkHandler = (e) => {
@@ -29,7 +33,7 @@ const BuyData = () => {
   return (
     <Container>
       <Row style={{ width: "60%" }}>
-        <h4>Buy Airtime </h4>
+        <h4>Buy Databundle </h4>
 
         <Form>
           <Col>

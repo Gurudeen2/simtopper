@@ -122,7 +122,7 @@ const DemoDashboard = () => {
               <Card.Text>
                 Investment by property
                 <br />
-                Total invested 0 USDT
+                Total invested 0 NGN
               </Card.Text>
             </Card.Body>
           </Card>
@@ -155,13 +155,15 @@ const DemoDashboard = () => {
         >
           <Card.Img src="/D2.jpg" as={Image} variant="top" fluid={true} />
           <Card.Body>
-            <Card.Title style={{ textAlign: "center" }}>dt.title</Card.Title>
+            <Card.Title style={{ textAlign: "center" }}>
+              Naibut Beach
+            </Card.Title>
             <Card.Text>
               <div className={classes.spacing}>
-                <strong>Price in NGN</strong>: <span>2,000,000</span>
+                <strong>Price in NGN</strong>: <span> ₦200,000,000.00</span>
               </div>
               <div className={classes.spacing}>
-                <strong>Property Type</strong>: <span>Apartment</span>
+                <strong>Property Type</strong>: <span>Residential</span>
               </div>
               <div className={classes.spacing}>
                 <strong>Projected ROI Transfer</strong>{" "}
@@ -171,7 +173,7 @@ const DemoDashboard = () => {
                     className="bi bi-question-circle-fill"
                   ></i>
                 </OverlayTrigger>{" "}
-                : <span>20.56%</span>
+                : <span>63%</span>
               </div>
             </Card.Text>
             <div className={classes["button-container"]}>

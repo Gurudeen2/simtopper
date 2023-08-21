@@ -1,23 +1,58 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import classes from "./About.module.css";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className={classes["about-bg"]}>
-      <Container>
-        <Row>
-          <Col style={{ padding: "4rem", color: "#fff" }}>
-            <h4>
-              Welcome to Esusu Prop Trade, where we revolutionize the world of
-              real estate investment with a touch of innovation and a team of
-              exceptional professionals.
-            </h4>
-            {/* <p>Professionals bringing the new way of Real Estate investment</p> */}
-          </Col>
-          <Col></Col>
-        </Row>
-      </Container>
+    <>
+      <Navbar className={classes["nav-bar"]}>
+        <Container>
+          <Navbar.Brand href="/">
+            {/* <img src="" alt="logo" width="30%" className={classes.img} /> */}
+            <h2>EsusuProp Trade</h2>
+          </Navbar.Brand>
+
+          <Nav className="justify-content-end">
+            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="/howitworks">How It Works</Nav.Link>
+            <Nav.Link href="#home">FAQ</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav>
+
+          <Nav className="justify-content-end">
+            <Link
+              to="/demoreg"
+              className="btn btn-outline-secondary"
+              style={{
+                color: "#000",
+                background: "#fff",
+                border: "1px solid black",
+              }}
+            >
+              Signup
+            </Link>
+            {"  "}
+            <Link to="/demologin" className="btn btn-primary">
+              Login
+            </Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <div className={classes["about-bg"]}>
+        <Container>
+          <Row>
+            <Col style={{ padding: "4rem", color: "#fff" }}>
+              <h4>Welcome to Esusu Prop Trade</h4>
+              <p>
+                where we revolutionize the world of real estate investment with
+                a touch of innovation and a team of exceptional professionals.
+              </p>
+            </Col>
+            <Col></Col>
+          </Row>
+        </Container>
+      </div>
 
       <div style={{ background: "#f8f8f8" }}>
         <Container
@@ -84,7 +119,7 @@ const About = () => {
               </p>
               <p>
                 {" "}
-                Value Proposition: Empowering global real estate investors with
+                Audit Transaction: Empowering global real estate investors with
                 innovative technology and accessible crowdfunding for
                 profitable, secure, and transparent investments.
               </p>
@@ -92,7 +127,7 @@ const About = () => {
           </Row>
         </Container>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -68,12 +68,12 @@ const NetworkProvider = () => {
 
   return (
     <>
-      <Container>
-        <Row>
-          <Col md="10" sm="10" xs="8">
+      <Container style={{ paddingTop: "1.5rem" }}>
+        <Row style={{ paddingBottom: "1rem" }}>
+          <Col>
             <h3>Network</h3>
           </Col>
-          <Col md="2" sm="2" xs="4">
+          <Col style={{ textAlign: "right" }}>
             <Button
               onClick={handleShow}
               style={{

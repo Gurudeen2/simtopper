@@ -100,7 +100,9 @@ const SingleOpport = () => {
             }}
           >
             <Card.Body>
-              <Card.Title style={{ textAlign: "center" }}>Naibut Beach</Card.Title>
+              <Card.Title style={{ textAlign: "center" }}>
+                Naibut Beach
+              </Card.Title>
               <Card.Text>
                 <div className={classes.spacing}>
                   <strong>Price in NGN</strong>: <span>price</span>
@@ -207,27 +209,20 @@ const SingleOpport = () => {
               </Card.Title>
               <Card.Text>
                 <p>
-                  Klong Muang Beach, Krabi, Thailand. Home to pristine beaches,
-                  a wide range of hotels, beach bars, a popular area for
-                  filmmakers and diving enthusiasts. It’s known as a higher-end
-                  location with the likes of Ritz-Carlton Reserve Hotel, Dusit
-                  Thani, Sofitel, Elements Krabi and many more along this
-                  stretch of beach. Situated next to Au Nang and Krabi Town,
-                  which are a short drive away. These tourist hot spots offer a
-                  wide range of food, shopping and nightlife. Klong Muang is a
-                  more relaxed and private location, for those looking to escape
-                  but still, be close to all the action and fast access from
-                  Bangkok and international locations.
+                  Naibut Beach, Lagos, Nigeria, offers a perfect blend of
+                  pristine beaches, hotels, beach bars, and is a favorite spot
+                  for filmmakers and diving enthusiasts. It boasts renowned
+                  establishments such as Rayton Reserve Hotel, Mustle, Sontel,
+                  and Elements Lagos. Located near Lekki and Lagos Town, it
+                  provides easy access to a variety of dining, shopping, and
+                  nightlife options. Mustle offers a tranquil and private escape
+                  while remaining close to the vibrant city life.
+                  <br />
+                  Additionally, it is conveniently located just 40 minutes away
+                  from Lagos Airport and offers a one-hour flight to Abuja,
+                  making it accessible to domestic and international travelers.
                 </p>
-                <ul
-                  style={{
-                    listStyleType: "disc",
-                  }}
-                >
-                  <li>40 minutes to Krabi Airport</li>
-                  <li>1 hour flight to Bangkok</li>
-                  <li>2 hour ferry to Phuket</li>
-                </ul>
+               
               </Card.Text>
             </Card.Body>
           </Card>

@@ -15,10 +15,11 @@ import { Link } from "react-router-dom";
 const Homepage = () => {
   const data = [
     {
-      title: "Krabi Beach Apartment",
+      title: "Naibut Beach",
       price: 200000000,
-      type: "Apartment",
-      roi: 45.63,
+      type: "Residential",
+      roi: 63,
+      location: "Lagos",
       img1: "/D1.jpg",
       img2: "/D2.jpg",
       img3: "/D6.jpg",
@@ -29,34 +30,16 @@ const Homepage = () => {
           img3: "/D6.jpg",
         },
       ],
-      location: "Krabi (Thailand)",
     },
     {
-      title: "Sea-view Condominium",
+      title: "Land at Lekki",
       price: 340000000,
-      type: "Apartment",
-      roi: 25.31,
+      type: "Residential",
+      roi: 25,
+      location: "Lagos",
       img1: "/D6.jpg",
       img2: "/D6.jpg",
       img3: "/D6.jpg",
-      location: "Upper Sukhumvit (Bangkok)",
-      img: [
-        {
-          img1: "/D6.jpg",
-          img2: "/D6.jpg",
-          img3: "/D6.jpg",
-        },
-      ],
-    },
-    {
-      title: "Luxury apartments in Bangkok",
-      price: 580000000,
-      type: "Apartment",
-      roi: 20.67,
-      img1: "/D6.jpg",
-      img2: "/D6.jpg",
-      img3: "/D6.jpg",
-      location: "Puket Town (Thailand)",
       img: [
         {
           img1: "/D6.jpg",
@@ -79,7 +62,7 @@ const Homepage = () => {
 
           <Nav className="justify-content-end">
             <Nav.Link href="/about">About Us</Nav.Link>
-            <Nav.Link href="#home">How It Works</Nav.Link>
+            <Nav.Link href="/howitworks">How It Works</Nav.Link>
             <Nav.Link href="#home">FAQ</Nav.Link>
             <Nav.Link href="/contact">Contact</Nav.Link>
           </Nav>
@@ -110,10 +93,10 @@ const Homepage = () => {
         <Container>
           <Row>
             <Col style={{ padding: "4rem", color: "#fff" }}>
-              <h4>Next-Generation Real Estate Crowdfunding</h4>
+              <h4>Empowering Global Real Estate</h4>
               <p>
-                Participate in global investments backed by Real Estate and
-                secured by Blockchain technologies
+                Investors with innovative technology and accessible crowdfunding
+                for profitable, secure, and transparent investments.
               </p>
               <div>
                 <Button href="/demoreg">Signup</Button>
@@ -255,11 +238,14 @@ const Homepage = () => {
                         </div>
                         <div className={classes.spacing}>
                           <strong>Location </strong> :{" "}
-                          <span>{dt.location}%</span>
+                          <span>{dt.location}</span>
                         </div>
                       </Card.Text>
                       <div className={classes["button-container"]}>
-                        <Link className={`btn btn-primary ${classes.button}`}>
+                        <Link
+                          className={`btn btn-primary ${classes.button}`}
+                          to="/account/demo/opportunity"
+                        >
                           Funded
                         </Link>
                       </div>
@@ -321,49 +307,6 @@ const Homepage = () => {
                       }}
                     />
                     <h5 className={classes.h5}>Investments Liquidity</h5>
-                  </div>
-                </Col>
-              </Row>
-              <Row style={{ paddingTop: "1rem" }}>
-                <Col>
-                  <div className={`p-3 ${classes.card}`}>
-                    <img
-                      src={require("../../../assets/images/advantages-icon-4.png")}
-                      alt="1"
-                      style={{
-                        paddingBottom: "1rem",
-                      }}
-                    />
-                    <h5 className={classes.h5}>Cross-border investments</h5>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={`p-3 ${classes.card}`}>
-                    <img
-                      src={require("../../../assets/images/advantages-icon-5.png")}
-                      alt="1"
-                      style={{
-                        paddingBottom: "1rem",
-                      }}
-                    />
-                    <h5 className={classes.h5}>
-                      Trade, hold or liquidate tokens as desired on the platform
-                      or security exchange
-                    </h5>
-                  </div>
-                </Col>
-                <Col>
-                  <div className={`p-3 ${classes.card}`}>
-                    <img
-                      src={require("../../../assets/images/advantages-icon-6.png")}
-                      alt="1"
-                      style={{
-                        paddingBottom: "1rem",
-                      }}
-                    />
-                    <h5 className={classes.h5}>
-                      Audited blockchain transactions
-                    </h5>
                   </div>
                 </Col>
               </Row>

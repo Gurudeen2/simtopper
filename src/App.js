@@ -10,6 +10,7 @@ import DemoLogin from "./components/Demo/Account/Login/Login";
 import Preloader from "./components/UI/Preloader/Preloader";
 import About from "./components/Demo/Pages/About";
 import Homepage from "./components/Demo/Homepage/Homepage";
+import HowItWorks from "./components/Demo/Pages/HowItWorks";
 
 const Dashboard = React.lazy(() => import("./components/User/Admin/Dashboard"));
 const Register = React.lazy(() => import("./components/User/Register"));
@@ -22,8 +23,6 @@ function App() {
   const authCtx = useContext(AuthContext);
   return (
     <Suspense fallback={<Preloader />}>
-     
-      
       {/* <LandingPage /> */}
       <Routes>
         {/* {authCtx.isLoggedIn ? */}
@@ -31,16 +30,16 @@ function App() {
         <Route path="/" exact Component={Homepage} />
         {/* : } */}
 
+        {/* <Route path="/howitworks" Component={HowItWorks} />
         <Route path="/demoreg" Component={DemoReg} />
-        <Route path="/demologin" Component={DemoLogin} />
+        <Route path="/about" Component={About} />
+        <Route path="/demologin" Component={DemoLogin} /> */}
         <Route path="/register" Component={Register} />
         <Route path="/login" Component={Login} />
-        <Route path="/about" Component={About} />
         <Route path="/changepassword" Component={ChangePassword} />
       </Routes>
       <Footer />
     </Suspense>
- 
   );
 }
 

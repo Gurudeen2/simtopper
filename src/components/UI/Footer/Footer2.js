@@ -9,7 +9,7 @@ const Footer = () => (
     <div className="container-fluid text-center text-md-left">
       <div className="row">
         <div className="col-md-6 mt-md-0 mt-3">
-          <h5 className="text-uppercase">EsusuProp Trade Platform Ltd</h5>
+          <h5 className="text-uppercase">SimTopper</h5>
         </div>
 
         <hr className="clearfix w-100 d-md-none pb-0" />
@@ -53,7 +53,7 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="#!" className={classes.link}>
+              <a href="/howitworks" className={classes.link}>
                 How it works
               </a>
             </li>

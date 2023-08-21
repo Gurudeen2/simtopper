@@ -1,27 +1,50 @@
 import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import classes from "./About.module.css";
+import { Link } from "react-router-dom";
 
 const HowItWorks = () => {
   return (
-    <div className={classes["about-bg"]}>
-      <Container>
-        <Row>
-          <Col style={{ padding: "4rem", color: "#fff" }}>
-            <h4>
-              Blockreal is proud to employ professionals with a successful track
-              record in their respective fields.
-            </h4>
-            <p>Professionals bringing the new way of Real Estate investment</p>
-          </Col>
-          <Col></Col>
-        </Row>
-      </Container>
+    <>
+      <Navbar className={classes["nav-bar"]}>
+        <Container>
+          <Navbar.Brand href="/">
+            {/* <img src="" alt="logo" width="30%" className={classes.img} /> */}
+            <h2>EsusuProp Trade</h2>
+          </Navbar.Brand>
+
+          <Nav className="justify-content-end">
+            <Nav.Link href="/about">About Us</Nav.Link>
+            <Nav.Link href="/howitworks">How It Works</Nav.Link>
+            <Nav.Link href="#home">FAQ</Nav.Link>
+            <Nav.Link href="/contact">Contact</Nav.Link>
+          </Nav>
+
+          <Nav className="justify-content-end">
+            <Link
+              to="/demoreg"
+              className="btn btn-outline-secondary"
+              style={{
+                color: "#000",
+                background: "#fff",
+                border: "1px solid black",
+              }}
+            >
+              Signup
+            </Link>
+            {"  "}
+            <Link to="/demologin" className="btn btn-primary">
+              Login
+            </Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
       <div style={{ background: "#f8f8f8" }}>
         <Container
           style={{
             paddingTop: "2rem",
-            paddingBottom: "2rem",
+            paddingBottom: "14rem",
           }}
         >
           <Row>
@@ -50,7 +73,7 @@ const HowItWorks = () => {
           </Row>
         </Container>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -173,25 +173,6 @@ const Deposit = () => {
                       </div>
                     </Col>
                   </Row>
-                  <div
-                    style={{
-                      display: "block",
-                      marginTop: "10px",
-                      marginBottom: "10px",
-                      color: "#737373",
-                      textAlign: "right",
-                      fontSize: "10px",
-                    }}
-                  >
-                    <p>
-                      * The minimum withdrawal is 50 USDT
-                      <br />
-                      * For withdrawals in USDT, we apply a fee of 3 USDT
-                      <br />
-                      * You can only make one withdrawal request at a time
-                      <br />* The withdrawal process can take up to 72 hours
-                    </p>
-                  </div>
                 </Form>
               </Card.Text>
             </Card.Body>
