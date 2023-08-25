@@ -6,24 +6,13 @@ import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
 
-const NetworkProvider = () => {
+const DataPrice = () => {
   const [data, setData_] = useState([]);
 
   const [show, setShow_] = useState(false);
 
   const handleClose = () => setShow_(false);
   const handleShow = () => setShow_(true);
-
-  const deleteData = (row) => {
-    axios
-      .delete(baseUrl + "deletenetwork/" + row.providerID)
-      .then((res) => {
-        console.log("delete", res);
-        alert(`${row.providerName} Deleted!!`);
-        fetchData();
-      })
-      .catch((err) => alert(err));
-  };
   // Create table headers consisting of 4 columns.
   const header = [
     {
@@ -31,13 +20,18 @@ const NetworkProvider = () => {
       title: "",
     },
     {
-      prop: "providerID",
-      title: "ID",
+      prop: "networkName",
+      title: "Network Name",
       isFilterable: true,
     },
     {
-      title: "Name",
-      prop: "providerName",
+      title: "Amount",
+      prop: "dataAmount",
+      isFilterable: true,
+    },
+    {
+      title: "Duration",
+      prop: "dataDuration",
       isFilterable: true,
     },
     {
@@ -48,7 +42,10 @@ const NetworkProvider = () => {
           <Button
             variant="outline-primary"
             size="sm"
-            onClick={() => deleteData(row)}
+            onClick={() => {
+              axios.delete(baseUrl + "deletenetwork/" + row.providerID);
+              alert(`${row.providerID}'s score is ${row.providerName}`);
+            }}
           >
             Delete
           </Button>
@@ -57,29 +54,29 @@ const NetworkProvider = () => {
     },
   ];
 
-  const fetchData = useCallback(async () => {
-    await axios
-      .get(baseUrl + "getnetwork/")
-      .then((res) => {
-        let datas = res.data.map((dt) => dt.fields);
-        setData_(datas);
-        console.log("res fetch", datas);
-      })
-      .catch((err) => {
-        alert(err);
-      });
-  }, []);
+  // const fetchData = useCallback(async () => {
+  //   await axios
+  //     .get(baseUrl + "getnetwork/")
+  //     .then((res) => {
+  //       let datas = res.data.map((dt) => dt.fields);
+  //       setData_(datas);
+  //       console.log("res", datas);
+  //     })
+  //     .catch((err) => {
+  //       alert(err);
+  //     });
+  // }, []);
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
+  // useEffect(() => {
+  //   fetchData();
+  // }, [fetchData]);
 
   return (
     <>
       <Container style={{ paddingTop: "1.5rem" }}>
         <Row style={{ paddingBottom: "1rem" }}>
           <Col>
-            <h3>Network</h3>
+            <h3>Data Price</h3>
           </Col>
           <Col style={{ textAlign: "right" }}>
             <Button
@@ -90,7 +87,7 @@ const NetworkProvider = () => {
                 borderRadius: "0px",
               }}
             >
-              Add Network
+              Add Data Price
             </Button>
           </Col>
         </Row>
@@ -105,4 +102,4 @@ const NetworkProvider = () => {
     </>
   );
 };
-export default NetworkProvider;
+export default DataPrice;

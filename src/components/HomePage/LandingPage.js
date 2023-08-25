@@ -7,10 +7,12 @@ import PriceTag from "../UI/Pages/PriceTag";
 import APIDocPage from "../UI/Pages/APIDocPage";
 import UserTestimonies from "../UI/Pages/UserTestimonies";
 import Partner from "../UI/Pages/Partner";
+import Footer from "../UI/Footer/Footer2";
+import { Container } from "react-bootstrap";
 
 function LandingPage() {
   return (
-    <>
+    <Container fluid>
       <Banner />
       <Home />
       <Reason />
@@ -19,7 +21,8 @@ function LandingPage() {
       <APIDocPage />
       <UserTestimonies />
       <Partner />
-    </>
+      <Footer/>
+    </Container>
   );
 }
 

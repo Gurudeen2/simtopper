@@ -10,7 +10,7 @@ const Sidebar = () => {
       className={`border-end sidenav ${classes.sidebar}`}
       id="sidebar-wrapper"
     >
-      <div className="sidebar-heading border-bottom " >
+      <div className="sidebar-heading border-bottom ">
         <Link to="/">
           {/* <img
               alt="Alt content"
@@ -21,48 +21,35 @@ const Sidebar = () => {
       <PerfectScrollbar className="sidebar-items">
         <ul className="list-unstyled ps-0">
           <li className="mb-1">
-            <Link tag="a" className={classes.link} to="/account/demo/dashboard">
+            <Link tag="a" className={classes.link} to="/account/dashboard">
               <i className="fa fa-dashboard"></i> Dashboard
             </Link>
           </li>
 
           <li className="border-top my-3"></li>
 
-          <span style={{ color: "#fff", fontSize: "14px" }}>Funding</span>
+          <span style={{ color: "#fff", fontSize: "14px" }}>Recharge</span>
           <li className="mb-1">
-            <Link tag="a" className={classes.link} to="/account/demo/deposit">
-              <i className="fa fa-file-o"></i> Deposit
+            <Link tag="a" className={classes.link} to="/account/airtime">
+              <i className="fa fa-file-o"></i> Airtime
             </Link>
           </li>
           <li className="mb-1">
-            <Link
-              tag="a"
-              className={classes.link}
-              to="/account/demo/deposit#withdraw"
-            >
-              <i className="fa fa-file-o"></i> Withdrawal
+            <Link tag="a" className={classes.link} to="/account/data">
+              <i className="fa fa-file-o"></i> Databundle
             </Link>
           </li>
           <li className="border-top my-3"></li>
-          <span style={{ color: "#fff", fontSize: "14px" }}>Properties</span>
+          <span style={{ color: "#fff", fontSize: "14px" }}>Config</span>
           <li className="mb-1">
-            <Link
-              tag="a"
-              className={classes.link}
-              to="/account/demo/opportunity"
-            >
-              <i className="fa fa-text-width" aria-hidden="true"></i>My
-              Properties
+            <Link tag="a" className={classes.link} to="/account/addnetwork">
+              <i className="fa fa-text-width" aria-hidden="true"></i> Network
             </Link>
           </li>
           <li className="mb-1">
-            <Link
-              tag="a"
-              className={classes.link}
-              to="/account/demo/opportunity"
-            >
+            <Link tag="a" className={classes.link} to="/account/datapricing">
               <i className="fa fa-text-width" aria-hidden="true"></i>
-              Opportunities
+              Data Price
             </Link>
           </li>
           <li className="border-top my-3"></li>

@@ -14,10 +14,16 @@ const Banner = () => {
           </p>
 
           <div>
-            <Button variant="danger" className={classes.button}>
+            <Button
+              variant="danger"
+              className={classes.button}
+              href="/register"
+            >
               REGISTER
             </Button>
-            <Button variant="outline-info">LOGIN</Button>
+            <Button variant="outline-info" href="/login">
+              LOGIN
+            </Button>
           </div>
         </Col>
       </Row>

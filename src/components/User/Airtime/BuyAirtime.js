@@ -86,8 +86,8 @@ const BuyAirtime = () => {
         onHide={() => setModalShow(false)}
         description={description}
       />
-      
-      <Container>
+
+      <Container style={{paddingTop:"1.5rem"}}>
         <Row style={{ width: "60%" }}>
           <h4>Buy Airtime </h4>
 
@@ -165,7 +165,7 @@ const BuyAirtime = () => {
               </Form.Group>
             </Col>
 
-            <Col>
+            <Col style={{ textAlign: "right" }}>
               <Button variant="primary" type="submit">
                 Buy Now
               </Button>

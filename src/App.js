@@ -27,7 +27,7 @@ function App() {
       <Routes>
         {/* {authCtx.isLoggedIn ? */}
         <Route path="/account/*" exact Component={Dashboard} />
-        <Route path="/" exact Component={Homepage} />
+        <Route path="/" exact Component={LandingPage} />
         {/* : } */}
 
         {/* <Route path="/howitworks" Component={HowItWorks} />
@@ -38,7 +38,7 @@ function App() {
         <Route path="/login" Component={Login} />
         <Route path="/changepassword" Component={ChangePassword} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </Suspense>
   );
 }

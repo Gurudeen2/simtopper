@@ -6,6 +6,7 @@ import BuyAirtime from "../Airtime/BuyAirtime";
 import NetworkProvider from "./Network/Network";
 import NavHeader from "../../UI/Header/Header";
 import BuyData from "../Data/BuyData";
+import DataPrice from "./DataPricing/DataPrice";
 
 const Dashboard = () => {
   return (
@@ -37,6 +38,7 @@ const Dashboard = () => {
             <Route path="/airtime" Component={BuyAirtime} />
             <Route path="/addnetwork" Component={NetworkProvider} />
             <Route path="/data" Component={BuyData} />
+            <Route path="/datapricing" Component={DataPrice} />
           </Routes>
         </div>
       </div>

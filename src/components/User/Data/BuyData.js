@@ -19,7 +19,6 @@ const BuyData = () => {
     { value: "200MB - 14Days", key: "1", amount: "50" },
     { value: "200MB - 14Days", key: "1", amount: "50" },
     { value: "200MB - 14Days", key: "1", amount: "50" },
-   
   ];
 
   const networkHandler = (e) => {
@@ -29,10 +28,10 @@ const BuyData = () => {
       return;
     }
   };
-  
+
   return (
-    <Container>
-      <Row style={{ width: "60%" }}>
+    <Container style={{ paddingTop: "1.5rem" }}>
+      <Row style={{ width: "70%" }}>
         <h4>Buy Databundle </h4>
 
         <Form>
@@ -88,7 +87,7 @@ const BuyData = () => {
             </Form.Group>
           </Col>
 
-          <Col>
+          <Col style={{textAlign:"right"}}>
             <Button variant="primary" type="submit">
               Buy Now
             </Button>

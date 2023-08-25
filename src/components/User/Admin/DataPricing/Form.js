@@ -25,10 +25,7 @@ function FormNetwork(props) {
     }
   };
 
-   
-
   const onSubmitHandler = () => {
-    props.onHide();
     const data = {
       providerID: providerId.current.value,
       providerName: providerName.current.value,
@@ -41,6 +38,7 @@ function FormNetwork(props) {
       .catch((err) => {
         alert(err);
       });
+    props.onHide();
   };
 
   return (
@@ -54,7 +52,7 @@ function FormNetwork(props) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-            Add Network
+            Add Data Price
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -63,37 +61,45 @@ function FormNetwork(props) {
               <Form onSubmit={methods.handleSubmit(onSubmitHandler)}>
                 <Col>
                   <Form.Group className="mb-3">
-                    <Form.Label>Network ID</Form.Label>
+                    <Form.Label>Network Name</Form.Label>
+                    <Form.Select aria-label="Default select example" required>
+                      <option>Select Network</option>
+                      <option value="1">MTN</option>
+                      <option value="2">GLO</option>
+                      <option value="3">AIRTEL</option>
+                    </Form.Select>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Data Amount</Form.Label>
+                    <Form.Select aria-label="Default select example" required>
+                      <option>Select Amount</option>
+                      <option value="1">500MB</option>
+                      <option value="2">1GB</option>
+                      <option value="3">2GB</option>
+                    </Form.Select>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Data Duration</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Network ID"
-                      name="provideID"
-                      ref={providerId}
-                      onChange={onChangeHandler}
-                      required
+                      name="Duration"
+                      value="30 Days"
+                      // ref={providerName}
+                      readOnly
                     />
-                    {error && (
-                      <span
-                        style={{
-                          color: "red",
-                          fontStyle: "italic",
-                          fontSize: "0.8rem",
-                        }}
-                      >
-                        Enter Number Only
-                      </span>
-                    )}
                   </Form.Group>
                 </Col>
 
                 <Col>
                   <Form.Group className="mb-3">
-                    <Form.Label>Network Name</Form.Label>
+                    <Form.Label>Price</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Network Name"
-                      name="networkName"
-                      ref={providerName}
+                      name="dataPrice"
                       required
                     />
                   </Form.Group>
