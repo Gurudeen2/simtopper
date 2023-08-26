@@ -25,10 +25,7 @@ function FormNetwork(props) {
     }
   };
 
-   
-
   const onSubmitHandler = () => {
-    props.onHide();
     const data = {
       providerID: providerId.current.value,
       providerName: providerName.current.value,
@@ -41,6 +38,7 @@ function FormNetwork(props) {
       .catch((err) => {
         alert(err);
       });
+    props.onHide();
   };
 
   return (

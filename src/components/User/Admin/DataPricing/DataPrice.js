@@ -20,18 +20,23 @@ const DataPrice = () => {
       title: "",
     },
     {
-      prop: "networkName",
+      prop: "network",
       title: "Network Name",
       isFilterable: true,
     },
     {
       title: "Amount",
-      prop: "dataAmount",
+      prop: "amount",
       isFilterable: true,
     },
     {
       title: "Duration",
-      prop: "dataDuration",
+      prop: "duration",
+      isFilterable: true,
+    },
+    {
+      title: "Price in Naira",
+      prop: "price",
       isFilterable: true,
     },
     {
@@ -54,22 +59,29 @@ const DataPrice = () => {
     },
   ];
 
-  // const fetchData = useCallback(async () => {
-  //   await axios
-  //     .get(baseUrl + "getnetwork/")
-  //     .then((res) => {
-  //       let datas = res.data.map((dt) => dt.fields);
-  //       setData_(datas);
-  //       console.log("res", datas);
-  //     })
-  //     .catch((err) => {
-  //       alert(err);
-  //     });
-  // }, []);
+  const fetchData = useCallback(async () => {
+    await axios
+      .get(baseUrl + "getdataprice/")
+      .then((res) => {
+        let datas = res.data.map((dt) => {
+          
+            dt.network ="MTN"
+          return  {
+            ...dt,
+          }
+        
+        });
+        setData_(res.data);
+        console.log("res", datas);
+      })
+      .catch((err) => {
+        alert(err);
+      });
+  }, []);
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, [fetchData]);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   return (
     <>

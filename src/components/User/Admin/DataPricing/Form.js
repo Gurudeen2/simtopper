@@ -7,33 +7,28 @@ import { baseUrl } from "../../../../BaseUrl";
 function FormNetwork(props) {
   const methods = useForm();
 
-  const providerId = useRef();
-  const providerName = useRef();
-  const [error, setError_] = useState(false);
-  // const [modalShow, setModalShow] = useState(false);
-  // const [description, setDescription] = useState();
+  const network = useRef();
+  const duration = useRef();
+  const price = useRef();
+  const amount = useRef();
 
-  const onChangeHandler = (e) => {
-    const re = /^[0-9\b]+$/;
-    const id = re.test(e.target.value.replace(/\s/g, ""));
-    if (id) {
-      providerId.current.value = e.target.value.replace(/\s/g, "");
-      setError_(false);
-    } else {
-      providerId.current.value = "";
-      setError_(true);
-    }
-  };
+
+ 
 
   const onSubmitHandler = () => {
     const data = {
-      providerID: providerId.current.value,
-      providerName: providerName.current.value,
+
+      network: network.current.value,
+      amount: amount.current.value,
+      duration: duration.current.value,
+      price: price.current.value,
     };
+    console.log("data on datapricing form com", data);
     axios
-      .post(baseUrl + "addnetwork/", data)
+      .post(baseUrl + "adddataprice/", data)
       .then((res) => {
-        alert("Network Added");
+        console.log("data price form", res)
+        alert("Data Price Added");
       })
       .catch((err) => {
         alert(err);
@@ -62,7 +57,7 @@ function FormNetwork(props) {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Network Name</Form.Label>
-                    <Form.Select aria-label="Default select example" required>
+                    <Form.Select aria-label="Default select example" required ref={network}>
                       <option>Select Network</option>
                       <option value="1">MTN</option>
                       <option value="2">GLO</option>
@@ -73,7 +68,11 @@ function FormNetwork(props) {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Data Amount</Form.Label>
-                    <Form.Select aria-label="Default select example" required>
+                    <Form.Select
+                      aria-label="Default select example"
+                      required
+                      ref={amount}
+                    >
                       <option>Select Amount</option>
                       <option value="1">500MB</option>
                       <option value="2">1GB</option>
@@ -88,8 +87,8 @@ function FormNetwork(props) {
                       type="text"
                       name="Duration"
                       value="30 Days"
-                      // ref={providerName}
-                      readOnly
+                      ref={duration}
+                      // readOnly
                     />
                   </Form.Group>
                 </Col>
@@ -99,7 +98,8 @@ function FormNetwork(props) {
                     <Form.Label>Price</Form.Label>
                     <Form.Control
                       type="text"
-                      name="dataPrice"
+                      name="price"
+                      ref={price}
                       required
                     />
                   </Form.Group>
