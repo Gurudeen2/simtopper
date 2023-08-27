@@ -5,7 +5,7 @@ import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
-import { getNetwork } from "../../../../apiUrl";
+import { getDataPrice, getNetwork } from "../../../../apiUrl";
 
 const DataPrice = () => {
   const [data, setData_] = useState([]);
@@ -68,19 +68,9 @@ const DataPrice = () => {
   };
 
   const fetchData = useCallback(async () => {
-    let transData = [];
     await axios
-      .get(baseUrl + "getdataprice/")
+      .get(baseUrl + getDataPrice)
       .then((res) => {
-        res.data.map((dt, index) => {
-          transData.push({
-            amount: dt.amount,
-            duration: dt.duration,
-            network: 1,
-            price: dt.price,
-          });
-        });
-        console.log("newData", transData)
         setData_(res.data);
       })
       .catch((err) => {
@@ -93,22 +83,18 @@ const DataPrice = () => {
     GetNetwork();
   }, [fetchData]);
 
-  console.log("get network", data);
-  // let datas = res.data.map((dt) => {
-  //   if (getNetworkData.length > 0) {
-  //     dt.network = getNetworkData.filter(
-  //       (d) => d.providerID === dt.network
-  //     )[0].providerName;
-  //   }
-  //   console.log(
-  //     "log ",
-  //     getNetworkData.filter((d) => d.providerID === dt.network)
-  //   );
-
-  //   return {
-  //     ...dt,
-  //   };
-  // });
+  let transData = [];
+  data.map((dt) => {
+    if (getNetworkData.length > 0) {
+      transData.push({
+        amount: dt.amount,
+        duration: dt.duration,
+        network: getNetworkData.find((d) => d.providerID === dt.network)
+          .providerName,
+        price: dt.price,
+      });
+    }
+  });
   return (
     <>
       <Container style={{ paddingTop: "1.5rem" }}>
@@ -132,7 +118,7 @@ const DataPrice = () => {
 
         <Row>
           <Col>
-            <TableComponent body={data} header={header} />
+            <TableComponent body={transData} header={header} />
           </Col>
         </Row>
       </Container>
