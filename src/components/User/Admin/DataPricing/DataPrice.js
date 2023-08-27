@@ -5,11 +5,13 @@ import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
+import { getNetwork } from "../../../../apiUrl";
 
 const DataPrice = () => {
   const [data, setData_] = useState([]);
 
   const [show, setShow_] = useState(false);
+  const [getNetworkData, setGetNetworkData_] = useState([]);
 
   const handleClose = () => setShow_(false);
   const handleShow = () => setShow_(true);
@@ -59,20 +61,27 @@ const DataPrice = () => {
     },
   ];
 
+  const GetNetwork = () => {
+    axios.get(baseUrl + getNetwork).then((res) => {
+      setGetNetworkData_(res.data);
+    });
+  };
+
   const fetchData = useCallback(async () => {
+    let transData = [];
     await axios
       .get(baseUrl + "getdataprice/")
       .then((res) => {
-        let datas = res.data.map((dt) => {
-          
-            dt.network ="MTN"
-          return  {
-            ...dt,
-          }
-        
+        res.data.map((dt, index) => {
+          transData.push({
+            amount: dt.amount,
+            duration: dt.duration,
+            network: 1,
+            price: dt.price,
+          });
         });
+        console.log("newData", transData)
         setData_(res.data);
-        console.log("res", datas);
       })
       .catch((err) => {
         alert(err);
@@ -81,8 +90,25 @@ const DataPrice = () => {
 
   useEffect(() => {
     fetchData();
+    GetNetwork();
   }, [fetchData]);
 
+  console.log("get network", data);
+  // let datas = res.data.map((dt) => {
+  //   if (getNetworkData.length > 0) {
+  //     dt.network = getNetworkData.filter(
+  //       (d) => d.providerID === dt.network
+  //     )[0].providerName;
+  //   }
+  //   console.log(
+  //     "log ",
+  //     getNetworkData.filter((d) => d.providerID === dt.network)
+  //   );
+
+  //   return {
+  //     ...dt,
+  //   };
+  // });
   return (
     <>
       <Container style={{ paddingTop: "1.5rem" }}>

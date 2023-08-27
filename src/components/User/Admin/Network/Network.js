@@ -5,6 +5,7 @@ import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
+import { deleteNetwork, getNetwork } from "../../../../apiUrl";
 
 const NetworkProvider = () => {
   const [data, setData_] = useState([]);
@@ -15,10 +16,10 @@ const NetworkProvider = () => {
   const handleShow = () => setShow_(true);
 
   const deleteData = (row) => {
+    
     axios
-      .delete(baseUrl + "deletenetwork/" + row.providerID)
+      .delete(baseUrl + deleteNetwork + row.providerID)
       .then((res) => {
-        console.log("delete", res);
         alert(`${row.providerName} Deleted!!`);
         fetchData();
       })
@@ -59,11 +60,9 @@ const NetworkProvider = () => {
 
   const fetchData = useCallback(async () => {
     await axios
-      .get(baseUrl + "getnetwork/")
+      .get(baseUrl + getNetwork)
       .then((res) => {
-        let datas = res.data.map((dt) => dt.fields);
-        setData_(datas);
-        console.log("res fetch", datas);
+        setData_(res.data);
       })
       .catch((err) => {
         alert(err);
