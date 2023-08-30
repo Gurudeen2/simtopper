@@ -33,10 +33,12 @@ function FormNetwork(props) {
     axios
       .post(baseUrl + "addnetwork/", data)
       .then((res) => {
+        
         alert("Network Added");
+        props.fetchdata()
       })
       .catch((err) => {
-        alert(err);
+        alert(err.message);
       });
     props.onHide();
   };

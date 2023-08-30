@@ -5,7 +5,8 @@ import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
-import { getDataPrice, getNetwork } from "../../../../apiUrl";
+import { DataPriceURL, getDataPrice, getNetwork } from "../../../../apiUrl";
+import classes from "./Dataprice.module.css";
 
 const DataPrice = () => {
   const [data, setData_] = useState([]);
@@ -18,8 +19,9 @@ const DataPrice = () => {
   // Create table headers consisting of 4 columns.
   const header = [
     {
-      prop: "",
-      title: "",
+      prop: "id",
+      title: "ID",
+      isFilterable: true,
     },
     {
       prop: "network",
@@ -27,7 +29,7 @@ const DataPrice = () => {
       isFilterable: true,
     },
     {
-      title: "Amount",
+      title: "Amount(GB)",
       prop: "amount",
       isFilterable: true,
     },
@@ -45,13 +47,21 @@ const DataPrice = () => {
       prop: "button",
 
       cell: (row) => (
-        <div style={{ textAlign: "center", right: "30%" }}>
+        <div>
           <Button
             variant="outline-primary"
             size="sm"
+            className={classes["del-btn"]}
             onClick={() => {
-              axios.delete(baseUrl + "deletenetwork/" + row.providerID);
-              alert(`${row.providerID}'s score is ${row.providerName}`);
+              axios
+                .delete(baseUrl + DataPriceURL + row.id)
+                .then((res) => {
+                  if (res.status === 204) {
+                    alert(`${row.network} Record with ID ${row.id} is Deleted`);
+                    fetchData();
+                  }
+                })
+                .catch((err) => alert(err.message));
             }}
           >
             Delete
@@ -74,7 +84,7 @@ const DataPrice = () => {
         setData_(res.data);
       })
       .catch((err) => {
-        alert(err);
+        alert(err.message);
       });
   }, []);
 
@@ -87,6 +97,7 @@ const DataPrice = () => {
   data.map((dt) => {
     if (getNetworkData.length > 0) {
       transData.push({
+        id: dt.id,
         amount: dt.amount,
         duration: dt.duration,
         network: getNetworkData.find((d) => d.providerID === dt.network)
@@ -94,6 +105,7 @@ const DataPrice = () => {
         price: dt.price,
       });
     }
+    return transData;
   });
   return (
     <>
@@ -122,7 +134,12 @@ const DataPrice = () => {
           </Col>
         </Row>
       </Container>
-      <FormNetwork show={show} onHide={handleClose} />
+      <FormNetwork
+        show={show}
+        onHide={handleClose}
+        network={getNetworkData}
+        fetchData={() => fetchData()}
+      />
     </>
   );
 };

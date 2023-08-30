@@ -5,50 +5,49 @@ import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
-import { deleteNetwork, getNetwork } from "../../../../apiUrl";
+import { DataPriceURL, getDataPrice } from "../../../../apiUrl";
+import classes from "./DataAmount.module.css";
 
-const NetworkProvider = () => {
+const DataAmount = () => {
   const [data, setData_] = useState([]);
 
   const [show, setShow_] = useState(false);
 
   const handleClose = () => setShow_(false);
   const handleShow = () => setShow_(true);
-
-  const deleteData = (row) => {
-    axios
-      .delete(baseUrl + deleteNetwork + row.providerID)
-      .then((res) => {
-        alert(`${row.providerName} Deleted!!`);
-        fetchData();
-      })
-      .catch((err) => alert(err.message));
-  };
   // Create table headers consisting of 4 columns.
   const header = [
     {
-      prop: "",
-      title: "",
-    },
-    {
-      prop: "providerID",
+      prop: "id",
       title: "ID",
       isFilterable: true,
     },
     {
-      title: "Name",
-      prop: "providerName",
+      prop: "amount",
+      title: "Amount",
       isFilterable: true,
     },
+
     {
       prop: "button",
 
       cell: (row) => (
-        <div style={{ textAlign: "center", right: "30%" }}>
+        <div>
           <Button
             variant="outline-primary"
             size="sm"
-            onClick={() => deleteData(row)}
+            className={classes["del-btn"]}
+            onClick={() => {
+              axios
+                .delete(baseUrl + DataPriceURL + row.id)
+                .then((res) => {
+                  if (res.status === 204) {
+                    alert(`${row.network} Record with ID ${row.id} is Deleted`);
+                    fetchData();
+                  }
+                })
+                .catch((err) => alert(err));
+            }}
           >
             Delete
           </Button>
@@ -59,12 +58,12 @@ const NetworkProvider = () => {
 
   const fetchData = useCallback(async () => {
     await axios
-      .get(baseUrl + getNetwork)
+      .get(baseUrl + getDataPrice)
       .then((res) => {
         setData_(res.data);
       })
       .catch((err) => {
-        alert(err.message);
+        alert(err);
       });
   }, []);
 
@@ -77,7 +76,7 @@ const NetworkProvider = () => {
       <Container style={{ paddingTop: "1.5rem" }}>
         <Row style={{ paddingBottom: "1rem" }}>
           <Col>
-            <h3>Network</h3>
+            <h3>Data Amount</h3>
           </Col>
           <Col style={{ textAlign: "right" }}>
             <Button
@@ -88,7 +87,7 @@ const NetworkProvider = () => {
                 borderRadius: "0px",
               }}
             >
-              Add Network
+              Add Data Amount
             </Button>
           </Col>
         </Row>
@@ -102,9 +101,9 @@ const NetworkProvider = () => {
       <FormNetwork
         show={show}
         onHide={handleClose}
-        fetchdata={() => fetchData()}
+        fetchData={() => fetchData()}
       />
     </>
   );
 };
-export default NetworkProvider;
+export default DataAmount;

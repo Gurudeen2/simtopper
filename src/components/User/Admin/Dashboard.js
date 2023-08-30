@@ -7,6 +7,7 @@ import NetworkProvider from "./Network/Network";
 import NavHeader from "../../UI/Header/Header";
 import BuyData from "../Data/BuyData";
 import DataPrice from "./DataPricing/DataPrice";
+import DataAmount from "./DataAmount/DataAmount";
 
 const Dashboard = () => {
   return (
@@ -39,6 +40,7 @@ const Dashboard = () => {
             <Route path="/addnetwork" Component={NetworkProvider} />
             <Route path="/data" Component={BuyData} />
             <Route path="/datapricing" Component={DataPrice} />
+            <Route path="/dataamount" Component={DataAmount} />
           </Routes>
         </div>
       </div>

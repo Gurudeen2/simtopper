@@ -1,8 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { Col, Form, Row, Button, Container, Modal } from "react-bootstrap";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { baseUrl } from "../../../../BaseUrl";
+import { addDataPrice } from "../../../../apiUrl";
 
 function FormNetwork(props) {
   const methods = useForm();
@@ -12,26 +13,23 @@ function FormNetwork(props) {
   const price = useRef();
   const amount = useRef();
 
-
- 
-
   const onSubmitHandler = () => {
     const data = {
-
+      id: network.current.value + "-" + amount.current.value,
       network: network.current.value,
       amount: amount.current.value,
       duration: duration.current.value,
       price: price.current.value,
     };
-    console.log("data on datapricing form com", data);
+
     axios
-      .post(baseUrl + "adddataprice/", data)
+      .post(baseUrl + addDataPrice, data)
       .then((res) => {
-        console.log("data price form", res)
         alert("Data Price Added");
+        props.fetchData();
       })
       .catch((err) => {
-        alert(err);
+        alert(err.message);
       });
     props.onHide();
   };
@@ -57,11 +55,15 @@ function FormNetwork(props) {
                 <Col>
                   <Form.Group className="mb-3">
                     <Form.Label>Network Name</Form.Label>
-                    <Form.Select aria-label="Default select example" required ref={network}>
-                      <option>Select Network</option>
-                      <option value="1">MTN</option>
-                      <option value="2">GLO</option>
-                      <option value="3">AIRTEL</option>
+                    <Form.Select
+                      aria-label="Default select example"
+                      required
+                      ref={network}
+                    >
+                      <option disabled>Select Network</option>
+                      {props.network.map((nt) => (
+                        <option value={nt.providerID}>{nt.providerName}</option>
+                      ))}
                     </Form.Select>
                   </Form.Group>
                 </Col>
@@ -88,7 +90,7 @@ function FormNetwork(props) {
                       name="Duration"
                       value="30 Days"
                       ref={duration}
-                      // readOnly
+                      readOnly
                     />
                   </Form.Group>
                 </Col>

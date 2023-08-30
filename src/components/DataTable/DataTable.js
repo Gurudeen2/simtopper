@@ -7,51 +7,15 @@ import {
   TableBody,
   TableHeader,
 } from "react-bs-datatable";
-import { Col, Row, Table, Button, Container } from "react-bootstrap";
+import { Col, Row, Table, Container } from "react-bootstrap";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// Create table headers consisting of 4 columns.
-const header = [
-  {
-    prop: "",
-    title: "",
-  },
-  {
-    prop: "providerID",
-    title: "ID",
-    isFilterable: true,
-  },
-  {
-    title: "Name",
-    prop: "providerName",
-    isFilterable: true,
-  },
-  {
-    prop: "button",
-
-    cell: (row) => (
-      <div style={{ textAlign: "center", right: "30%" }}>
-        <Button
-          variant="outline-primary"
-          size="sm"
-          onClick={() => {
-            alert(`${row.providerID}'s score is ${row.providerName}`);
-          }}
-        >
-          Delete
-        </Button>
-      </div>
-    ),
-  },
-];
-
-const body = [];
 
 // Then, use it in a component.
 function TableComponent(props) {
   return (
-    <Container
+    <Container fluid
       style={{
         paddingLeft: "2rem",
         paddingRight: "2rem",
@@ -99,7 +63,7 @@ function TableComponent(props) {
           className="d-flex flex-col justify-content-lg-center align-items-center
         justify-content-sm-start mb-2 mb-sm-0"
         >
-          <Table>
+          <Table >
             <TableHeader />
             <TableBody />
           </Table>

@@ -1,0 +1,14 @@
+.del-btn {
+  border: none;
+  width: 20rem;
+  border-radius: 0px;
+}
+
+.del-btn:hover {
+  background-color: inherit;
+  color: black;
+}
+.del-btn:visited {
+  background-color: inherit;
+  color: black;
+}
