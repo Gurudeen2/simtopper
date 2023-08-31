@@ -103,11 +103,9 @@ const DataPrice = () => {
           id: dt.id,
           amount:
             getDataAmount.length > 0
-              ? console.log(
-                  getDataAmount.find((da) => da.id === parseInt(dt.amount))
-                )
+              ? getDataAmount.find((da) => da.id === +dt.amount).amount
               : dt.amount,
-          // .amount,
+
           duration: dt.duration,
           network:
             getNetworkData.length > 0
@@ -117,19 +115,6 @@ const DataPrice = () => {
           price: dt.price,
         }));
         setData_(datan);
-
-        // console.log("newData", datan);
-        // data.map((dt) => {
-        //   setData_({
-        // id: dt.id,
-        // amount: dt.amount,
-        // duration: dt.duration,
-        // network: dt.network, //getNetworkData.find((d) => d.providerID === dt.network)
-        // // .providerName,
-        // price: dt.price,
-        //   });
-        //   // return setData_
-        // });
       })
       .catch((err) => {
         alert(err.message);
@@ -141,29 +126,7 @@ const DataPrice = () => {
 
     if (getNetworkData.length === 0) GetNetwork();
     if (getDataAmount.length === 0) GetDataAmount();
-    //  GetDataAmount();
-  }, [getNetworkData, getDataAmount.length, fetchData]);
-
-  // let transData = [];
-  // data.map((dt) => {
-  //   if (getNetworkData.length > 0 && getDataAmount.length > 0) {
-  //     console.log(
-  //       "a", dt.amount
-  //      // getDataAmount.find((da) => da.id === parseInt(dt.amount))
-  //     );
-  //     transData.push({
-  //       id: dt.id,
-  //       amount: dt.amount,
-  //       duration: dt.duration,
-  //       network: getNetworkData.find((d) => d.providerID === dt.network)
-  //         .providerName,
-  //       price: dt.price,
-  //     });
-  //   } else {
-  //     transData.push(...data);
-  //   }
-  //   return transData;
-  // });
+  }, [getNetworkData.length, getDataAmount.length, fetchData]);
 
   return (
     <>
@@ -192,13 +155,13 @@ const DataPrice = () => {
           </Col>
         </Row>
       </Container>
-      {/* <FormNetwork
+      <FormNetwork
         show={show}
         onHide={handleClose}
         network={getNetworkData}
         dataamount={getDataAmount}
         fetchData={() => fetchData()}
-      /> */}
+      />
     </>
   );
 };

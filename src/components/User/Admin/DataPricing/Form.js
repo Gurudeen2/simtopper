@@ -85,8 +85,6 @@ function FormNetwork(props) {
                           {da.amount}
                         </option>
                       ))}
-                      <option value="2">1GB</option>
-                      <option value="3">2GB</option>
                     </Form.Select>
                   </Form.Group>
                 </Col>
