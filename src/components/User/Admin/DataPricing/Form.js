@@ -25,8 +25,10 @@ function FormNetwork(props) {
     axios
       .post(baseUrl + addDataPrice, data)
       .then((res) => {
-        alert("Data Price Added");
-        props.fetchData();
+        if (res.status === 201) {
+          alert("Data Price Added");
+          props.fetchData();
+        }
       })
       .catch((err) => {
         alert(err.message);
@@ -62,7 +64,9 @@ function FormNetwork(props) {
                     >
                       <option disabled>Select Network</option>
                       {props.network.map((nt) => (
-                        <option value={nt.providerID}>{nt.providerName}</option>
+                        <option key={nt.providerID} value={nt.providerID}>
+                          {nt.providerName}
+                        </option>
                       ))}
                     </Form.Select>
                   </Form.Group>
@@ -75,8 +79,12 @@ function FormNetwork(props) {
                       required
                       ref={amount}
                     >
-                      <option>Select Amount</option>
-                      <option value="1">500MB</option>
+                      <option disabled>Select Amount</option>
+                      {props.dataamount.map((da) => (
+                        <option key={da.id} value={da.id}>
+                          {da.amount}
+                        </option>
+                      ))}
                       <option value="2">1GB</option>
                       <option value="3">2GB</option>
                     </Form.Select>

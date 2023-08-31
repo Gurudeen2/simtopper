@@ -9,3 +9,7 @@ export const getDataPrice = "getdataprice/";
 export const DataPriceURL = "dataprice/";
 
 export const addDataPrice = "adddataprice/";
+
+export const createDataAmount = "dataamount/";
+
+export const deleteDataAmount = "dataamountchange/";

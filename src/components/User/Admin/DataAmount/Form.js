@@ -3,7 +3,7 @@ import { Col, Form, Row, Button, Container, Modal } from "react-bootstrap";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { baseUrl } from "../../../../BaseUrl";
-import { addDataPrice } from "../../../../apiUrl";
+import { createDataAmount } from "../../../../apiUrl";
 
 function FormDataAmount(props) {
   const methods = useForm();
@@ -16,15 +16,15 @@ function FormDataAmount(props) {
     };
 
     axios
-      .post(baseUrl + addDataPrice, data)
+      .post(baseUrl + createDataAmount, data)
       .then((res) => {
-        // if (res.status === 20)
-        console.log("res status code", res);
-        alert("Data Amount Added");
+        if (res.status === 201) {
+          alert("Data Amount Added");
+        }
         props.fetchData();
       })
       .catch((err) => {
-        alert(err);
+        alert(err.message);
       });
     props.onHide();
   };

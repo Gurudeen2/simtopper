@@ -5,7 +5,7 @@ import FormNetwork from "./Form";
 import TableComponent from "../../../DataTable/DataTable";
 import axios from "axios";
 import { baseUrl } from "../../../../BaseUrl";
-import { DataPriceURL, getDataPrice } from "../../../../apiUrl";
+import { createDataAmount, deleteDataAmount } from "../../../../apiUrl";
 import classes from "./DataAmount.module.css";
 
 const DataAmount = () => {
@@ -39,14 +39,14 @@ const DataAmount = () => {
             className={classes["del-btn"]}
             onClick={() => {
               axios
-                .delete(baseUrl + DataPriceURL + row.id)
+                .delete(baseUrl + deleteDataAmount + row.id)
                 .then((res) => {
                   if (res.status === 204) {
-                    alert(`${row.network} Record with ID ${row.id} is Deleted`);
+                    alert(`Record with ID ${row.id} was Deleted`);
                     fetchData();
                   }
                 })
-                .catch((err) => alert(err));
+                .catch((err) => alert(err.message));
             }}
           >
             Delete
@@ -58,12 +58,12 @@ const DataAmount = () => {
 
   const fetchData = useCallback(async () => {
     await axios
-      .get(baseUrl + getDataPrice)
+      .get(baseUrl + createDataAmount)
       .then((res) => {
         setData_(res.data);
       })
       .catch((err) => {
-        alert(err);
+        alert(err.message);
       });
   }, []);
 
