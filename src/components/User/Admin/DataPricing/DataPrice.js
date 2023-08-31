@@ -86,30 +86,39 @@ const DataPrice = () => {
       .catch((err) => alert(err.message));
   };
 
-  const GetDataAmount = useCallback(async () => {
-    await axios
+  const GetDataAmount = () => {
+    axios
       .get(baseUrl + createDataAmount)
       .then((res) => {
         setGetDataAmount_(res.data);
       })
       .catch((err) => alert(err.messages));
-  }, []);
+  };
 
-  const fetchData =  () => {
-
-  axios
+  const fetchData = useCallback(() => {
+    axios
       .get(baseUrl + getDataPrice)
       .then((res) => {
         const datan = res.data.map((dt) => ({
           id: dt.id,
-          amount: dt.amount,
+          amount:
+            getDataAmount.length > 0
+              ? console.log(
+                  getDataAmount.find((da) => da.id === parseInt(dt.amount))
+                )
+              : dt.amount,
+          // .amount,
           duration: dt.duration,
-          network: dt.network, //getNetworkData.find((d) => d.providerID === dt.network)
-          // .providerName,
+          network:
+            getNetworkData.length > 0
+              ? getNetworkData.find((d) => d.providerID === dt.network)
+                  .providerName
+              : dt.network,
           price: dt.price,
         }));
-        setData_(res.data);
-        console.log("newData", datan);
+        setData_(datan);
+
+        // console.log("newData", datan);
         // data.map((dt) => {
         //   setData_({
         // id: dt.id,
@@ -121,18 +130,19 @@ const DataPrice = () => {
         //   });
         //   // return setData_
         // });
-        console.log("check", getNetworkData);
       })
       .catch((err) => {
         alert(err.message);
       });
-  };
+  }, [getNetworkData, getDataAmount]);
 
   useEffect(() => {
-    GetNetwork();
     fetchData();
+
+    if (getNetworkData.length === 0) GetNetwork();
+    if (getDataAmount.length === 0) GetDataAmount();
     //  GetDataAmount();
-  }, []);
+  }, [getNetworkData, getDataAmount.length, fetchData]);
 
   // let transData = [];
   // data.map((dt) => {
