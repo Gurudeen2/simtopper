@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
+import { baseUrl } from "../../../BaseUrl";
+import { getNetwork, getDataPrice } from "../../../apiUrl";
+import axios from "axios";
 
 const BuyData = () => {
   const [bonus, setBonus] = useState();
+  const [networkData, setNetworkData_] = useState([]);
 
   const options = [
     { value: "MTN", key: "1" },
@@ -29,6 +33,19 @@ const BuyData = () => {
     }
   };
 
+  const Network = () => {
+    axios
+      .get(baseUrl + getNetwork)
+      .then((res) => setNetworkData_(res.data))
+      .catch((err) => alert(err.message));
+  };
+
+  useEffect(() => {
+    Network();
+  }, []);
+
+  console.log("network data", networkData)
+
   return (
     <Container style={{ paddingTop: "1.5rem" }}>
       <Row style={{ width: "70%" }}>
@@ -46,7 +63,7 @@ const BuyData = () => {
               />
             </Form.Group>
           </Col>
-
+          {/* 0 : providerID : 1 providerName : "MTN" */}
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
@@ -59,7 +76,6 @@ const BuyData = () => {
               </Form.Select>
             </Form.Group>
           </Col>
-
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>DataBundle Plan</Form.Label>
@@ -72,22 +88,19 @@ const BuyData = () => {
               </Form.Select>
             </Form.Group>
           </Col>
-
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Mobile Number</Form.Label>
               <Form.Control type="text" name="number" required />
             </Form.Group>
           </Col>
-
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Amount</Form.Label>
               <Form.Control type="text" name="amount" readOnly />
             </Form.Group>
           </Col>
-
-          <Col style={{textAlign:"right"}}>
+          <Col style={{ textAlign: "right" }}>
             <Button variant="primary" type="submit">
               Buy Now
             </Button>
