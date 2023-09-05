@@ -7,13 +7,7 @@ import axios from "axios";
 const BuyData = () => {
   const [bonus, setBonus] = useState();
   const [networkData, setNetworkData_] = useState([]);
-
-  const options = [
-    { value: "MTN", key: "1" },
-    { value: "GLO", key: "2" },
-    { value: "AIRTEL", key: "3" },
-    { value: "9MOBILE", key: "4" },
-  ];
+  const [dataPrice, setDataPrice_] = useState([]);
 
   const DataOptions = [
     { value: "200MB - 14Days", key: "1", amount: "50" },
@@ -40,11 +34,19 @@ const BuyData = () => {
       .catch((err) => alert(err.message));
   };
 
+  const DataPrice = () => {
+    axios
+      .get(baseUrl + getDataPrice)
+      .then((res) => setDataPrice_(res.data))
+      .catch((err) => alert(err.message));
+  };
+
   useEffect(() => {
     Network();
+    DataPrice()
   }, []);
 
-  console.log("network data", networkData)
+  console.log("data price", dataPrice)
 
   return (
     <Container style={{ paddingTop: "1.5rem" }}>
@@ -63,25 +65,25 @@ const BuyData = () => {
               />
             </Form.Group>
           </Col>
-          {/* 0 : providerID : 1 providerName : "MTN" */}
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
               <Form.Select onChange={networkHandler}>
-                {options.map((option) => (
-                  <option value={option.value} key={option.key}>
-                    {option.value}
+                {networkData.map((option) => (
+                  <option key={option.providerID} value={option.providerName}>
+                    {option.providerName}
                   </option>
                 ))}
               </Form.Select>
             </Form.Group>
           </Col>
+          amount : "3" duration : "30 Days" id : "2-3" network : 2 price : "230"
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>DataBundle Plan</Form.Label>
               <Form.Select onChange={networkHandler}>
-                {DataOptions.map((option) => (
-                  <option value={option.value} key={option.key}>
+                {dataPrice.map((option) => (
+                  <option key={option.key} value={option.value}>
                     {option.value}
                   </option>
                 ))}
