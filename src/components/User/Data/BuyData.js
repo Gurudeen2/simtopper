@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Col, Form, Row, Button, Container } from "react-bootstrap";
 import { baseUrl } from "../../../BaseUrl";
 import {
@@ -9,85 +9,71 @@ import {
 import axios from "axios";
 
 const BuyData = () => {
-  const [bonus, setBonus] = useState();
   const [networkData, setNetworkData_] = useState([]);
   const [dataPrice, setDataPrice_] = useState([]);
   const [dataAmount, setDataAmount_] = useState([]);
+  const [newData_, setNewData_] = useState([]);
 
-  const networkValue = useRef();
+  const [networkValue, setNetworkValue_] = useState([]);
+  const [amountValue_, setAmountValue_] = useState("");
 
   const networkHandler = (e) => {
-    const handler = e.target.value;
-    console.log("Network Value", networkValue.current.value);
+    setNetworkValue_(newData_.filter((nd_) => nd_.network === +e.target.value));
+  };
 
-    console.log("handler", handler);
-    if (handler === "GLO" || handler === "MTN") {
-      setBonus(handler);
-      return;
+  const amountValueHandler = (e) => {
+    setAmountValue_("");
+    if (e.target.value) {
+      setAmountValue_(
+        networkValue.find((nd_) => nd_.amount === e.target.value).price
+      );
     }
   };
 
-  const DataAmount = useCallback(() => {
+  const newDataPrice = useCallback(() => {
+    const newData = dataPrice.map((d) => {
+      return {
+        id: d.id,
+        network: d.network,
+        price: d.price,
+        duration: d.duration,
+        amount:
+          dataAmount.length > 0
+            ? dataAmount.find((da) => da.id === +d.amount).amount
+            : d.amount,
+      };
+    });
+    setNewData_(newData);
+  }, [dataAmount.length, dataPrice.length]);
+  const DataAmount = () => {
     axios
       .get(baseUrl + getDataAmount)
       .then((res) => setDataAmount_(res.data))
       .catch((err) => alert(err.message));
-  }, []);
-
-  const Network = useCallback(() => {
+  };
+  const Network = () => {
     axios
       .get(baseUrl + getNetwork)
       .then((res) => setNetworkData_(res.data))
       .catch((err) => alert(err.message));
-  }, []);
+  };
 
-  const DataPrice = useCallback(() => {
+  const DataPrice = () => {
     axios
       .get(baseUrl + getDataPrice)
       .then((res) => {
-        newDataPrice(res.data);
-        // setDataPrice_(res.data
-        // res.data.map((dt) => {
-        //   console.log("Check", dataAmount);
-        //   setDataPrice_({
-        //     amount:
-        //       dataAmount.length > 0
-        //         ? console.log(
-        //             "inside",
-        //             dataAmount.find((da) => da.id === +dt.amount)
-        //           )
-        //         : dt.amount,
-        //     duration: dt.duration,
-        //     id: dt.id,
-        //     network: dt.network,
-        //     price: dt.price,
-        //   });
-        //   return setDataPrice_;
-        // });
-        // );
+        setDataPrice_(res.data);
       })
       .catch((err) => alert(err.message));
-  }, []);
-  //function start here
-  const newDataPrice = (data) => {
-    const newData = data.map((d) => {
-      return {
-        id: d.id,
-        price: d.price,
-        duration: d.duration,
-        amount: d.amount,
-      };
-    });
-    console.log("DA", newData);
   };
+  //function start here
 
-  console.log("dataPrice", dataPrice);
-  newDataPrice();
   useEffect(() => {
     Network();
     DataPrice();
     DataAmount();
-  }, [Network, DataPrice, DataAmount]);
+    newDataPrice();
+  }, [newData_.length, newDataPrice]);
   return (
     <Container style={{ paddingTop: "1.5rem" }}>
       <Row style={{ width: "70%" }}>
@@ -108,26 +94,26 @@ const BuyData = () => {
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Network</Form.Label>
-              <Form.Select onChange={networkHandler} ref={networkValue}>
-                <option>Select Network</option>
+              <Form.Select onChange={networkHandler} required>
+                <option value="">Select Network</option>
                 {networkData.map((option) => (
-                  <option key={option.providerID} value={option.providerName}>
+                  <option key={option.providerID} value={option.providerID}>
                     {option.providerName}
                   </option>
                 ))}
               </Form.Select>
             </Form.Group>
           </Col>
-          amount : "3" duration : "30 Days" id : "2-3" network : 2 price : "230"
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>DataBundle Plan</Form.Label>
-              <Form.Select onChange={networkHandler}>
-                {/* {dataPrice.map((option) => (
+              <Form.Select required onChange={amountValueHandler}>
+                <option value="">Select Data Plan</option>
+                {networkValue.map((option) => (
                   <option key={option.id} value={option.amount}>
                     {`${option.amount} - ${option.duration}`}
                   </option>
-                ))} */}
+                ))}
               </Form.Select>
             </Form.Group>
           </Col>
@@ -140,7 +126,12 @@ const BuyData = () => {
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Amount</Form.Label>
-              <Form.Control type="text" name="amount" readOnly />
+              <Form.Control
+                type="text"
+                name="amount"
+                value={amountValue_}
+                readOnly
+              />
             </Form.Group>
           </Col>
           <Col style={{ textAlign: "right" }}>
