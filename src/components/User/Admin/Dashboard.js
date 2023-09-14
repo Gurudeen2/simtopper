@@ -9,6 +9,8 @@ import BuyData from "../Data/BuyData";
 import DataPrice from "./DataPricing/DataPrice";
 import DataAmount from "./DataAmount/DataAmount";
 
+const Deposit = React.lazy(() => import("../Deposit/Deposit"));
+
 const Dashboard = () => {
   return (
     <div className="d-flex" id="wrapper">
@@ -41,6 +43,7 @@ const Dashboard = () => {
             <Route path="/data" Component={BuyData} />
             <Route path="/datapricing" Component={DataPrice} />
             <Route path="/dataamount" Component={DataAmount} />
+            <Route path="/deposit" Component={Deposit} />
           </Routes>
         </div>
       </div>
