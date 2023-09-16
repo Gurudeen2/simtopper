@@ -43,7 +43,7 @@ const Dashboard = () => {
             <Route path="/data" Component={BuyData} />
             <Route path="/datapricing" Component={DataPrice} />
             <Route path="/dataamount" Component={DataAmount} />
-            <Route path="/deposit" Component={Deposit} />
+            <Route path="/deposit/*" exact Component={Deposit} />
           </Routes>
         </div>
       </div>
