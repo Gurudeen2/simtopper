@@ -1,44 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Col, Form } from "react-bootstrap";
-import { Route, Routes, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const InterSwitch = () => {
+  const [custEmail, setCustEmail_] = useState("akeemtolanifatai@gmail.com");
   const { amount } = useParams();
-    console.log("location", amount);
-    required parameter
-
-    pay_item_id
-    pay_item_name
-    txt_ref
-    amount
-    currency
-    cust_email
-    site_redirect_url
+  console.log("location", amount);
 
   function checkout() {
-    var merchantCode = "MX19329";
-    var payItemId = "Default_Payable_MX19329";
+    // 1c4lMGHfWlNSdjRTCcDluAvB8oCaxTob8lzibA/+P+o6xJEfndaUw+QnAnYpi8M/
+    var merchantCode = "MX169494";
+    var payItemId = "Default_Payable_MX169494";
 
     var transRef = randomReference();
     var paymentRequest = {
       merchant_code: merchantCode,
       pay_item_id: payItemId,
       txn_ref: transRef,
-      amount: document.getElementsByName("amount")[0].value,
-      cust_id: document.getElementsByName("cust_id")[0].value,
-      currency: document.getElementsByName("currency")[0].value,
+      pay_item_name: "Fund SimTopper Account",
+      cust_email: custEmail,
+      amount: amount,
+      cust_id: "akeem",
+      currency: "566",
       site_redirect_url: window.location.origin,
       onComplete: paymentCallback,
       mode: "TEST",
     };
-    window.webpayCheckout(paymentRequest);
+    window.we webpayCheckout(paymentRequest);
   }
 
   //generate a random transaction ref
   function randomReference() {
     var length = 10;
     var chars =
-      "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      "1c4lMGHfWlNSdjRTCcDluAvB8oCaxTob8lzibA/+P+o6xJEfndaUw+QnAnYpi8M/";
+    // "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var result = "";
     for (var i = length; i > 0; --i)
       result += chars[Math.floor(Math.random() * chars.length)];
@@ -65,7 +61,7 @@ const InterSwitch = () => {
         </Form.Group>
       </Col>
       <Col>
-        <Button>Proceed Payment</Button>
+        <Button onClick={() => checkout()}>Proceed Payment</Button>
       </Col>
     </Form>
   );
