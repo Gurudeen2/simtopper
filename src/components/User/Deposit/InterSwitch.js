@@ -26,7 +26,7 @@ const InterSwitch = () => {
       onComplete: paymentCallback,
       mode: "TEST",
     };
-    window.we webpayCheckout(paymentRequest);
+    window.webpayCheckout(paymentRequest);
   }
 
   //generate a random transaction ref
