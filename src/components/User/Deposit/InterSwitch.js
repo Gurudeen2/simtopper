@@ -5,12 +5,14 @@ import { useParams } from "react-router-dom";
 const InterSwitch = () => {
   const [custEmail, setCustEmail_] = useState("akeemtolanifatai@gmail.com");
   const { amount } = useParams();
+  
   console.log("location", amount);
 
   function checkout() {
     // 1c4lMGHfWlNSdjRTCcDluAvB8oCaxTob8lzibA/+P+o6xJEfndaUw+QnAnYpi8M/
     var merchantCode = "MX169494";
     var payItemId = "Default_Payable_MX169494";
+    let amount_ = +amount * 100
 
     var transRef = randomReference();
     var paymentRequest = {
@@ -19,7 +21,7 @@ const InterSwitch = () => {
       txn_ref: transRef,
       pay_item_name: "Fund SimTopper Account",
       cust_email: custEmail,
-      amount: amount,
+      amount: amount_.toString(),
       cust_id: "akeem",
       currency: "566",
       site_redirect_url: window.location.origin,
