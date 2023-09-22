@@ -5,14 +5,12 @@ import { useParams } from "react-router-dom";
 const InterSwitch = () => {
   const [custEmail, setCustEmail_] = useState("akeemtolanifatai@gmail.com");
   const { amount } = useParams();
-  
-  console.log("location", amount);
 
   function checkout() {
     // 1c4lMGHfWlNSdjRTCcDluAvB8oCaxTob8lzibA/+P+o6xJEfndaUw+QnAnYpi8M/
     var merchantCode = "MX169494";
     var payItemId = "Default_Payable_MX169494";
-    let amount_ = +amount * 100
+    let amount_ = +amount * 100;
 
     var transRef = randomReference();
     var paymentRequest = {
@@ -43,8 +41,19 @@ const InterSwitch = () => {
     return result;
   }
 
+  amount: 100000;
+  apprAmt: 100000;
+  cardNum: "";
+  desc: "Customer cancellation";
+  mac: "";
+  payRef: "AfAvllAAMd";
+  resp: "Z6";
+  retRef: "";
+  txnref: "AfAvllAAMd";
+  url: "http://localhost:3000";
   //callback function that gets triggered on payment success or failure
   function paymentCallback(response) {
+    console.log("response", response);
     if (response != null) {
       alert(response.desc);
     }
